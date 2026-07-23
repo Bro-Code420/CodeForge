@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.drop-cap::first-letter {
+  float: left;
+  font-size: 5rem;
+  line-height: 1;
+  padding-right: 12px;
+  padding-top: 4px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+.paper-texture {
+  background-color: #F6F1E8;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+
+.ink-bleed {
+  filter: contrast(1.2) grayscale(1) brightness(0.9);
+}
+
+.newspaper-border-double {
+  border-top: 4px double #161616;
+  border-bottom: 4px double #161616;
+}
+
+.breaking-news {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #161616;
+  color: #F6F1E8;
+  padding: 4px 0;
+}
+
+.scroll-text {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

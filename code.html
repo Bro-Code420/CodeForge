@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style="overflow-x: hidden;"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "on-tertiary-fixed": "#01210c",
+                            "on-secondary": "#ffffff",
+                            "outline": "#161616",
+                            "background": "#F6F1E8",
+                            "surface": "#F6F1E8",
+                            "primary": "#161616",
+                            "secondary": "#333333",
+                            "surface-container": "#f2ede4",
+                            "burgundy": "#5E2A2A"
+                        },
+                        borderRadius: {
+                            "DEFAULT": "0px",
+                            "lg": "0px",
+                            "xl": "0px",
+                            "full": "9999px"
+                        },
+                        fontFamily: {
+                            "masthead": ["Playfair Display", "serif"],
+                            "headline": ["Playfair Display", "serif"],
+                            "body": ["Libre Baskerville", "serif"],
+                            "serif-alt": ["Cormorant Garamond", "serif"],
+                            "mono": ["IBM Plex Mono", "monospace"],
+                            "label-caps": ["IBM Plex Mono", "monospace"]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 5rem;
+            line-height: 1;
+            padding-right: 12px;
+            padding-top: 4px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+        }
+        .paper-texture {
+            background-color: #F6F1E8;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+        }
+        .ink-bleed {
+            filter: contrast(1.2) grayscale(1) brightness(0.9);
+        }
+        .newspaper-border-double {
+            border-top: 4px double #161616;
+            border-bottom: 4px double #161616;
+        }
+        .terminal-overlay {
+            display: none; /* Hidden by default after initial load simulation */
+        }
+        .breaking-news {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #161616;
+            color: #F6F1E8;
+            padding: 4px 0;
+        }
+        .scroll-text {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="paper-texture text-primary min-h-screen flex flex-col selection:bg-primary selection:text-background font-body">
+<!-- Header -->
+<header class="w-full flex flex-col border-b-2 border-primary">
+<div class="flex justify-between px-6 md:px-12 py-2 font-mono text-[10px] md:text-xs uppercase border-b border-primary">
+<span>VOL. I // ISSUE NO. 01</span>
+<span>13 AUGUST 2026</span>
+<span>NAGPUR, INDIA</span>
+</div>
+<div class="px-6 md:px-12 py-10 md:py-20 text-center">
+<h1 class="font-masthead text-7xl md:text-[160px] font-black uppercase tracking-tighter leading-none mb-2">CODE FORGE</h1>
+<p class="font-serif-alt text-2xl md:text-4xl italic tracking-wide">Code • Create • Innovate</p>
+</div>
+<div class="breaking-news">
+<div class="scroll-text font-mono text-xs uppercase tracking-widest">
+            BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — PRIZE POOL EXCEEDS ₹10,000 — 10 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —
+        </div>
+</div>
+<nav class="flex justify-center items-center py-4 border-t border-primary gap-4 md:gap-12 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest overflow-x-auto no-scrollbar px-6">
+<a class="hover:italic" href="#about">The Vision</a>
+<span class="opacity-30">/</span>
+<a class="hover:italic" href="#theme">Special Report</a>
+<span class="opacity-30">/</span>
+<a class="hover:italic" href="#areas">Features</a>
+<span class="opacity-30">/</span>
+<a class="hover:italic" href="#timeline">Chronology</a>
+<span class="opacity-30">/</span>
+<a class="hover:italic" href="#registry">Registry</a>
+</nav>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-16">
+<!-- Headline and Intro -->
+<div class="md:col-span-12 mb-12">
+<h2 class="font-headline text-5xl md:text-8xl uppercase font-black leading-[0.85] mb-12 tracking-tighter text-center">
+                    In Pursuit of Structural <br class="hidden md:block"/> Digital Integrity
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<p class="text-xl md:text-2xl leading-relaxed text-justify drop-cap">
+                        In the heart of India's geographic center, a new digital dawn rises. CODE FORGE 2026 isn't merely a competition; it is a gathering of the finest minds tasked with hand-crafting the next generation of infrastructure. 
+                    </p>
+<p class="text-xl md:text-2xl leading-relaxed text-justify">
+                        This inaugural event challenges participants to transcend the ephemeral. We seek architectures that exhibit the resilience of tempered steel and the precision of a master watchmaker. Join us in Nagpur for an odyssey of pure creation.
+                    </p>
+</div>
+</div>
+<!-- Visual Interest & Data Grid Row -->
+<div class="md:col-span-7">
+<div class="border-[6px] border-primary p-2 bg-white">
+<img alt="Fig 01: The Central Engine." class="w-full grayscale ink-bleed" src="https://lh3.googleusercontent.com/aida/AP1WRLvIIRv_ifIBCgi9U2FIctBJh_mINR1CqefHmW6IgomrjQnSLF3Odv8b72vhl1Ovs7qpNTqhBzLvokm-HP10a1YHtlanVaGkj5R-fN17bZEkkyjUzHVil4QJl6nkwXRlgyasqGT1OHuIM5KNa5kBh9_gRCRTnQVhDHc0mL7F7ba5BQdHj1x0VdHDYY3cmpdJ26xmE1xGK1AFXeAUoDEwkkIRcRwOMCQZ6l04dGoSCAqdJ408uz9h4tRFT8Zd"/>
+</div>
+<p class="font-mono text-xs italic mt-4 uppercase tracking-tighter text-left border-l-4 border-primary pl-4">
+                    Fig 01: The Central Engine. ARCHIVE 2026. A documentation of the core processing unit designed for high-integrity protocol execution.
+                </p>
+</div>
+<div class="md:col-span-5 flex flex-col justify-between h-full">
+<!-- Data Grid -->
+<div class="border border-primary bg-white/50 mb-12">
+<div class="grid grid-cols-2 border-b border-primary">
+<div class="p-4 border-r border-primary">
+<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Venue</span>
+<span class="font-headline font-bold text-lg">G.H. Raisoni, Nagpur</span>
+</div>
+<div class="p-4">
+<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Team Size</span>
+<span class="font-headline font-bold text-lg">2–4 Members</span>
+</div>
+</div>
+<div class="grid grid-cols-2 border-b border-primary">
+<div class="p-4 border-r border-primary">
+<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Registration</span>
+<span class="font-headline font-bold text-lg">₹400 / Team</span>
+</div>
+<div class="p-4">
+<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Prize Pool</span>
+<span class="font-headline font-bold text-lg">₹10K+</span>
+</div>
+</div>
+<div class="p-4 bg-primary text-background text-center">
+<span class="font-mono text-[10px] uppercase tracking-widest block mb-1">Chronology</span>
+<span class="font-headline font-bold text-xl uppercase italic">August 13, 2026</span>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="text-center md:text-left">
+<h4 class="font-mono text-xs font-bold uppercase mb-4 tracking-[0.2em] opacity-80 border-b border-primary/20 pb-2 inline-block">SECURE YOUR STATION</h4>
+<div class="flex flex-col gap-6">
+<a class="group relative inline-block" href="#register">
+<div class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></div>
+<button class="relative w-full bg-burgundy text-background px-12 py-6 font-mono text-xl font-black uppercase border-2 border-primary transition-all">
+                                REGISTER STATION
+                            </button>
+</a>
+<div class="font-mono text-[10px] uppercase flex items-center justify-center md:justify-start gap-3 opacity-70">
+<span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                            Latest Dispatch: 24 Days Remaining Until Close
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-primary border-t-2 mb-24"/>
+<!-- About Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24" id="about">
+<div class="md:col-span-3 font-mono text-xs border-r border-primary pr-8 space-y-6">
+<div>
+<h4 class="font-bold uppercase mb-2 underline">Presentation</h4>
+<p>All prototypes must be presented via physical terminal demonstrations and formal technical manifestos.</p>
+</div>
+<div>
+<h4 class="font-bold uppercase mb-2 underline">Collaboration</h4>
+<p>The Forge encourages inter-disciplinary squads of engineers, architects, and visual theorists.</p>
+</div>
+</div>
+<div class="md:col-span-6">
+<h3 class="font-mono text-sm font-bold uppercase mb-6 underline decoration-2 underline-offset-4">EDITORIAL VISION</h3>
+<p class="text-lg md:text-xl leading-relaxed text-justify drop-cap mb-6">
+                Innovation is not the pursuit of the new, but the refinement of the essential. At CODE FORGE, we return to the principles of the master craftsman—precision, durability, and elegance. As the world shifts towards ephemeral systems, we forge foundations that last. Our focus on "Intelligent Systems" explores the intersection of sovereign infrastructure and legacy protocol integration.
+            </p>
+<div class="bg-primary/5 p-6 italic font-headline text-lg border-l-4 border-primary">
+                "Software is the most versatile tool humanity has ever built. At the Forge, we ensure it is also the strongest."
+            </div>
+</div>
+<div class="md:col-span-3">
+<div class="newspaper-border p-1 mb-4">
+<img alt="Fig 02: The Vision" class="w-full grayscale ink-bleed" src="https://lh3.googleusercontent.com/aida/AP1WRLsmd454IOIeZcz_L3mbQIyNogNczQPfxGIdBiEPnE7rhzfoNyUdrJGZDWYoDWpn3Yh6NLz0n3OsYcMoMndcXHqgP7IlJbzH0ZLxyZxwraDVQgT3TbB-PCqrpfWv9m2Pne3t2BMfhWaLls4QaJ3CKVSKz7FDRXA92kNqYy843X3ALp1EqSdGCxgSylkfLsbblM2ceekpxUQHkSe4xLVhUPGKI3w5th7dhl9W9D-_M6BXAgd_ldxYtEovNXsg"/>
+</div>
+<p class="font-mono text-[10px] uppercase text-center">Fig 02: The Vision.</p>
+</div>
+</section>
+<!-- Theme Section -->
+<section class="mb-24 bg-primary text-background p-12 relative overflow-hidden" id="theme">
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16">
+<div>
+<span class="font-mono text-xs font-bold border border-background px-3 py-1 uppercase">Special Report</span>
+<h3 class="font-headline text-5xl md:text-6xl font-black mt-8 mb-8 uppercase leading-none">Intelligent Systems</h3>
+<div class="space-y-6 font-body text-lg opacity-90">
+<p><strong class="font-headline">The Theme:</strong> Developing architectures that don't just calculate, but reason with the structural density of industrial engineering.</p>
+<p><strong class="font-headline">Objectives:</strong> To bridge the gap between academic theory and hardened industrial application through deterministic intelligence.</p>
+<p><strong class="font-headline">Technology Scope:</strong> Web3, Generative AI, Embedded Systems, and Sovereign Cloud Infrastructure.</p>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<div class="border border-background/30 p-1">
+<img alt="Fig 03: The Intelligent Foundry" class="w-full grayscale contrast-125 opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLtTqbpRpWaXBKtUKa7zvU4HkjsNT7BZgMzQU36LEGLR1zKGXaZqK-et_VEJIQ8uYgIMk94wLKt9sAs1n3buBcDgmSggTkBrqi1jZ0WSm3BOJ1Qkp2C3WclMv-5JemLVvrosulEi-_dRweQ7gNDdogTNCCdo82O2EottRQ0TZVt_NzD-FThn7K1KSNbERr2BXO_uaTODwWnzymWld6F8zL7o8IMlExHyEwS1MZRZ7LF0v9ecAwzs6DHd-fU"/>
+</div>
+<p class="font-mono text-[10px] mt-2 uppercase text-center opacity-60">Fig 03: The Intelligent Foundry.</p>
+</div>
+</div>
+</section>
+<!-- Application Areas -->
+<section class="mb-24" id="areas">
+<h3 class="font-headline text-4xl uppercase font-black mb-12 text-center underline decoration-double">Feature Articles: Industry Verticals</h3>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-px bg-primary border border-primary">
+<div class="bg-background p-6 hover:bg-surface-container transition-colors">
+<h4 class="font-headline font-bold uppercase text-lg mb-4">Healthcare</h4>
+<p class="font-body text-sm leading-snug">Synthesized diagnostics and well-being protocols for the modern age.</p>
+</div>
+<div class="bg-background p-6 hover:bg-surface-container transition-colors">
+<h4 class="font-headline font-bold uppercase text-lg mb-4">Urbanism</h4>
+<p class="font-body text-sm leading-snug">Smart cities and urban infrastructure optimized for sovereign resilience.</p>
+</div>
+<div class="bg-background p-6 hover:bg-surface-container transition-colors">
+<h4 class="font-headline font-bold uppercase text-lg mb-4">Ecology</h4>
+<p class="font-body text-sm leading-snug">Sustainability and environmental systems forged for long-term survival.</p>
+</div>
+<div class="bg-background p-6 hover:bg-surface-container transition-colors">
+<h4 class="font-headline font-bold uppercase text-lg mb-4">Trust</h4>
+<p class="font-body text-sm leading-snug">Cybersecurity and digital trust: hardening the protocols of the future.</p>
+</div>
+<div class="bg-background p-6 hover:bg-surface-container transition-colors">
+<h4 class="font-headline font-bold uppercase text-lg mb-4">Enterprise</h4>
+<p class="font-body text-sm leading-snug">Intelligent automation and productivity tools for the industrial forge.</p>
+</div>
+</div>
+</section>
+<!-- Why Participate & Highlights -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+<div>
+<h3 class="font-headline text-3xl font-bold uppercase mb-8">Value Proposition</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="border border-primary p-4">
+<h5 class="font-mono font-bold text-xs uppercase mb-2">Build Solutions</h5>
+<p class="text-xs">Address real-world crises with engineering precision.</p>
+</div>
+<div class="border border-primary p-4">
+<h5 class="font-mono font-bold text-xs uppercase mb-2">Network</h5>
+<p class="text-xs">Connect with the subcontinent's finest engineering minds.</p>
+</div>
+<div class="border border-primary p-4">
+<h5 class="font-mono font-bold text-xs uppercase mb-2">Collaborate</h5>
+<p class="text-xs">Experience the friction and flow of rapid development.</p>
+</div>
+<div class="border border-primary p-4">
+<h5 class="font-mono font-bold text-xs uppercase mb-2">Rewards</h5>
+<p class="text-xs">Win significant innovation grants and industry swags.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 p-8 border-2 border-primary">
+<h3 class="font-headline text-3xl font-bold uppercase mb-8 text-center">Event Highlights</h3>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black">₹10K+</span>
+<span class="font-mono text-[10px] uppercase">Grant Pool</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black">10 HRS</span>
+<span class="font-mono text-[10px] uppercase">Active Coding</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black">OFFLINE</span>
+<span class="font-mono text-[10px] uppercase">Physical Presence</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-3xl font-black">SWAG</span>
+<span class="font-mono text-[10px] uppercase">Limited Kits</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Prize Pool Section -->
+<section class="mb-24 border border-primary p-8 md:p-12">
+<h3 class="font-headline text-4xl font-black uppercase text-center mb-12 italic">Innovation Grants Allocation</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
+<span class="font-mono text-xs uppercase opacity-60">The Grand Prize</span>
+<h4 class="font-headline text-4xl font-bold my-4">Winner</h4>
+<p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
+<p class="text-xs mt-4">Recognition in the National Press Archives.</p>
+</div>
+<div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
+<span class="font-mono text-xs uppercase opacity-60">The Runner Up</span>
+<h4 class="font-headline text-4xl font-bold my-4">Second Place</h4>
+<p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
+<p class="text-xs mt-4">Commendation for Engineering Excellence.</p>
+</div>
+<div class="text-center p-6">
+<span class="font-mono text-xs uppercase opacity-60">Universal Tier</span>
+<h4 class="font-headline text-4xl font-bold my-4">Participants</h4>
+<p class="font-mono font-bold text-xl uppercase tracking-tighter">Certificates</p>
+<p class="text-xs mt-4">Entry into the Forge Alumni Network.</p>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-primary/20 flex flex-wrap justify-center gap-12 font-mono text-xs uppercase font-bold">
+<span>• Technical Excellence Award</span>
+<span>• Innovation Excellence Award</span>
+<span>• Best UI/UX Design</span>
+</div>
+</section>
+<!-- Judging Criteria -->
+<section class="mb-24 grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-5">
+<div class="border border-primary p-6 bg-white shadow-inner">
+<h3 class="font-mono text-sm font-bold uppercase mb-6 text-center border-b border-primary pb-2">OFFICIAL SCORE SHEET</h3>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>Problem Understanding</span><span>15</span></div>
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>Technical Implementation</span><span>25</span></div>
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>Innovation &amp; Uniqueness</span><span>20</span></div>
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>UI/UX Interface</span><span>15</span></div>
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>PPT Presentation</span><span>10</span></div>
+<div class="flex justify-between border-b border-dotted border-primary/40 pb-1"><span>Final Demo</span><span>15</span></div>
+<div class="flex justify-between font-bold border-none pt-4"><span>TOTAL MARKS</span><span>100</span></div>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center">
+<h3 class="font-headline text-4xl font-black uppercase mb-6">Board of Inquiry</h3>
+<p class="mb-8 opacity-80">Our panel of distinguished adjudicators will evaluate entries based on structural density and operational efficiency.</p>
+<div class="border border-primary p-2">
+<img alt="The Board" class="w-full grayscale contrast-125 ink-bleed" src="https://lh3.googleusercontent.com/aida/AP1WRLuuwbmjrA6qXNi1-vSBXIxJ9LYBYT5PpH59ZmuqSfrBunbsH7LtaHyqPazF-dEGU86dC8jztw2ElxqhuAJ86MMuf0JG2G5JZjK6-jOO-d_mxjDtk11sCL5_IZ5Xx5VINiJw4oPdGPrOuN3Q7k5VvRYDI75wiRhZuSNGhhyR_zbeSbL-avRmrCyQdqaeUrw1tNkXnVcY61ckBCvCeZJuQIRwT3BbQPUaQHtUAd3MyvMCLaXCIqc2JH6Np5ls"/>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section class="mb-24" id="timeline">
+<h3 class="font-headline text-5xl font-black uppercase mb-12 text-center">Chronology of Events</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-mono text-xs">
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">09:00 AM</span>
+<span class="uppercase">Registration &amp; Station Security</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">10:00 AM</span>
+<span class="uppercase">The Press Opens (Opening Ceremony)</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">10:15 AM</span>
+<span class="uppercase">Coding Commencement</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">01:00 PM</span>
+<span class="uppercase">Logistics Break (Lunch)</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">01:30 PM</span>
+<span class="uppercase">Technical Development Phase II</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">04:00 PM</span>
+<span class="uppercase">Cease Coding</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">04:30 PM</span>
+<span class="uppercase">Inquiry &amp; Evaluation</span>
+</div>
+<div class="flex justify-between border-b border-primary py-4">
+<span class="font-bold">06:30 PM</span>
+<span class="uppercase">Manifesto Results</span>
+</div>
+</div>
+</section>
+<!-- Official Rules -->
+<section class="mb-24 bg-primary/5 p-8 border-4 border-double border-primary">
+<h3 class="font-mono text-sm font-black uppercase mb-6 text-center underline">OFFICIAL CODE OF CONDUCT</h3>
+<ul class="font-mono text-[11px] space-y-3 leading-relaxed">
+<li>I. TEAMS MUST CONSIST OF 2 TO 4 MEMBERS FROM THE SAME DISCIPLINE OR INTERDISCIPLINARY.</li>
+<li>II. ALL INTELLECTUAL PROPERTY PRODUCED MUST BE DEVELOPED DURING THE 10-HOUR WINDOW.</li>
+<li>III. USE OF OPEN-SOURCE LIBRARIES IS PERMITTED, PROVIDED THEY ARE CITED IN THE MANIFESTO.</li>
+<li>IV. ANY VIOLATION OF ACADEMIC INTEGRITY WILL LEAD TO IMMEDIATE DISQUALIFICATION.</li>
+<li>V. THE DECISION OF THE BOARD OF INQUIRY IS FINAL AND BINDING.</li>
+</ul>
+</section>
+<!-- FAQ -->
+<section class="mb-24">
+<h3 class="font-headline text-3xl font-bold uppercase mb-10">Frequently Asked Questions</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-body">
+<div class="border border-primary p-6">
+<h5 class="font-bold mb-2">Who can participate?</h5>
+<p class="text-sm opacity-80">Students currently enrolled in undergraduate or postgraduate technical programs across India.</p>
+</div>
+<div class="border border-primary p-6">
+<h5 class="font-bold mb-2">Team size requirements?</h5>
+<p class="text-sm opacity-80">A squad must contain no fewer than two and no more than four members.</p>
+</div>
+<div class="border border-primary p-6">
+<h5 class="font-bold mb-2">Are problem statements provided?</h5>
+<p class="text-sm opacity-80">Participants may choose their own challenge within the predefined application areas.</p>
+</div>
+<div class="border border-primary p-6">
+<h5 class="font-bold mb-2">Will food be provided?</h5>
+<p class="text-sm opacity-80">Yes, the press will provide lunch and high-tea for all registered participants.</p>
+</div>
+</div>
+</section>
+<!-- Registry Section -->
+<section class="text-center py-20 bg-primary/5 border-t-4 border-b-4 border-double border-primary" id="registry">
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase mb-8">THE PRESS IS READY. ARE YOU?</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
+<button class="bg-burgundy text-background px-16 py-6 font-mono text-lg font-bold uppercase border-2 border-primary hover:bg-transparent hover:text-primary transition-all">
+                SECURE STATION
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-[10px] uppercase opacity-70 border-t border-primary/20 pt-12">
+<div>
+<p class="font-bold text-primary mb-2">Host Institution</p>
+<p>G.H. Raisoni College of Engineering, Nagpur</p>
+</div>
+<div>
+<p class="font-bold text-primary mb-2">Department</p>
+<p>Science &amp; Technology</p>
+</div>
+<div>
+<p class="font-bold text-primary mb-2">Editorial Crew</p>
+<p>Deadline Dodgers</p>
+</div>
+</div>
+</section>
+<!-- Contact -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-primary pt-12">
+<div>
+<h4 class="font-headline text-2xl font-bold uppercase mb-6 italic">Editorial Office</h4>
+<div class="font-mono text-xs space-y-4">
+<p><strong class="text-primary">Venue:</strong> Main Block, G.H. Raisoni College, Nagpur, India.</p>
+<p><strong class="text-primary">Faculty Coord:</strong> Dr. S. K. Gupta, Dept of Science &amp; Tech.</p>
+<p><strong class="text-primary">Student Coord:</strong> team@deadlinedodgers.com</p>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center p-8 bg-white border border-primary">
+<span class="material-symbols-outlined text-6xl mb-4">mail</span>
+<p class="font-mono text-[10px] uppercase text-center mb-4">All official inquiries should be directed to the registrar's office via the digital portal.</p>
+<button class="font-mono text-xs font-bold underline uppercase">Send Dispatch</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t-4 border-primary py-16 px-6 md:px-12">
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+<h5 class="font-masthead text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8">CODE FORGE 2026</h5>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mb-12 font-mono text-[10px] uppercase tracking-widest border-b border-primary/10 pb-12">
+<div>
+<p class="font-bold mb-4 underline">Legal Notices</p>
+<ul class="space-y-2 opacity-60">
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Code of Conduct</a></li>
+</ul>
+</div>
+<div>
+<p class="font-bold mb-4 underline">Affiliations</p>
+<ul class="space-y-2 opacity-60">
+<li>G.H. Raisoni College</li>
+<li>Science &amp; Technology Dept.</li>
+<li>Nagpur Innovation Hub</li>
+</ul>
+</div>
+<div>
+<p class="font-bold mb-4 underline">Dispatches</p>
+<div class="flex justify-center gap-6">
+<a class="material-symbols-outlined text-xl hover:scale-110 transition-transform" href="#">rss_feed</a>
+<a class="material-symbols-outlined text-xl hover:scale-110 transition-transform" href="#">terminal</a>
+<a class="material-symbols-outlined text-xl hover:scale-110 transition-transform" href="#">public</a>
+</div>
+</div>
+</div>
+<p class="font-mono text-[9px] uppercase leading-relaxed opacity-50 max-w-2xl">
+            VOL. I // ISSUE NO. 01 // 13 AUGUST 2026 // NAGPUR, INDIA<br/>
+            © 2026 CODE FORGE PRESS. DESIGNED &amp; DEVELOPED BY DEADLINE DODGERS.<br/>
+            PRINTED IN THE TERMINAL. NO ELECTRONS WERE HARMED IN THE MAKING OF THIS MANIFESTO.
+        </p>
+</div>
+</footer>
+</body></html>
