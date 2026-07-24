@@ -28,7 +28,7 @@
   function checkMobile() {
     if (typeof window === 'undefined') return false;
     isMobile = window.innerWidth < 640;
-    const baseSize = isMobile ? 260 : 360;
+    const baseSize = isMobile ? 240 : 360;
     if (!isPickedUp) {
       torchSize = baseSize;
       targetTorchSize = baseSize;
@@ -40,8 +40,8 @@
     if (typeof window === 'undefined') return { x: 300, y: 150 };
     checkMobile();
     return {
-      x: isMobile ? window.innerWidth - 28 : window.innerWidth - 42,
-      y: isMobile ? 118 : 148
+      x: isMobile ? window.innerWidth - 170 : window.innerWidth - 240,
+      y: isMobile ? 92 : 148
     };
   }
 
@@ -74,14 +74,18 @@
     isPickedUp = true;
     isActive = true;
     checkMobile();
-    targetTorchSize = isMobile ? 280 : 360;
+    targetTorchSize = isMobile ? 260 : 360;
+    if (mouse.x === 0 && mouse.y === 0) {
+      mouse.x = window.innerWidth / 2;
+      mouse.y = window.innerHeight / 2;
+    }
   }
 
   function dockTorch() {
     isPickedUp = false;
     isActive = false;
     checkMobile();
-    targetTorchSize = isMobile ? 260 : 360;
+    targetTorchSize = isMobile ? 240 : 360;
   }
 
   function toggleTorch() {
@@ -97,14 +101,14 @@
     const target = e.target.closest('a, button, [role="button"], input, textarea, .hover-expand');
     checkMobile();
     if (target) {
-      targetTorchSize = isMobile ? 340 : 480;
+      targetTorchSize = isMobile ? 300 : 480;
     } else {
-      targetTorchSize = isMobile ? 280 : 360;
+      targetTorchSize = isMobile ? 260 : 360;
     }
   }
 
   function initThreeJS() {
-    if (isMobile || !canvasEl) return;
+    if (!canvasEl) return;
 
     // Scene
     scene = new THREE.Scene();
@@ -169,7 +173,7 @@
     originalCenter = box.getCenter(new THREE.Vector3());
     
     // Default initial scale
-    const targetScaleFactor = isMobile ? 0.65 : 0.95;
+    const targetScaleFactor = isPickedUp ? (isMobile ? 1.0 : 1.7) : (isMobile ? 0.6 : 0.95);
     const scale = targetScaleFactor / originalMaxDim;
     loadedModel.scale.setScalar(scale);
 
@@ -193,7 +197,7 @@
     let posX = torch.x;
     let posY = torch.y;
     if (isMobile && isPickedUp) {
-      posY -= 35; // Lift torch above finger
+      posY -= 45; // Lift torch above finger
     }
 
     const normalizedX = (posX / window.innerWidth) * 2 - 1;
@@ -224,7 +228,6 @@
   }
 
   function animate() {
-    if (isMobile) return;
     // Determine target position (mouse/touch if picked up, dock if resting at corner)
     if (isPickedUp) {
       targetPos.x = mouse.x;
@@ -251,17 +254,22 @@
     baseFreqX = 0.032 + Math.sin(timeSec * 2.2) * 0.004;
     baseFreqY = 0.042 + Math.cos(timeSec * 2.8) * 0.004;
 
-    // Update CSS variables for CSS spotlight mask
+    // Update CSS variables for CSS spotlight mask (offsetting on mobile so light beam aligns with lifted flame)
+    let torchYOffset = torch.y;
+    if (isMobile && isPickedUp) {
+      torchYOffset -= 45;
+    }
+
     if (typeof document !== 'undefined') {
       document.documentElement.style.setProperty('--torch-x', `${torch.x.toFixed(2)}px`);
-      document.documentElement.style.setProperty('--torch-y', `${torch.y.toFixed(2)}px`);
+      document.documentElement.style.setProperty('--torch-y', `${torchYOffset.toFixed(2)}px`);
       document.documentElement.style.setProperty('--torch-size', `${activeTorchSize.toFixed(1)}px`);
     }
 
-    // Dynamic scale interpolation (no feedback loop)
+    // Dynamic scale interpolation
     if (loadedModel) {
       checkMobile();
-      const targetScaleFactor = isPickedUp ? (isMobile ? 1.1 : 1.7) : (isMobile ? 0.65 : 0.95);
+      const targetScaleFactor = isPickedUp ? (isMobile ? 1.0 : 1.7) : (isMobile ? 0.6 : 0.95);
       const scale = targetScaleFactor / originalMaxDim;
 
       // Lerp scale
@@ -293,13 +301,6 @@
 
   function handleResize() {
     checkMobile();
-    if (isMobile) {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-      }
-      return;
-    }
     handleScroll();
     updateModelScale();
     if (camera && renderer) {
@@ -311,19 +312,19 @@
 
   onMount(() => {
     checkMobile();
-    if (isMobile) return;
 
     const dock = getDockPosition();
     mouse.x = dock.x;
     mouse.y = dock.y;
     torch.x = dock.x;
     torch.y = dock.y;
-    torchSize = isMobile ? 260 : 360;
+    torchSize = isMobile ? 240 : 360;
     targetTorchSize = torchSize;
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchstart', handleTouch, { passive: true });
     window.addEventListener('touchmove', handleTouch, { passive: true });
+    window.addEventListener('touchend', handleTouch, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mouseover', handleElementHover);
     window.addEventListener('resize', handleResize);
@@ -338,6 +339,7 @@
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('touchstart', handleTouch);
       window.removeEventListener('touchmove', handleTouch);
+      window.removeEventListener('touchend', handleTouch);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mouseover', handleElementHover);
       window.removeEventListener('resize', handleResize);
@@ -351,90 +353,89 @@
   });
 </script>
 
-{#if !isMobile}
-  <!-- Top Right Corner Flambeau Dock Indicator & Control Button -->
-  <div 
-    class="flambeau-dock-badge" 
-    class:visible={isScrolledPastHero || isPickedUp}
+<!-- Top Right Corner Flambeau Dock Indicator & Control Button -->
+<div 
+  class="flambeau-dock-badge" 
+  class:visible={isScrolledPastHero || isPickedUp}
+  class:picked={isPickedUp}
+  class:highlight={isScrolledPastHero && !isPickedUp}
+>
+  <button 
+    class="vintage-torch-ticket"
     class:picked={isPickedUp}
-    class:highlight={isScrolledPastHero && !isPickedUp}
+    on:click={toggleTorch}
+    title={isPickedUp ? 'Dock Flambeau (Return to Original Site)' : 'Take the Torch to Illuminate'}
   >
-    <button 
-      class="vintage-torch-ticket"
-      class:picked={isPickedUp}
-      on:click={toggleTorch}
-      title={isPickedUp ? 'Dock Flambeau (Return to Original Site)' : 'Take the Torch to Illuminate'}
-    >
-      <!-- Vintage Editorial Typography -->
-      <div class="ticket-right">
-        <div class="ticket-top">═ ★ FEATURE STORY ★ ═</div>
-        <div class="ticket-middle">
-          {#if isPickedUp}
-            RETURN TORCH
-          {:else}
-            TAKE THE TORCH
-          {/if}
-        </div>
-        <div class="ticket-bottom">
-          {#if isPickedUp}
-            DOCK FLAMBEAU ──→
-          {:else}
-            CONTINUE READING ──→
-          {/if}
-        </div>
+    <!-- Vintage Editorial Typography -->
+    <div class="ticket-right">
+      <div class="ticket-top">═ ★ FEATURE STORY ★ ═</div>
+      <div class="ticket-middle">
+        {#if isPickedUp}
+          RETURN TORCH
+        {:else}
+          TAKE THE TORCH
+        {/if}
       </div>
-    </button>
-  </div>
+      <div class="ticket-bottom">
+        {#if isPickedUp}
+          DOCK FLAMBEAU ──→
+        {:else}
+          CONTINUE READING ──→
+        {/if}
+      </div>
+    </div>
+  </button>
+</div>
 
-  <!-- Ambient Dark Dimming Overlay (Active when scrolled past hero & torch not picked up yet) -->
-  <div 
-    class="ambient-dim-overlay"
-    class:active={isScrolledPastHero && !isPickedUp}
-    aria-hidden="true"
-  ></div>
+<!-- Ambient Dark Dimming Overlay (Active when scrolled past hero & torch not picked up yet) -->
+<div 
+  class="ambient-dim-overlay"
+  class:active={isScrolledPastHero && !isPickedUp}
+  aria-hidden="true"
+></div>
 
-  <!-- 3D WebGL Canvas Rendering the 3D Glowing Torch -->
-  <canvas 
-    bind:this={canvasEl} 
-    class="torch-3d-canvas"
-    class:active={isScrolledPastHero || isPickedUp}
-    aria-hidden="true"
-  ></canvas>
-  <!-- Dark Spotlight Mask Overlay (Active when torch is picked up) -->
-  <div 
-    class="spotlight-overlay"
-    class:active={isActive}
-    aria-hidden="true"
-  ></div>
+<!-- 3D WebGL Canvas Rendering the 3D Glowing Torch -->
+<canvas 
+  bind:this={canvasEl} 
+  class="torch-3d-canvas"
+  class:active={isScrolledPastHero || isPickedUp}
+  aria-hidden="true"
+></canvas>
 
-  <!-- Warm Ambient Beam Glow Effect -->
-  <div 
-    class="torch-glow-beam"
-    class:active={isActive}
-    aria-hidden="true"
-  ></div>
+<!-- Dark Spotlight Mask Overlay (Active when torch is picked up) -->
+<div 
+  class="spotlight-overlay"
+  class:active={isActive}
+  aria-hidden="true"
+></div>
 
-  <!-- SVG Filter for Organic Flame Light Distortion -->
-  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
-    <defs>
-      <filter id="flame-flicker-distortion">
-        <feTurbulence 
-          type="fractalNoise" 
-          baseFrequency="{baseFreqX.toFixed(5)} {baseFreqY.toFixed(5)}" 
-          numOctaves="2" 
-          result="noise" 
-        />
-        <feDisplacementMap 
-          in="SourceGraphic" 
-          in2="noise" 
-          scale="32" 
-          xChannelSelector="R" 
-          yChannelSelector="G" 
-        />
-      </filter>
-    </defs>
-  </svg>
-{/if}
+<!-- Warm Ambient Beam Glow Effect -->
+<div 
+  class="torch-glow-beam"
+  class:active={isActive}
+  aria-hidden="true"
+></div>
+
+<!-- SVG Filter for Organic Flame Light Distortion -->
+<svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+  <defs>
+    <filter id="flame-flicker-distortion">
+      <feTurbulence 
+        type="fractalNoise" 
+        baseFrequency="{baseFreqX.toFixed(5)} {baseFreqY.toFixed(5)}" 
+        numOctaves="2" 
+        result="noise" 
+      />
+      <feDisplacementMap 
+        in="SourceGraphic" 
+        in2="noise" 
+        scale="32" 
+        xChannelSelector="R" 
+        yChannelSelector="G" 
+      />
+    </filter>
+  </defs>
+</svg>
 
 <style>
   :global(:root) {
@@ -585,10 +586,32 @@
   /* Mobile responsive styling for small screens (< 640px) */
   @media (max-width: 640px) {
     .flambeau-dock-badge {
-      top: 76px;
+      top: 70px;
       right: 12px;
-      transform: scale(0.8);
-      transform-origin: top right;
+      transform: none;
+    }
+
+    .vintage-torch-ticket {
+      width: 140px;
+      height: 44px;
+      padding: 4px 8px;
+      box-shadow: 4px 4px 0px rgba(43, 43, 42, 0.25);
+    }
+
+    .vintage-torch-ticket .ticket-right {
+      padding: 4px 6px;
+    }
+
+    .vintage-torch-ticket .ticket-top,
+    .vintage-torch-ticket .ticket-bottom {
+      display: none;
+    }
+
+    .vintage-torch-ticket .ticket-middle {
+      font-size: 12px;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 0.5px;
     }
   }
 

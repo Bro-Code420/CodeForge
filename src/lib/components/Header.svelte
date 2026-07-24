@@ -20,7 +20,7 @@
     </div>
     
     <!-- Navigation Links -->
-    <nav class="flex justify-center items-center py-4 border-t border-primary gap-4 md:gap-12 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest overflow-x-auto no-scrollbar px-6">
+    <nav class="flex flex-wrap justify-center items-center py-4 border-t border-primary gap-x-4 md:gap-x-12 gap-y-2 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest px-6">
       {#each headerData.navLinks as link, index}
         <a class="hover:italic transition-all" href={link.href}>{link.label}</a>
         {#if index < headerData.navLinks.length - 1}
