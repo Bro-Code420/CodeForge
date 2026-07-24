@@ -51,7 +51,7 @@
   }
 
   function handleTouch(e) {
-    if (e.touches && e.touches.length > 0) {
+    if (!isMobile && e.touches && e.touches.length > 0) {
       if (!isPickedUp && e.target && e.target.closest('.flambeau-dock-badge')) return;
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
@@ -229,8 +229,13 @@
   function animate() {
     // Determine target position (mouse/touch if picked up, dock if resting at corner)
     if (isPickedUp) {
-      targetPos.x = mouse.x;
-      targetPos.y = mouse.y;
+      if (isMobile) {
+        targetPos.x = window.innerWidth * 0.7;
+        targetPos.y = window.innerHeight * 0.7;
+      } else {
+        targetPos.x = mouse.x;
+        targetPos.y = mouse.y;
+      }
     } else {
       const dock = getDockPosition();
       targetPos.x = dock.x;
