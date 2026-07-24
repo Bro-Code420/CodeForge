@@ -10,9 +10,11 @@
   let targetMouseY = 0;
   let animationFrameId;
 
-  // Parallax position variables (translation only, rotation disabled)
+  // Parallax position and camera variables
   let objectOffsetX = 0;
   let objectOffsetY = 0;
+  let cameraOrbitTheta = 0;
+  let cameraOrbitPhi = 75;
 
   function handleMouseMove(e) {
     // Normalize mouse position: left = -1, right = +1, top = -1, bottom = +1
@@ -25,9 +27,17 @@
     mouseX += (targetMouseX - mouseX) * 0.06;
     mouseY += (targetMouseY - mouseY) * 0.06;
 
-    // Subtle 2D position translation without any 3D rotation
+    // Subtle 2D position translation
     objectOffsetX = -mouseX * 15;
     objectOffsetY = -mouseY * 8;
+
+    // Natural camera tracking: Inverted theta so model faces TOWARDS cursor
+    cameraOrbitTheta = -mouseX * 20;
+    cameraOrbitPhi = 75 + mouseY * 6;
+
+    if (modelViewerRef) {
+      modelViewerRef.cameraOrbit = `${cameraOrbitTheta}deg ${cameraOrbitPhi}deg 100%`;
+    }
 
     animationFrameId = requestAnimationFrame(updateParallax);
   }
