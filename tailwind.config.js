@@ -30,7 +30,9 @@ export default {
         "body": ["Libre Baskerville", "serif"],
         "serif-alt": ["Cormorant Garamond", "serif"],
         "mono": ["IBM Plex Mono", "monospace"],
-        "label-caps": ["IBM Plex Mono", "monospace"]
+        "label-caps": ["IBM Plex Mono", "monospace"],
+        "retro-bold": ["Syne", "Impact", "sans-serif"],
+        "retro-heavy": ["Anton", "Impact", "sans-serif"]
       }
     },
   },

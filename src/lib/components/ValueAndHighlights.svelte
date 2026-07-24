@@ -20,8 +20,8 @@
     <div class="grid grid-cols-2 gap-x-8 gap-y-6">
       {#each eventHighlights as highlight}
         <div class="flex flex-col">
-          <span class="font-headline text-3xl font-black">{highlight.metric}</span>
-          <span class="font-mono text-[10px] uppercase">{highlight.label}</span>
+          <span class="font-headline text-2xl md:text-3xl font-black tracking-tight">{highlight.metric}</span>
+          <span class="font-mono text-[10px] uppercase font-bold tracking-wider">{highlight.label}</span>
         </div>
       {/each}
     </div>

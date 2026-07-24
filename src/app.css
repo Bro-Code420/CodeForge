@@ -52,3 +52,34 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Swallowtail Ribbon Badge */
+.swallowtail-ribbon {
+  background-color: #161616;
+  color: #F6F1E8;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 48px 10px 24px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 50%, 100% 100%, 0 100%);
+}
+
+/* Classic Mac OS Window Pinstripe header */
+.mac-pinstripes {
+  background: repeating-linear-gradient(
+    0deg,
+    #161616,
+    #161616 1px,
+    #F6F1E8 1px,
+    #F6F1E8 3px
+  );
+}
+
+.retro-drop-shadow {
+  box-shadow: 8px 8px 0px rgba(22, 22, 22, 0.15);
+}
+
+.distressed-text {
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.08);
+  letter-spacing: -0.04em;
+}
+

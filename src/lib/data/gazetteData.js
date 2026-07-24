@@ -1,10 +1,10 @@
 export const headerData = {
   vol: "VOL. I // ISSUE NO. 01",
-  date: "13 AUGUST 2026",
+  date: "17 AUGUST 2026",
   location: "NAGPUR, INDIA",
   title: "CODE FORGE",
   motto: "Code • Create • Innovate",
-  breakingTicker: "BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — PRIZE POOL EXCEEDS ₹10,000 — 10 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —",
+  breakingTicker: "BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — UP TO ₹25,000 PRIZE POOL — 8 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —",
   navLinks: [
     { label: "The Vision", href: "#about" },
     { label: "Special Report", href: "#theme" },
@@ -26,38 +26,72 @@ export const heroData = {
     { label: "Venue", value: "G.H. Raisoni, Nagpur" },
     { label: "Team Size", value: "2–4 Members" },
     { label: "Registration", value: "₹400 / Team" },
-    { label: "Prize Pool", value: "₹10K+" }
+    { label: "Prize Pool", value: "Up to ₹25K" }
   ],
-  eventDate: "August 13, 2026",
+  eventDate: "August 17, 2026",
   countdownText: "Latest Dispatch: 24 Days Remaining Until Close"
 };
 
 export const visionData = {
-  presentation: "All prototypes must be presented via physical terminal demonstrations and formal technical manifestos.",
-  collaboration: "The Forge encourages inter-disciplinary squads of engineers, architects, and visual theorists.",
-  editorialText: "Innovation is not the pursuit of the new, but the refinement of the essential. At CODE FORGE, we return to the principles of the master craftsman—precision, durability, and elegance. As the world shifts towards ephemeral systems, we forge foundations that last. Our focus on 'Intelligent Systems' explores the intersection of sovereign infrastructure and legacy protocol integration.",
-  quote: "\"Software is the most versatile tool humanity has ever built. At the Forge, we ensure it is also the strongest.\"",
+  sectionTitle: "ABOUT CODE FORGE",
+  presentation: "CODE FORGE is a one-day offline hackathon where student teams collaborate, design, and build innovative software solutions that solve real-world challenges through technology.",
+  collaboration: "We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.",
+  editorialText: "Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.\n\nAt CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.\n\nOur mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.",
+  quote: "\"Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code.\"",
   figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLsmd454IOIeZcz_L3mbQIyNogNczQPfxGIdBiEPnE7rhzfoNyUdrJGZDWYoDWpn3Yh6NLz0n3OsYcMoMndcXHqgP7IlJbzH0ZLxyZxwraDVQgT3TbB-PCqrpfWv9m2Pne3t2BMfhWaLls4QaJ3CKVSKz7FDRXA92kNqYy843X3ALp1EqSdGCxgSylkfLsbblM2ceekpxUQHkSe4xLVhUPGKI3w5th7dhl9W9D-_M6BXAgd_ldxYtEovNXsg",
-  figureCaption: "Fig 02: The Vision."
+  figureCaption: "FIG 02: About Code Forge"
 };
 
 export const themeData = {
-  badge: "Special Report",
-  title: "Intelligent Systems",
-  themeText: "Developing architectures that don't just calculate, but reason with the structural density of industrial engineering.",
-  objectivesText: "To bridge the gap between academic theory and hardened industrial application through deterministic intelligence.",
-  scopeText: "Web3, Generative AI, Embedded Systems, and Sovereign Cloud Infrastructure.",
+  badge: "OFFICIAL THEME",
+  title: "INTELLIGENT SYSTEMS",
+  tagline: "Research • Engineer • Build • Impact",
+  themeText: "The Intelligent Systems theme challenges participants to design and develop innovative software solutions that solve complex real-world problems through computational thinking, intelligent decision-making, and modern software engineering.",
+  objectives: [
+    "Solve meaningful real-world challenges.",
+    "Demonstrate intelligent decision-making.",
+    "Apply strong software engineering principles.",
+    "Deliver scalable, secure, and production-ready solutions.",
+    "Create measurable value for users, organizations, and society."
+  ],
+  scopeText: "Artificial Intelligence & Machine Learning, Cloud Computing, Cybersecurity, Data Analytics, APIs & Microservices, Internet of Things (IoT), Computer Vision, Natural Language Processing, Blockchain (where applicable), Mobile & Web Technologies.",
   figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLtTqbpRpWaXBKtUKa7zvU4HkjsNT7BZgMzQU36LEGLR1zKGXaZqK-et_VEJIQ8uYgIMk94wLKt9sAs1n3buBcDgmSggTkBrqi1jZ0WSm3BOJ1Qkp2C3WclMv-5JemLVvrosulEi-_dRweQ7gNDdogTNCCdo82O2EottRQ0TZVt_NzD-FThn7K1KSNbERr2BXO_uaTODwWnzymWld6F8zL7o8IMlExHyEwS1MZRZ7LF0v9ecAwzs6DHd-fU",
-  figureCaption: "Fig 03: The Intelligent Foundry."
+  figureCaption: "FIG 03: Intelligent Systems Theme"
 };
 
-export const industryVerticals = [
-  { title: "Healthcare", desc: "Synthesized diagnostics and well-being protocols for the modern age." },
-  { title: "Urbanism", desc: "Smart cities and urban infrastructure optimized for sovereign resilience." },
-  { title: "Ecology", desc: "Sustainability and environmental systems forged for long-term survival." },
-  { title: "Trust", desc: "Cybersecurity and digital trust: hardening the protocols of the future." },
-  { title: "Enterprise", desc: "Intelligent automation and productivity tools for the industrial forge." }
-];
+export const applicationAreasData = {
+  title: "FEATURE REPORT: APPLICATION AREAS",
+  subtitle: "Explore the official domains from which problem statements will be released.",
+  areas: [
+    {
+      icon: "🏥",
+      title: "Healthcare & Well-Being",
+      desc: "Design intelligent software solutions that improve healthcare accessibility, patient care, diagnostics, emergency response, and health management."
+    },
+    {
+      icon: "🏙",
+      title: "Smart Cities",
+      desc: "Build systems that enhance transportation, public services, utilities, resource management, and urban efficiency."
+    },
+    {
+      icon: "🌱",
+      title: "Sustainability",
+      desc: "Create technology-driven solutions that promote environmental sustainability, efficient resource utilization, climate resilience, and sustainable development."
+    },
+    {
+      icon: "🔐",
+      title: "Cybersecurity",
+      desc: "Develop secure and intelligent systems that strengthen digital security, privacy, identity management, and protection against cyber threats."
+    },
+    {
+      icon: "🏢",
+      title: "Enterprise",
+      desc: "Engineer software that improves organizational productivity, automates workflows, enhances collaboration, and supports intelligent business decision-making."
+    }
+  ]
+};
+
+export const industryVerticals = applicationAreasData.areas;
 
 export const valueProps = [
   { title: "Build Solutions", desc: "Address real-world crises with engineering precision." },
@@ -67,37 +101,44 @@ export const valueProps = [
 ];
 
 export const eventHighlights = [
-  { metric: "₹10K+", label: "Grant Pool" },
-  { metric: "10 HRS", label: "Active Coding" },
+  { metric: "Up to ₹25K", label: "Prize Pool" },
+  { metric: "8 HRS", label: "Active Coding" },
   { metric: "OFFLINE", label: "Physical Presence" },
   { metric: "SWAG", label: "Limited Kits" }
 ];
 
+export const prizeData = {
+  title: "PRIZE POOL ALLOCATION",
+  poolBadge: "TOTAL PRIZE POOL: UP TO ₹25,000",
+  subtitle: "Rewarding Innovation. Celebrating Excellence.",
+  description: "The best ideas deserve recognition. CODE FORGE celebrates teams that demonstrate exceptional creativity, technical excellence, and real-world impact. Compete and earn recognition for your innovation."
+};
+
 export const prizeTiers = [
   {
-    tier: "The Grand Prize",
+    tier: "THE FIRST RUNNER-UP",
+    title: "First Runner-Up",
+    reward: "Cash Prize",
+    note: "Recognizing outstanding technical execution, innovative thinking, and exceptional overall performance."
+  },
+  {
+    tier: "THE GRAND PRIZE",
     title: "Winner",
-    reward: "Cash + Swag Kit",
-    note: "Recognition in the National Press Archives."
+    reward: "Cash Prize + Trophy",
+    note: "Awarded to the team with the highest overall score for innovation, technical excellence, creativity, and impact."
   },
   {
-    tier: "The Runner Up",
-    title: "Second Place",
-    reward: "Cash + Swag Kit",
-    note: "Commendation for Engineering Excellence."
-  },
-  {
-    tier: "Universal Tier",
-    title: "Participants",
-    reward: "Certificates",
-    note: "Entry into the Forge Alumni Network."
+    tier: "THE SECOND RUNNER-UP",
+    title: "Second Runner-Up",
+    reward: "Cash Prize",
+    note: "Awarded to the team that demonstrates strong problem-solving, creativity, and effective implementation."
   }
 ];
 
 export const specialAwards = [
-  "Technical Excellence Award",
-  "Innovation Excellence Award",
-  "Best UI/UX Design"
+  "INNOVATION EXCELLENCE AWARD",
+  "TECHNICAL EXCELLENCE AWARD",
+  "BEST UI/UX DESIGN AWARD"
 ];
 
 export const scoreSheet = [
@@ -106,7 +147,8 @@ export const scoreSheet = [
   { criterion: "Innovation & Uniqueness", marks: 20 },
   { criterion: "UI/UX Interface", marks: 15 },
   { criterion: "PPT Presentation", marks: 10 },
-  { criterion: "Final Demo", marks: 15 }
+  { criterion: "Final Demo", marks: 15 },
+  { criterion: "Deployment", marks: 5 }
 ];
 
 export const boardPanel = {
@@ -126,37 +168,52 @@ export const timelineEvents = [
 ];
 
 export const codeOfConductRules = [
-  "TEAMS MUST CONSIST OF 2 TO 4 MEMBERS FROM THE SAME DISCIPLINE OR INTERDISCIPLINARY.",
-  "ALL INTELLECTUAL PROPERTY PRODUCED MUST BE DEVELOPED DURING THE 10-HOUR WINDOW.",
-  "USE OF OPEN-SOURCE LIBRARIES IS PERMITTED, PROVIDED THEY ARE CITED IN THE MANIFESTO.",
-  "ANY VIOLATION OF ACADEMIC INTEGRITY WILL LEAD TO IMMEDIATE DISQUALIFICATION.",
-  "THE DECISION OF THE BOARD OF INQUIRY IS FINAL AND BINDING."
+  "Teams must consist of 2 to 4 members. Each participant may register as a member of only one team.",
+  "All project development must take place during the official hackathon duration. Pre-built projects are not permitted.",
+  "Participants may use open-source libraries, APIs, and AI tools, provided they comply with their respective licenses and are properly acknowledged where applicable.",
+  "Maintain professionalism and respect toward fellow participants, mentors, judges, volunteers, and organizers throughout the event.",
+  "The decisions made by the judging panel and organizing committee regarding evaluation, awards, and eligibility shall be final and binding."
 ];
 
 export const faqList = [
   {
     q: "Who can participate?",
-    a: "Students currently enrolled in undergraduate or postgraduate technical programs across India."
+    a: "Students from eligible colleges and universities are welcome to participate in CODE FORGE 2026."
   },
   {
-    q: "Team size requirements?",
-    a: "A squad must contain no fewer than two and no more than four members."
+    q: "What is the team size?",
+    a: "Each team must consist of 2 to 4 members."
   },
   {
-    q: "Are problem statements provided?",
-    a: "Participants may choose their own challenge within the predefined application areas."
+    q: "How do I register?",
+    a: "Click Register Now, complete the official registration form, make the registration payment, and upload the payment proof to confirm your participation."
   },
   {
-    q: "Will food be provided?",
-    a: "Yes, the press will provide lunch and high-tea for all registered participants."
+    q: "When will the problem statements be released?",
+    a: "The official problem statements will be released one day before the hackathon to all registered participants."
+  },
+  {
+    q: "Will food and certificates be provided?",
+    a: "Yes. Lunch, refreshments, and an official Certificate of Participation will be provided to all eligible participants."
   }
 ];
 
 export const contactDetails = {
-  venue: "Main Block, G.H. Raisoni College, Nagpur, India.",
-  facultyCoord: "Dr. S. K. Gupta, Dept of Science & Tech.",
-  studentCoord: "team@deadlinedodgers.com",
-  hostInstitution: "G.H. Raisoni College of Engineering, Nagpur",
-  department: "Science & Technology",
+  title: "CONTACT & INFORMATION",
+  venue: "G H Raisoni College of Engineering and Management, Nagpur",
+  address: "Shradha Park, B-37-39/1, Wadi Link Road, MIDC, Hingna, Nagpur, Maharashtra 441110, India",
+  collegePhone: "+91 7350631900",
+  website: "ghrcemn.raisoni.net",
+  openingHours: "10:00 AM – 6:00 PM",
+  facultyCoordName: "Prof. Sakshi Bidkar",
+  facultyCoordPhone: "+91 8390486334",
+  studentCoordName: "Deadline Dodgers",
+  studentCoordPhone: "+91 8788591592",
+  email: "team@codeforge.in",
+  helpDeskTitle: "OFFICIAL HELP DESK",
+  helpDeskDesc: "Have questions about CODE FORGE? Contact our organizing team for assistance with registration, payments, event details, or participation.",
+  helpDeskButton: "CONTACT ORGANIZERS",
+  hostInstitution: "G.H. Raisoni College of Engineering & Management, Nagpur",
+  department: "Department of Science & Technology",
   editorialCrew: "Deadline Dodgers"
 };

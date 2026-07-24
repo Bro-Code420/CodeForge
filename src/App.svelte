@@ -1,6 +1,6 @@
 <script>
+  import Preloader from './lib/components/Preloader.svelte';
   import Header from './lib/components/Header.svelte';
-  import Hero from './lib/components/Hero.svelte';
   import EditorialVision from './lib/components/EditorialVision.svelte';
   import SpecialReport from './lib/components/SpecialReport.svelte';
   import IndustryVerticals from './lib/components/IndustryVerticals.svelte';
@@ -13,24 +13,37 @@
   import RegistrySection from './lib/components/RegistrySection.svelte';
   import ContactSection from './lib/components/ContactSection.svelte';
   import Footer from './lib/components/Footer.svelte';
+
+  let showPreloader = true;
+  let isAppRevealing = false;
 </script>
 
-<Header />
+{#if showPreloader}
+  <Preloader
+    on:engageStart={() => (isAppRevealing = true)}
+    on:complete={() => {
+      showPreloader = false;
+      isAppRevealing = true;
+    }}
+  />
+{/if}
 
-<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
-  <Hero />
-  <hr class="border-primary border-t-2 mb-24" />
-  <EditorialVision />
-  <SpecialReport />
-  <IndustryVerticals />
-  <ValueAndHighlights />
-  <GrantsAllocation />
-  <JudgingCriteria />
-  <Timeline />
-  <CodeOfConduct />
-  <FaqSection />
-  <RegistrySection />
-  <ContactSection />
-</main>
+<div class="w-full min-h-screen flex flex-col transition-all duration-1000 ease-out origin-center {isAppRevealing ? 'scale-100 opacity-100' : 'scale-[0.88] opacity-90'}">
+  <Header />
 
-<Footer />
+  <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <EditorialVision />
+    <SpecialReport />
+    <IndustryVerticals />
+    <ValueAndHighlights />
+    <GrantsAllocation />
+    <JudgingCriteria />
+    <Timeline />
+    <CodeOfConduct />
+    <FaqSection />
+    <RegistrySection />
+    <ContactSection />
+  </main>
+
+  <Footer />
+</div>
