@@ -36,21 +36,9 @@
   function getDockPosition() {
     if (typeof window === 'undefined') return { x: 300, y: 150 };
     checkMobile();
-    
-    // Find the ticket button dynamically on the viewport
-    const ticketEl = document.querySelector('.vintage-torch-ticket');
-    if (ticketEl) {
-      const rect = ticketEl.getBoundingClientRect();
-      return {
-        // Place the 3D model exactly aligned with the right edge center of the ticket card
-        x: rect.right - (isMobile ? 12 : 20),
-        y: rect.top + (rect.height / 2)
-      };
-    }
-
     return {
-      x: isMobile ? window.innerWidth - 28 : window.innerWidth - 42,
-      y: isMobile ? 118 : 148
+      x: isMobile ? window.innerWidth - 22 : window.innerWidth - 42,
+      y: isMobile ? 116 : 148
     };
   }
 
@@ -60,12 +48,6 @@
   }
 
   function handleTouch(e) {
-    // Prevent default scroll behavior on mobile if the torch is currently picked up
-    if (isPickedUp) {
-      if (e.cancelable) {
-        e.preventDefault();
-      }
-    }
     if (e.touches && e.touches.length > 0) {
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
@@ -318,13 +300,14 @@
     targetTorchSize = torchSize;
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchstart', handleTouch, { passive: false });
-    window.addEventListener('touchmove', handleTouch, { passive: false });
+    window.addEventListener('touchstart', handleTouch, { passive: true });
+    window.addEventListener('touchmove', handleTouch, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mouseover', handleElementHover);
     window.addEventListener('resize', handleResize);
 
     initThreeJS();
+    handleResize();
     handleScroll();
     animate();
   });
@@ -423,6 +406,7 @@
     inset: 0;
     z-index: 35;
     pointer-events: none;
+    touch-action: pan-y !important;
     background-color: rgba(12, 11, 10, 0.52);
     backdrop-filter: brightness(0.6) contrast(1.04);
     -webkit-backdrop-filter: brightness(0.6) contrast(1.04);
@@ -574,6 +558,7 @@
     height: 100vh;
     z-index: 65;
     pointer-events: none;
+    touch-action: pan-y !important;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -582,12 +567,12 @@
     opacity: 1;
   }
 
-  /* Dark Overlay concealing the page except under the torch mask */
   .spotlight-overlay {
     position: fixed;
     inset: 0;
     z-index: 40;
     pointer-events: none;
+    touch-action: pan-y !important;
     background-color: #0b0a08;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
