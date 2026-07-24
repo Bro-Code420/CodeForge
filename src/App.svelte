@@ -8,15 +8,19 @@
   import GrantsAllocation from './lib/components/GrantsAllocation.svelte';
   import JudgingCriteria from './lib/components/JudgingCriteria.svelte';
   import Timeline from './lib/components/Timeline.svelte';
+  import ProblemStatements from './lib/components/ProblemStatements.svelte';
   import CodeOfConduct from './lib/components/CodeOfConduct.svelte';
   import FaqSection from './lib/components/FaqSection.svelte';
   import RegistrySection from './lib/components/RegistrySection.svelte';
   import ContactSection from './lib/components/ContactSection.svelte';
   import Footer from './lib/components/Footer.svelte';
+  import SpotlightTorch from './lib/components/SpotlightTorch.svelte';
 
   let showPreloader = true;
   let isAppRevealing = false;
 </script>
+
+<SpotlightTorch />
 
 {#if showPreloader}
   <Preloader
@@ -39,6 +43,7 @@
     <GrantsAllocation />
     <JudgingCriteria />
     <Timeline />
+    <ProblemStatements />
     <CodeOfConduct />
     <FaqSection />
     <RegistrySection />

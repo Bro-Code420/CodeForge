@@ -38,7 +38,7 @@ export const visionData = {
   collaboration: "We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.",
   editorialText: "Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.\n\nAt CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.\n\nOur mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.",
   quote: "\"Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code.\"",
-  figureImg: "/52d35407-2a50-4542-890e-eb8970e4858c.jpg",
+  figureImg: "/551fd7c8-a797-468a-b2c9-2bb9e7c448db.png",
   figureCaption: "FIG 02: COLLABORATION. INNOVATION. IMPACT."
 };
 
@@ -55,7 +55,7 @@ export const themeData = {
     "Create measurable value for users, organizations, and society."
   ],
   scopeText: "Artificial Intelligence & Machine Learning, Cloud Computing, Cybersecurity, Data Analytics, APIs & Microservices, Internet of Things (IoT), Computer Vision, Natural Language Processing, Blockchain (where applicable), Mobile & Web Technologies.",
-  figureImg: "/hackathon_workstation.png",
+  figureImg: "/52d35407-2a50-4542-890e-eb8970e4858c.jpg",
   figureCaption: "FIG 03: Engineering Workstations & Systems"
 };
 

@@ -4,12 +4,7 @@
 </script>
 
 <header class="w-full border-b-2 border-primary bg-[#F6F1E8]">
-  <!-- Top Issue Metadata Bar -->
-  <div class="flex justify-between px-6 md:px-12 py-3 font-mono text-[10px] md:text-xs uppercase border-b border-primary">
-    <span>{headerData.vol}</span>
-    <span>{headerData.date}</span>
-    <span>{headerData.location}</span>
-  </div>
+
   
   <!-- New Retro Hero Section Replacing Old Masthead -->
   <div class="w-full">

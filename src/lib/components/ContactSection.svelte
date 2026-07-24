@@ -84,7 +84,7 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-background/30 pb-3 mb-4 gap-3 font-mono">
       <div>
         <h5 class="font-headline text-lg md:text-xl font-black uppercase tracking-tight text-background flex items-center gap-2">
-          <span>📍 CAMPUS NAVIGATION MAP</span>
+          <span> CAMPUS NAVIGATION MAP</span>
         </h5>
         <p class="text-[11px] md:text-xs opacity-80 mt-0.5 text-background/80">
           {contactDetails.address}
