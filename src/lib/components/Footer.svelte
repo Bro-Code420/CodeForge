@@ -1,5 +1,11 @@
-<footer class="bg-background border-t-4 border-primary py-16 px-6 md:px-12 mt-12">
+<script>
+  import TriangleMarquee from './TriangleMarquee.svelte';
+</script>
+
+<footer class="bg-background pt-12 pb-16 px-6 md:px-12 mt-12">
   <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+    <TriangleMarquee className="w-full mb-12" speed="1s" reverse={true} />
+
     <h5 class="font-masthead text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8">
       CODE FORGE 2026
     </h5>
@@ -43,7 +49,7 @@
     </div>
     
     <p class="font-mono text-[9px] uppercase leading-relaxed opacity-50 max-w-2xl">
-      VOL. I // ISSUE NO. 01 // 17 AUGUST 2026 // NAGPUR, INDIA<br />
+      VOL. I // ISSUE NO. 01 // 21 AUGUST 2026 // NAGPUR, INDIA<br />
       © 2026 CODE FORGE PRESS. DESIGNED & DEVELOPED BY DEADLINE DODGERS.<br />
       PRINTED IN THE TERMINAL. NO ELECTRONS WERE HARMED IN THE MAKING OF THIS MANIFESTO.
     </p>

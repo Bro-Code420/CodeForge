@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { heroData } from '../data/gazetteData.js';
+  import TriangleMarquee from './TriangleMarquee.svelte';
 
   let modelViewerRef;
   let mouseX = 0;
@@ -55,22 +56,13 @@
 </script>
 
 <section id="about" class="relative mb-20 pt-2 pb-8 overflow-hidden select-none">
-  <!-- Top Saw-tooth / Serrated Edge (Razor-Sharp Repeating Vector Pattern) -->
-  <div class="w-full overflow-hidden mb-3 h-5">
-    <svg class="w-full h-5" width="100%" height="20">
-      <defs>
-        <pattern id="sawtooth-pattern" width="24" height="20" patternUnits="userSpaceOnUse">
-          <polygon points="0,0 24,0 12,18" class="fill-primary" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="20" fill="url(#sawtooth-pattern)" />
-    </svg>
-  </div>
+  <!-- Top Saw-tooth / Serrated Edge (Razor-Sharp Repeating Vector Marquee) -->
+  <TriangleMarquee className="mb-4" speed="0.8s" />
 
   <!-- Meta Header Bar -->
   <div class="border-t-2 border-b-2 border-primary py-2.5 px-4 mb-8 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2">
     <span>CODE FORGE 2026 // VOL. I ISSUE 01</span>
-    <span>NAGPUR, INDIA — AUGUST 17, 2026</span>
+    <span>NAGPUR, INDIA — AUGUST 21, 2026</span>
   </div>
 
   <!-- Hero Main Content Grid -->
