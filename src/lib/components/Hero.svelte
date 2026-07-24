@@ -9,84 +9,35 @@
   let targetMouseX = 0;
   let targetMouseY = 0;
   let animationFrameId;
-  let isMobile = false;
 
-  // Parallax position and camera variables
+  // Parallax position variables (translation only, rotation disabled)
   let objectOffsetX = 0;
   let objectOffsetY = 0;
-  let cameraOrbitTheta = 0;
-  let cameraOrbitPhi = 75;
-  let spinAngle = 0;
-
-  function checkMobile() {
-    if (typeof window !== 'undefined') {
-      isMobile = window.innerWidth < 1024;
-    }
-  }
 
   function handleMouseMove(e) {
-    if (isMobile) return;
+    // Normalize mouse position: left = -1, right = +1, top = -1, bottom = +1
     targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
     targetMouseY = (e.clientY / window.innerHeight) * 2 - 1;
   }
 
-  function handleTouchMove(e) {
-    if (e.touches && e.touches.length > 0) {
-      const touch = e.touches[0];
-      targetMouseX = (touch.clientX / window.innerWidth) * 2 - 1;
-      targetMouseY = (touch.clientY / window.innerHeight) * 2 - 1;
-    }
-  }
-
-  function handleDeviceOrientation(e) {
-    if (e && e.gamma !== null && e.beta !== null) {
-      // Gyroscope phone tilt tracking on mobile
-      const normGamma = Math.max(-1, Math.min(1, e.gamma / 30));
-      const normBeta = Math.max(-1, Math.min(1, (e.beta - 45) / 30));
-      targetMouseX = normGamma;
-      targetMouseY = normBeta;
-    }
-  }
-
-  function spinMonitor() {
-    spinAngle += 360;
-  }
-
   function updateParallax() {
     // Smooth lerp (interpolation) for fluid movement
-    mouseX += (targetMouseX - mouseX) * 0.08;
-    mouseY += (targetMouseY - mouseY) * 0.08;
+    mouseX += (targetMouseX - mouseX) * 0.06;
+    mouseY += (targetMouseY - mouseY) * 0.06;
 
-    // Parallax logic
-    objectOffsetX = -mouseX * (isMobile ? 25 : 45);
-    objectOffsetY = -mouseY * (isMobile ? 12 : 20);
-
-    cameraOrbitTheta = mouseX * (isMobile ? 55 : 40) + spinAngle;
-    cameraOrbitPhi = 75 + mouseY * (isMobile ? 18 : 12);
-
-    if (modelViewerRef) {
-      modelViewerRef.cameraOrbit = `${cameraOrbitTheta}deg ${cameraOrbitPhi}deg 100%`;
-    }
+    // Subtle 2D position translation without any 3D rotation
+    objectOffsetX = -mouseX * 15;
+    objectOffsetY = -mouseY * 8;
 
     animationFrameId = requestAnimationFrame(updateParallax);
   }
 
   onMount(() => {
-    checkMobile();
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchstart', handleTouchMove, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
-    window.addEventListener('deviceorientation', handleDeviceOrientation, true);
-    window.addEventListener('resize', checkMobile);
-
     animationFrameId = requestAnimationFrame(updateParallax);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchstart', handleTouchMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('deviceorientation', handleDeviceOrientation);
-      window.removeEventListener('resize', checkMobile);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   });
@@ -136,47 +87,29 @@
       </div>
     </div>
 
-    <!-- Right Column: Interactive 3D Retro Monitor with Touch & Gyro Orientation for Mobile -->
-    <div class="lg:col-span-6 relative w-full flex flex-col items-center lg:items-end -mt-4 lg:mt-0">
+    <!-- Right Column: 3D Retro Monitor (Rotation Disabled) -->
+    <div class="lg:col-span-6 relative w-full flex justify-center lg:justify-end -mt-4 lg:mt-0">
       <div 
         style="transform: translate3d({objectOffsetX}px, {objectOffsetY}px, 0px);"
         class="relative w-full max-w-[580px] h-[320px] sm:h-[400px] md:h-[480px] flex items-center justify-center will-change-transform transition-transform duration-75 ease-out"
-        on:click={spinMonitor}
-        role="button"
-        tabindex="0"
-        on:keydown={(e) => e.key === 'Enter' && spinMonitor()}
       >
         <model-viewer
           bind:this={modelViewerRef}
           src="/monitor.glb"
           alt="3D Retro CRT Monitor"
-          camera-controls
-          auto-rotate={isMobile}
-          auto-rotate-delay="3000"
-          rotation-per-second="12deg"
-          touch-action="pan-y"
+          touch-action="none"
           interaction-prompt="none"
           disable-zoom
+          disable-tap
           shadow-intensity="1.5"
           shadow-softness="0.6"
           exposure="1.2"
           camera-orbit="0deg 75deg 100%"
           field-of-view="30deg"
-          style="width: 100%; height: 100%; background-color: transparent; touch-action: pan-y;"
-          class="w-full h-full cursor-grab active:cursor-grabbing"
+          style="width: 100%; height: 100%; background-color: transparent;"
+          class="w-full h-full pointer-events-none"
         >
         </model-viewer>
-      </div>
-
-      <!-- Mobile Interactive Hint Badge -->
-      <div class="block lg:hidden mt-2 text-center">
-        <button 
-          on:click={spinMonitor}
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-background font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-primary rounded-full shadow-md hover:scale-105 active:scale-95 transition-all"
-        >
-          <span>↺</span>
-          <span>TOUCH OR TILT PHONE TO ROTATE 3D MONITOR</span>
-        </button>
       </div>
     </div>
 
