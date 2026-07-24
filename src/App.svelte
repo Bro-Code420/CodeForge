@@ -9,7 +9,6 @@
   import JudgingCriteria from './lib/components/JudgingCriteria.svelte';
   import Timeline from './lib/components/Timeline.svelte';
   import ProblemStatements from './lib/components/ProblemStatements.svelte';
-  import PretextBreaker from './lib/components/PretextBreaker.svelte';
   import CodeOfConduct from './lib/components/CodeOfConduct.svelte';
   import FaqSection from './lib/components/FaqSection.svelte';
   import RegistrySection from './lib/components/RegistrySection.svelte';
@@ -45,7 +44,6 @@
     <JudgingCriteria />
     <Timeline />
     <ProblemStatements />
-    <PretextBreaker />
     <CodeOfConduct />
     <FaqSection />
     <RegistrySection />
