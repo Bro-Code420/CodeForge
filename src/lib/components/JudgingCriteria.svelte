@@ -1,7 +1,9 @@
 <script>
   import { scoreSheet, boardPanel } from '../data/gazetteData.js';
 
-  $: totalMarks = scoreSheet.reduce((sum, item) => sum + item.marks, 0);
+  $: baseScoreSheet = scoreSheet.filter(item => !item.isBonus);
+  $: bonusScoreSheet = scoreSheet.filter(item => item.isBonus);
+  $: baseTotalMarks = baseScoreSheet.reduce((sum, item) => sum + item.marks, 0);
 </script>
 
 <section id="evaluation" class="mb-24">
@@ -26,7 +28,7 @@
           OFFICIAL SCORE SHEET
         </h3>
         <p class="font-serif-alt italic text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">
-          Standardized Criteria & Weightage Matrix
+          Standardized Criteria & Weightage Matrix (100 Marks Base)
         </p>
 
         <!-- Table Header Row -->
@@ -37,7 +39,7 @@
 
         <!-- Criteria Item List with Dotted Leaders -->
         <div class="space-y-3.5 font-mono text-xs md:text-sm">
-          {#each scoreSheet as item}
+          {#each baseScoreSheet as item}
             <div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
               <span class="font-bold text-primary">{item.criterion}</span>
               <span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span>
@@ -46,14 +48,31 @@
               </span>
             </div>
           {/each}
+
+          {#if bonusScoreSheet.length > 0}
+            <div class="pt-3 mt-3 border-t-2 border-dashed border-primary/30">
+              <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-burgundy mb-2">
+                ★ EXTRA / BONUS CRITERIA
+              </p>
+              {#each bonusScoreSheet as item}
+                <div class="flex items-center justify-between py-1.5 px-2.5 bg-burgundy/5 border border-burgundy/30">
+                  <span class="font-bold text-burgundy">{item.criterion}</span>
+                  <span class="flex-grow mx-2 border-b border-dotted border-burgundy/40 opacity-40"></span>
+                  <span class="font-bold font-mono px-2 py-0.5 bg-burgundy text-background text-xs">
+                    +{item.marks} EXTRA
+                  </span>
+                </div>
+              {/each}
+            </div>
+          {/if}
         </div>
       </div>
 
       <!-- Total & Footer Seal -->
       <div class="mt-8 pt-4 border-t-2 border-primary">
         <div class="flex justify-between items-center bg-primary text-background p-4 font-mono font-bold text-sm md:text-base">
-          <span>TOTAL AGGREGATE MARKS</span>
-          <span class="text-lg">{totalMarks}</span>
+          <span>TOTAL MARKS</span>
+          <span class="text-lg">{baseTotalMarks} <span class="text-xs font-normal text-background/80">(+5 EXTRA)</span></span>
         </div>
         <p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70 mt-3">
           ★ CERTIFIED EVALUATION MATRIX — ALL SCORES AUDITED BY BOARD OF INQUIRY

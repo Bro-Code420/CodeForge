@@ -38,8 +38,8 @@ export const visionData = {
   collaboration: "We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.",
   editorialText: "Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.\n\nAt CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.\n\nOur mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.",
   quote: "\"Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code.\"",
-  figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLsmd454IOIeZcz_L3mbQIyNogNczQPfxGIdBiEPnE7rhzfoNyUdrJGZDWYoDWpn3Yh6NLz0n3OsYcMoMndcXHqgP7IlJbzH0ZLxyZxwraDVQgT3TbB-PCqrpfWv9m2Pne3t2BMfhWaLls4QaJ3CKVSKz7FDRXA92kNqYy843X3ALp1EqSdGCxgSylkfLsbblM2ceekpxUQHkSe4xLVhUPGKI3w5th7dhl9W9D-_M6BXAgd_ldxYtEovNXsg",
-  figureCaption: "FIG 02: About Code Forge"
+  figureImg: "/hackathon_team.png",
+  figureCaption: "FIG 02: Student Developers Collaborating"
 };
 
 export const themeData = {
@@ -55,8 +55,8 @@ export const themeData = {
     "Create measurable value for users, organizations, and society."
   ],
   scopeText: "Artificial Intelligence & Machine Learning, Cloud Computing, Cybersecurity, Data Analytics, APIs & Microservices, Internet of Things (IoT), Computer Vision, Natural Language Processing, Blockchain (where applicable), Mobile & Web Technologies.",
-  figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLtTqbpRpWaXBKtUKa7zvU4HkjsNT7BZgMzQU36LEGLR1zKGXaZqK-et_VEJIQ8uYgIMk94wLKt9sAs1n3buBcDgmSggTkBrqi1jZ0WSm3BOJ1Qkp2C3WclMv-5JemLVvrosulEi-_dRweQ7gNDdogTNCCdo82O2EottRQ0TZVt_NzD-FThn7K1KSNbERr2BXO_uaTODwWnzymWld6F8zL7o8IMlExHyEwS1MZRZ7LF0v9ecAwzs6DHd-fU",
-  figureCaption: "FIG 03: Intelligent Systems Theme"
+  figureImg: "/hackathon_workstation.png",
+  figureCaption: "FIG 03: Engineering Workstations & Systems"
 };
 
 export const applicationAreasData = {
@@ -142,13 +142,13 @@ export const specialAwards = [
 ];
 
 export const scoreSheet = [
-  { criterion: "Problem Understanding", marks: 15 },
-  { criterion: "Technical Implementation", marks: 25 },
-  { criterion: "Innovation & Uniqueness", marks: 20 },
-  { criterion: "UI/UX Interface", marks: 15 },
-  { criterion: "PPT Presentation", marks: 10 },
-  { criterion: "Final Demo", marks: 15 },
-  { criterion: "Deployment", marks: 5 }
+  { criterion: "Problem Understanding", marks: 15, isBonus: false },
+  { criterion: "Technical Implementation", marks: 25, isBonus: false },
+  { criterion: "Innovation & Uniqueness", marks: 20, isBonus: false },
+  { criterion: "UI/UX Interface", marks: 15, isBonus: false },
+  { criterion: "PPT Presentation", marks: 10, isBonus: false },
+  { criterion: "Final Demo", marks: 15, isBonus: false },
+  { criterion: "Deployment", marks: 5, isBonus: true }
 ];
 
 export const boardPanel = {

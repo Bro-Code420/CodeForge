@@ -29,9 +29,4 @@
     {/each}
   </div>
 
-  <div class="mt-12 pt-8 border-t border-primary/20 flex flex-wrap justify-center gap-12 font-mono text-xs uppercase font-bold">
-    {#each specialAwards as award}
-      <span>• {award}</span>
-    {/each}
-  </div>
 </section>
