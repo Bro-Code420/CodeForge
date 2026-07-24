@@ -105,11 +105,6 @@
           </button>
         </a>
       </div>
-
-      <div class="font-mono text-[11px] uppercase flex items-center gap-2.5 opacity-80 pt-1">
-        <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-        {heroData.countdownText}
-      </div>
     </div>
 
     <!-- Right Column: Interactive 3D Retro Monitor with Inverse Mouse Parallax -->

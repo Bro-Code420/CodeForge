@@ -176,11 +176,7 @@
 <button class="relative w-full bg-burgundy text-background px-12 py-6 font-mono text-xl font-black uppercase border-2 border-primary transition-all">
                                 REGISTER STATION
                             </button>
-</a>
-<div class="font-mono text-[10px] uppercase flex items-center justify-center md:justify-start gap-3 opacity-70">
-<span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-                            Latest Dispatch: 24 Days Remaining Until Close
-                        </div>
+</div>
 </div>
 </div>
 </div>
@@ -188,33 +184,46 @@
 </section>
 <hr class="border-primary border-t-2 mb-24"/>
 <!-- About Section -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-24" id="about">
-<div class="md:col-span-3 font-mono text-xs border-r border-primary pr-6 space-y-6">
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 mb-24 items-stretch" id="about">
+<div class="md:col-span-3 font-body text-xs md:text-sm border-r border-primary/50 pr-6 flex flex-col justify-start">
+<div class="mb-6">
+<h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">PRESENTATION</h4>
+<p class="leading-relaxed opacity-95 text-justify">CODE FORGE is a one-day offline hackathon where student teams collaborate, design, and build innovative software solutions that solve real-world challenges through technology.</p>
+</div>
+<hr class="border-t border-primary/40 my-2 mb-6"/>
 <div>
-<h4 class="font-bold uppercase mb-2 underline tracking-wider">Presentation</h4>
-<p class="leading-relaxed opacity-90">CODE FORGE is a one-day offline hackathon where student teams collaborate, design, and build innovative software solutions that solve real-world challenges through technology.</p>
+<h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">COLLABORATION</h4>
+<p class="leading-relaxed opacity-95 text-justify">We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.</p>
 </div>
+</div>
+<div class="md:col-span-6 flex flex-col justify-between">
 <div>
-<h4 class="font-bold uppercase mb-2 underline tracking-wider">Collaboration</h4>
-<p class="leading-relaxed opacity-90">We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.</p>
-</div>
-</div>
-<div class="md:col-span-6">
-<h3 class="font-mono text-sm font-bold uppercase mb-6 underline decoration-2 underline-offset-4 tracking-wider">ABOUT CODE FORGE</h3>
-<div class="space-y-4 font-body text-base md:text-lg leading-relaxed text-justify mb-8">
+<h3 class="font-mono text-sm font-bold uppercase mb-6 underline decoration-1 underline-offset-4 tracking-wider">ABOUT CODE FORGE</h3>
+<div class="space-y-4 font-body text-base md:text-lg leading-relaxed text-justify mb-6">
 <p class="drop-cap">Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.</p>
 <p>At CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.</p>
 <p>Our mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.</p>
 </div>
-<div class="bg-primary/5 p-6 italic font-headline text-base md:text-lg border-l-4 border-primary">
+</div>
+<div class="bg-primary/5 p-6 italic font-headline text-base md:text-lg border-l-4 border-primary mt-4">
 "Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code."
 </div>
 </div>
-<div class="md:col-span-3">
-<div class="newspaper-border p-1 mb-4 border-2 border-primary bg-white">
-<img alt="FIG 02: Student Developers Collaborating" class="w-full grayscale ink-bleed" src="/hackathon_team.png"/>
+<div class="md:col-span-3 border-2 border-primary p-3 md:p-4 bg-white/40 shadow-sm flex flex-col justify-between h-full relative">
+<div>
+<div class="border-2 border-primary bg-white p-1 mb-3">
+<img alt="FIG 02: COLLABORATION. INNOVATION. IMPACT." class="w-full grayscale contrast-125 ink-bleed block" src="/hackathon_team.png"/>
 </div>
-<p class="font-mono text-[10px] font-bold uppercase text-center">FIG 02: Student Developers Collaborating</p>
+<p class="font-mono text-[10px] font-bold uppercase text-center tracking-wider text-primary border-t border-b border-primary/40 py-2 mb-4">FIG 02: COLLABORATION. INNOVATION. IMPACT.</p>
+</div>
+<div class="mt-auto pt-2">
+<a href="/Hackathon-Theme.pdf" download="Hackathon-Theme.pdf" target="_blank" rel="noopener noreferrer" class="group relative inline-block w-full">
+<div class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></div>
+<button class="relative w-full bg-burgundy text-background px-3 py-3 font-mono text-xs md:text-sm font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">download</span> DOWNLOAD THEME PDF
+</button>
+</a>
+</div>
 </div>
 </section>
 <!-- Theme Section -->
@@ -248,78 +257,115 @@
 </div>
 </section>
 <!-- Application Areas -->
-<section class="mb-24" id="areas">
-<div class="text-center mb-10">
-<h3 class="font-headline text-3xl md:text-5xl uppercase font-black mb-3 underline decoration-double">FEATURE REPORT: APPLICATION AREAS</h3>
-<p class="font-serif-alt italic text-base md:text-xl opacity-85 max-w-3xl mx-auto">Explore the official domains from which problem statements will be released.</p>
+<section id="areas" class="mb-24 select-none">
+<div class="border-t-2 border-b-2 border-primary py-3 mb-10 text-center bg-primary/5">
+<h3 class="font-headline text-3xl md:text-5xl uppercase font-black tracking-tight distressed-text mb-1">FEATURE REPORT: APPLICATION AREAS</h3>
+<p class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto">Explore the official domains from which problem statements will be released.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-5 gap-px bg-primary border-2 border-primary shadow-sm">
-<div class="bg-background p-6 hover:bg-white transition-colors">
-<div class="text-2xl mb-3">🏥</div>
-<h4 class="font-headline font-bold uppercase text-base md:text-lg mb-3 leading-snug">Healthcare &amp; Well-Being</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90">Design intelligent software solutions that improve healthcare accessibility, patient care, diagnostics, emergency response, and health management.</p>
+<div class="border-2 border-primary paper-texture bg-background shadow-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-primary">
+<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 01</span><span class="opacity-40">§ 2026</span></div>
+<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">medical_services</span></div>
+<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Healthcare &amp; Well-Being</h4>
+<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Intelligent software solutions elevating healthcare accessibility, diagnostics, emergency response, and patient management.</p>
 </div>
-<div class="bg-background p-6 hover:bg-white transition-colors">
-<div class="text-2xl mb-3">🏙</div>
-<h4 class="font-headline font-bold uppercase text-base md:text-lg mb-3 leading-snug">Smart Cities</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90">Build systems that enhance transportation, public services, utilities, resource management, and urban efficiency.</p>
+<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 01</span><span>GAZETTE SPEC</span></div>
 </div>
-<div class="bg-background p-6 hover:bg-white transition-colors">
-<div class="text-2xl mb-3">🌱</div>
-<h4 class="font-headline font-bold uppercase text-base md:text-lg mb-3 leading-snug">Sustainability</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90">Create technology-driven solutions that promote environmental sustainability, efficient resource utilization, climate resilience, and sustainable development.</p>
+<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 02</span><span class="opacity-40">§ 2026</span></div>
+<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">location_city</span></div>
+<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Smart Cities</h4>
+<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Urban systems enhancing public transit, municipal utilities, resource optimization, and civic efficiency.</p>
 </div>
-<div class="bg-background p-6 hover:bg-white transition-colors">
-<div class="text-2xl mb-3">🔐</div>
-<h4 class="font-headline font-bold uppercase text-base md:text-lg mb-3 leading-snug">Cybersecurity</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90">Develop secure and intelligent systems that strengthen digital security, privacy, identity management, and protection against cyber threats.</p>
+<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 02</span><span>GAZETTE SPEC</span></div>
 </div>
-<div class="bg-background p-6 hover:bg-white transition-colors">
-<div class="text-2xl mb-3">🏢</div>
-<h4 class="font-headline font-bold uppercase text-base md:text-lg mb-3 leading-snug">Enterprise</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90">Engineer software that improves organizational productivity, automates workflows, enhances collaboration, and supports intelligent business decision-making.</p>
+<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 03</span><span class="opacity-40">§ 2026</span></div>
+<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">eco</span></div>
+<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Sustainability</h4>
+<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Technology-driven solutions promoting resource efficiency, climate resilience, and eco-friendly development.</p>
+</div>
+<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 03</span><span>GAZETTE SPEC</span></div>
+</div>
+<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 04</span><span class="opacity-40">§ 2026</span></div>
+<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">shield_lock</span></div>
+<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Cybersecurity</h4>
+<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Fortified digital systems strengthening data security, privacy, identity management, and threat protection.</p>
+</div>
+<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 04</span><span>GAZETTE SPEC</span></div>
+</div>
+<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 05</span><span class="opacity-40">§ 2026</span></div>
+<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">domain</span></div>
+<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Enterprise Productivity</h4>
+<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Software solutions optimizing organizational workflows, productivity, automation, and decision intelligence.</p>
+</div>
+<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 05</span><span>GAZETTE SPEC</span></div>
+</div>
 </div>
 </div>
 </section>
 <!-- Why Participate & Highlights -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+<section class="mb-24 select-none">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+<div class="lg:col-span-7 flex flex-col justify-between">
 <div>
-<h3 class="font-headline text-3xl font-bold uppercase mb-8">Value Proposition</h3>
+<div class="flex items-center justify-between border-b-2 border-primary pb-3 mb-6">
+<h3 class="font-headline text-3xl md:text-4xl font-black uppercase tracking-tight distressed-text">VALUE PROPOSITION</h3>
+<span class="font-mono text-xs font-bold uppercase tracking-widest bg-primary text-background px-2.5 py-1">CORE PILLARS</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 01</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">engineering</span></div>
+<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Build Solutions</h4>
+<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Address real-world crises with engineering precision.</p>
+</div>
+</div>
+<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 02</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">groups</span></div>
+<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Network</h4>
+<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Connect with the subcontinent's finest engineering minds.</p>
+</div>
+</div>
+<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 03</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">terminal</span></div>
+<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Collaborate</h4>
+<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Experience the friction and flow of rapid development.</p>
+</div>
+</div>
+<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 04</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">workspace_premium</span></div>
+<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Rewards</h4>
+<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Win significant innovation grants and industry swags.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between relative">
+<div>
+<div class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider"><span>GAZETTE METRICS</span><span class="bg-burgundy text-background px-2 py-0.5">DISPATCH 03</span></div>
+<h3 class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">EVENT HIGHLIGHTS</h3>
+<p class="font-serif-alt italic text-xs md:text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">Key Operating Metrics &amp; Allocation Overview</p>
 <div class="grid grid-cols-2 gap-4">
-<div class="border border-primary p-4">
-<h5 class="font-mono font-bold text-xs uppercase mb-2">Build Solutions</h5>
-<p class="text-xs">Address real-world crises with engineering precision.</p>
-</div>
-<div class="border border-primary p-4">
-<h5 class="font-mono font-bold text-xs uppercase mb-2">Network</h5>
-<p class="text-xs">Connect with the subcontinent's finest engineering minds.</p>
-</div>
-<div class="border border-primary p-4">
-<div class="border border-primary p-4">
-<h5 class="font-mono font-bold text-xs uppercase mb-2">Rewards</h5>
-<p class="text-xs">Win significant innovation grants and industry swags.</p>
+<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">Up to ₹25K</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Prize Pool</span></div>
+<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">8 HRS</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Active Coding</span></div>
+<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">OFFLINE</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Physical Presence</span></div>
+<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">SWAG</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Limited Kits</span></div>
 </div>
 </div>
-</div>
-<div class="bg-primary/5 p-8 border-2 border-primary">
-<h3 class="font-headline text-3xl font-bold uppercase mb-8 text-center">Event Highlights</h3>
-<div class="grid grid-cols-2 gap-x-8 gap-y-6">
-<div class="flex flex-col">
-<span class="font-headline text-2xl md:text-3xl font-black">Up to ₹25K</span>
-<span class="font-mono text-[10px] uppercase font-bold">Prize Pool</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline text-2xl md:text-3xl font-black">8 HRS</span>
-<span class="font-mono text-[10px] uppercase font-bold">Active Coding</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline text-3xl font-black">OFFLINE</span>
-<span class="font-mono text-[10px] uppercase">Physical Presence</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline text-3xl font-black">SWAG</span>
-<span class="font-mono text-[10px] uppercase">Limited Kits</span>
-</div>
+<div class="mt-6 pt-3 border-t-2 border-primary"><p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70">★ OFFICIAL HACKATHON DISPATCH SPECIFICATIONS — 2026</p></div>
 </div>
 </div>
 </section>

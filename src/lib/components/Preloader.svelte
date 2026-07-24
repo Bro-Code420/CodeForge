@@ -177,16 +177,16 @@
     class="preloader-btn-container group cursor-pointer focus:outline-none"
     aria-label="Engage Code Forge"
   >
-    <!-- Logo SVG Icon -->
+    <!-- Logo SVG Icon: Newspaper Icon -->
     <div id="pbc-logo" class="w-16 h-16 flex items-center justify-center text-background">
       <svg class="w-10 h-10 fill-current text-white/90" viewBox="0 0 24 24">
-        <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.7 4.7C.6 7.1 1 10.1 3 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.4-.4.4-1.1 0-1.4z"/>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm-4 8H7v-2h6v2z"/>
       </svg>
     </div>
 
-    <!-- Label "ENGAGE" -->
+    <!-- Label "CodeForge" -->
     <div id="pbc-label" class="overflow-hidden font-mono font-bold text-sm md:text-base uppercase tracking-[0.2em] text-white">
-      <p class="line">Engage</p>
+      <p class="line">CodeForge</p>
     </div>
 
     <!-- Outro Label "ACCESS GRANTED" -->

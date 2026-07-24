@@ -38,8 +38,8 @@ export const visionData = {
   collaboration: "We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.",
   editorialText: "Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.\n\nAt CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.\n\nOur mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.",
   quote: "\"Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code.\"",
-  figureImg: "/hackathon_team.png",
-  figureCaption: "FIG 02: Student Developers Collaborating"
+  figureImg: "/52d35407-2a50-4542-890e-eb8970e4858c.jpg",
+  figureCaption: "FIG 02: COLLABORATION. INNOVATION. IMPACT."
 };
 
 export const themeData = {
@@ -64,29 +64,34 @@ export const applicationAreasData = {
   subtitle: "Explore the official domains from which problem statements will be released.",
   areas: [
     {
-      icon: "🏥",
+      featureCode: "FEATURE 01",
+      symbol: "medical_services",
       title: "Healthcare & Well-Being",
-      desc: "Design intelligent software solutions that improve healthcare accessibility, patient care, diagnostics, emergency response, and health management."
+      summary: "Intelligent software solutions elevating healthcare accessibility, diagnostics, emergency response, and patient management."
     },
     {
-      icon: "🏙",
+      featureCode: "FEATURE 02",
+      symbol: "location_city",
       title: "Smart Cities",
-      desc: "Build systems that enhance transportation, public services, utilities, resource management, and urban efficiency."
+      summary: "Urban systems enhancing public transit, municipal utilities, resource optimization, and civic efficiency."
     },
     {
-      icon: "🌱",
+      featureCode: "FEATURE 03",
+      symbol: "eco",
       title: "Sustainability",
-      desc: "Create technology-driven solutions that promote environmental sustainability, efficient resource utilization, climate resilience, and sustainable development."
+      summary: "Technology-driven solutions promoting resource efficiency, climate resilience, and eco-friendly development."
     },
     {
-      icon: "🔐",
+      featureCode: "FEATURE 04",
+      symbol: "shield_lock",
       title: "Cybersecurity",
-      desc: "Develop secure and intelligent systems that strengthen digital security, privacy, identity management, and protection against cyber threats."
+      summary: "Fortified digital systems strengthening data security, privacy, identity management, and threat protection."
     },
     {
-      icon: "🏢",
-      title: "Enterprise",
-      desc: "Engineer software that improves organizational productivity, automates workflows, enhances collaboration, and supports intelligent business decision-making."
+      featureCode: "FEATURE 05",
+      symbol: "domain",
+      title: "Enterprise Productivity",
+      summary: "Software solutions optimizing organizational workflows, productivity, automation, and decision intelligence."
     }
   ]
 };
@@ -94,10 +99,10 @@ export const applicationAreasData = {
 export const industryVerticals = applicationAreasData.areas;
 
 export const valueProps = [
-  { title: "Build Solutions", desc: "Address real-world crises with engineering precision." },
-  { title: "Network", desc: "Connect with the subcontinent's finest engineering minds." },
-  { title: "Collaborate", desc: "Experience the friction and flow of rapid development." },
-  { title: "Rewards", desc: "Win significant innovation grants and industry swags." }
+  { title: "Build Solutions", desc: "Address real-world crises with engineering precision.", symbol: "engineering" },
+  { title: "Network", desc: "Connect with the subcontinent's finest engineering minds.", symbol: "groups" },
+  { title: "Collaborate", desc: "Experience the friction and flow of rapid development.", symbol: "terminal" },
+  { title: "Rewards", desc: "Win significant innovation grants and industry swags.", symbol: "workspace_premium" }
 ];
 
 export const eventHighlights = [
