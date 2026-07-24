@@ -75,9 +75,9 @@
     isPickedUp = true;
     isActive = true;
     checkMobile();
-    targetTorchSize = isMobile ? 280 : 360;
-    mouse.x = window.innerWidth / 2;
-    mouse.y = window.innerHeight * 0.45;
+    targetTorchSize = isMobile ? 290 : 360;
+    mouse.x = isMobile ? window.innerWidth * 0.7 : window.innerWidth / 2;
+    mouse.y = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.45;
   }
 
   function dockTorch() {
