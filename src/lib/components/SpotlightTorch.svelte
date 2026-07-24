@@ -611,7 +611,7 @@
   /* Dark Overlay concealing the page except under the torch mask */
   .spotlight-overlay {
     position: fixed;
-    inset: 0;
+    inset: -60px;
     z-index: 40;
     pointer-events: none;
     background-color: #0b0a08;
