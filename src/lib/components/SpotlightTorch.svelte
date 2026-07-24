@@ -36,6 +36,18 @@
   function getDockPosition() {
     if (typeof window === 'undefined') return { x: 300, y: 150 };
     checkMobile();
+    
+    // Find the ticket button dynamically on the viewport
+    const ticketEl = document.querySelector('.vintage-torch-ticket');
+    if (ticketEl) {
+      const rect = ticketEl.getBoundingClientRect();
+      return {
+        // Place the 3D model exactly aligned with the right edge center of the ticket card
+        x: rect.right - (isMobile ? 12 : 20),
+        y: rect.top + (rect.height / 2)
+      };
+    }
+
     return {
       x: isMobile ? window.innerWidth - 28 : window.innerWidth - 42,
       y: isMobile ? 118 : 148
@@ -48,6 +60,12 @@
   }
 
   function handleTouch(e) {
+    // Prevent default scroll behavior on mobile if the torch is currently picked up
+    if (isPickedUp) {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    }
     if (e.touches && e.touches.length > 0) {
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
@@ -300,8 +318,8 @@
     targetTorchSize = torchSize;
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchstart', handleTouch, { passive: true });
-    window.addEventListener('touchmove', handleTouch, { passive: true });
+    window.addEventListener('touchstart', handleTouch, { passive: false });
+    window.addEventListener('touchmove', handleTouch, { passive: false });
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('mouseover', handleElementHover);
     window.addEventListener('resize', handleResize);
