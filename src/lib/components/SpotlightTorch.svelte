@@ -52,6 +52,7 @@
 
   function handleTouch(e) {
     if (e.touches && e.touches.length > 0) {
+      if (!isPickedUp && e.target && e.target.closest('.flambeau-dock-badge')) return;
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
     }
@@ -74,11 +75,9 @@
     isPickedUp = true;
     isActive = true;
     checkMobile();
-    targetTorchSize = isMobile ? 260 : 360;
-    if (mouse.x === 0 && mouse.y === 0) {
-      mouse.x = window.innerWidth / 2;
-      mouse.y = window.innerHeight / 2;
-    }
+    targetTorchSize = isMobile ? 280 : 360;
+    mouse.x = window.innerWidth / 2;
+    mouse.y = window.innerHeight * 0.45;
   }
 
   function dockTorch() {
