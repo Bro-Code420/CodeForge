@@ -51,7 +51,7 @@
   }
 
   function handleTouch(e) {
-    if (!isMobile && e.touches && e.touches.length > 0) {
+    if (e.touches && e.touches.length > 0) {
       if (!isPickedUp && e.target && e.target.closest('.flambeau-dock-badge')) return;
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
@@ -75,9 +75,9 @@
     isPickedUp = true;
     isActive = true;
     checkMobile();
-    targetTorchSize = isMobile ? 290 : 360;
-    mouse.x = isMobile ? window.innerWidth * 0.7 : window.innerWidth / 2;
-    mouse.y = isMobile ? window.innerHeight * 0.7 : window.innerHeight * 0.45;
+    targetTorchSize = isMobile ? 280 : 360;
+    mouse.x = window.innerWidth / 2;
+    mouse.y = window.innerHeight * 0.45;
   }
 
   function dockTorch() {
@@ -190,14 +190,10 @@
   }
 
   function updateTorchPosition() {
-    if (!camera || !torchGroup) return;
+    if (!camera || !torchGroup || isMobile) return;
 
-    // On mobile touch, offset position slightly above finger so finger doesn't obscure flame
     let posX = torch.x;
     let posY = torch.y;
-    if (isMobile && isPickedUp) {
-      posY -= 45; // Lift torch above finger
-    }
 
     const normalizedX = (posX / window.innerWidth) * 2 - 1;
     const normalizedY = -(posY / window.innerHeight) * 2 + 1;
@@ -229,13 +225,8 @@
   function animate() {
     // Determine target position (mouse/touch if picked up, dock if resting at corner)
     if (isPickedUp) {
-      if (isMobile) {
-        targetPos.x = window.innerWidth * 0.7;
-        targetPos.y = window.innerHeight * 0.7;
-      } else {
-        targetPos.x = mouse.x;
-        targetPos.y = mouse.y;
-      }
+      targetPos.x = mouse.x;
+      targetPos.y = mouse.y;
     } else {
       const dock = getDockPosition();
       targetPos.x = dock.x;
@@ -258,9 +249,9 @@
     baseFreqX = 0.032 + Math.sin(timeSec * 2.2) * 0.004;
     baseFreqY = 0.042 + Math.cos(timeSec * 2.8) * 0.004;
 
-    // Update CSS variables for CSS spotlight mask (offsetting on mobile so light beam aligns with lifted flame)
+    // Update CSS variables for CSS spotlight mask
     let torchYOffset = torch.y;
-    if (isMobile && isPickedUp) {
+    if (!isMobile && isPickedUp) {
       torchYOffset -= 45;
     }
 
@@ -589,6 +580,10 @@
 
   /* Mobile responsive styling for small screens (< 640px) */
   @media (max-width: 640px) {
+    .torch-3d-canvas {
+      display: none !important;
+    }
+
     .flambeau-dock-badge {
       top: 70px;
       right: 12px;
