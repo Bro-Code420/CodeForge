@@ -37,8 +37,8 @@
     if (typeof window === 'undefined') return { x: 300, y: 150 };
     checkMobile();
     return {
-      x: isMobile ? window.innerWidth - 22 : window.innerWidth - 42,
-      y: isMobile ? 116 : 148
+      x: isMobile ? window.innerWidth - 28 : window.innerWidth - 42,
+      y: isMobile ? 118 : 148
     };
   }
 
@@ -101,7 +101,7 @@
   }
 
   function initThreeJS() {
-    if (!canvasEl) return;
+    if (isMobile || !canvasEl) return;
 
     // Scene
     scene = new THREE.Scene();
@@ -221,6 +221,7 @@
   }
 
   function animate() {
+    if (isMobile) return;
     // Determine target position (mouse/touch if picked up, dock if resting at corner)
     if (isPickedUp) {
       targetPos.x = mouse.x;
@@ -280,6 +281,13 @@
 
   function handleResize() {
     checkMobile();
+    if (isMobile) {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+      return;
+    }
     handleScroll();
     updateModelScale();
     if (camera && renderer) {
@@ -291,6 +299,8 @@
 
   onMount(() => {
     checkMobile();
+    if (isMobile) return;
+
     const dock = getDockPosition();
     mouse.x = dock.x;
     mouse.y = dock.y;
@@ -307,7 +317,6 @@
     window.addEventListener('resize', handleResize);
 
     initThreeJS();
-    handleResize();
     handleScroll();
     animate();
   });
@@ -330,68 +339,69 @@
   });
 </script>
 
-<!-- Top Right Corner Flambeau Dock Indicator & Control Button -->
-<div 
-  class="flambeau-dock-badge" 
-  class:visible={isScrolledPastHero || isPickedUp}
-  class:picked={isPickedUp}
-  class:highlight={isScrolledPastHero && !isPickedUp}
->
-  <button 
-    class="vintage-torch-ticket"
+{#if !isMobile}
+  <!-- Top Right Corner Flambeau Dock Indicator & Control Button -->
+  <div 
+    class="flambeau-dock-badge" 
+    class:visible={isScrolledPastHero || isPickedUp}
     class:picked={isPickedUp}
-    on:click={toggleTorch}
-    title={isPickedUp ? 'Dock Flambeau (Return to Original Site)' : 'Take the Torch to Illuminate'}
+    class:highlight={isScrolledPastHero && !isPickedUp}
   >
-    <!-- Vintage Editorial Typography -->
-    <div class="ticket-right">
-      <div class="ticket-top">═ ★ FEATURE STORY ★ ═</div>
-      <div class="ticket-middle">
-        {#if isPickedUp}
-          RETURN TORCH
-        {:else}
-          TAKE THE TORCH
-        {/if}
+    <button 
+      class="vintage-torch-ticket"
+      class:picked={isPickedUp}
+      on:click={toggleTorch}
+      title={isPickedUp ? 'Dock Flambeau (Return to Original Site)' : 'Take the Torch to Illuminate'}
+    >
+      <!-- Vintage Editorial Typography -->
+      <div class="ticket-right">
+        <div class="ticket-top">═ ★ FEATURE STORY ★ ═</div>
+        <div class="ticket-middle">
+          {#if isPickedUp}
+            RETURN TORCH
+          {:else}
+            TAKE THE TORCH
+          {/if}
+        </div>
+        <div class="ticket-bottom">
+          {#if isPickedUp}
+            DOCK FLAMBEAU ──→
+          {:else}
+            CONTINUE READING ──→
+          {/if}
+        </div>
       </div>
-      <div class="ticket-bottom">
-        {#if isPickedUp}
-          DOCK FLAMBEAU ──→
-        {:else}
-          CONTINUE READING ──→
-        {/if}
-      </div>
-    </div>
-  </button>
-</div>
+    </button>
+  </div>
 
-<!-- Ambient Dark Dimming Overlay (Active when scrolled past hero & torch not picked up yet) -->
-<div 
-  class="ambient-dim-overlay"
-  class:active={isScrolledPastHero && !isPickedUp}
-  aria-hidden="true"
-></div>
+  <!-- Ambient Dark Dimming Overlay (Active when scrolled past hero & torch not picked up yet) -->
+  <div 
+    class="ambient-dim-overlay"
+    class:active={isScrolledPastHero && !isPickedUp}
+    aria-hidden="true"
+  ></div>
 
-<!-- 3D WebGL Canvas Rendering the 3D Glowing Torch -->
-<canvas 
-  bind:this={canvasEl} 
-  class="torch-3d-canvas"
-  class:active={isScrolledPastHero || isPickedUp}
-  aria-hidden="true"
-></canvas>
+  <!-- 3D WebGL Canvas Rendering the 3D Glowing Torch -->
+  <canvas 
+    bind:this={canvasEl} 
+    class="torch-3d-canvas"
+    class:active={isScrolledPastHero || isPickedUp}
+    aria-hidden="true"
+  ></canvas>
+  <!-- Dark Spotlight Mask Overlay (Active when torch is picked up) -->
+  <div 
+    class="spotlight-overlay"
+    class:active={isActive}
+    aria-hidden="true"
+  ></div>
 
-<!-- Dark Spotlight Mask Overlay (Active when torch is picked up) -->
-<div 
-  class="spotlight-overlay"
-  class:active={isActive}
-  aria-hidden="true"
-></div>
-
-<!-- Warm Ambient Beam Glow Effect -->
-<div 
-  class="torch-glow-beam"
-  class:active={isActive}
-  aria-hidden="true"
-></div>
+  <!-- Warm Ambient Beam Glow Effect -->
+  <div 
+    class="torch-glow-beam"
+    class:active={isActive}
+    aria-hidden="true"
+  ></div>
+{/if}
 
 <style>
   :global(:root) {
@@ -406,7 +416,6 @@
     inset: 0;
     z-index: 35;
     pointer-events: none;
-    touch-action: pan-y !important;
     background-color: rgba(12, 11, 10, 0.52);
     backdrop-filter: brightness(0.6) contrast(1.04);
     -webkit-backdrop-filter: brightness(0.6) contrast(1.04);
@@ -558,7 +567,6 @@
     height: 100vh;
     z-index: 65;
     pointer-events: none;
-    touch-action: pan-y !important;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -567,12 +575,12 @@
     opacity: 1;
   }
 
+  /* Dark Overlay concealing the page except under the torch mask */
   .spotlight-overlay {
     position: fixed;
     inset: 0;
     z-index: 40;
     pointer-events: none;
-    touch-action: pan-y !important;
     background-color: #0b0a08;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
