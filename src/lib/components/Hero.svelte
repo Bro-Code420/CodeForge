@@ -31,8 +31,8 @@
     objectOffsetX = -mouseX * 15;
     objectOffsetY = -mouseY * 8;
 
-    // Natural camera tracking: Inverted theta so model faces TOWARDS cursor
-    cameraOrbitTheta = -mouseX * 20;
+    // Camera tracking: camera angle follows cursor direction (right = right, left = left)
+    cameraOrbitTheta = mouseX * 20;
     cameraOrbitPhi = 75 + mouseY * 6;
 
     if (modelViewerRef) {
