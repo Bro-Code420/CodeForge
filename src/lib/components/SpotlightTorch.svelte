@@ -8,6 +8,9 @@
   let isScrolledPastHero = false;
   let isMobile = false;
 
+  let baseFreqX = 0.035;
+  let baseFreqY = 0.045;
+
   let mouse = { x: 0, y: 0 };
   let torch = { x: 0, y: 0 };
   let targetPos = { x: 0, y: 0 };
@@ -239,11 +242,20 @@
     // Lerp torch size
     torchSize += (targetTorchSize - torchSize) * ease;
 
+    // Organic firelight size flicker
+    const sizeFlicker = Math.sin(performance.now() * 0.015) * 6 + (Math.random() - 0.5) * 3;
+    const activeTorchSize = torchSize + sizeFlicker;
+
+    // Animate turbulence coordinates over time
+    const timeSec = performance.now() * 0.001;
+    baseFreqX = 0.032 + Math.sin(timeSec * 2.2) * 0.004;
+    baseFreqY = 0.042 + Math.cos(timeSec * 2.8) * 0.004;
+
     // Update CSS variables for CSS spotlight mask
     if (typeof document !== 'undefined') {
       document.documentElement.style.setProperty('--torch-x', `${torch.x.toFixed(2)}px`);
       document.documentElement.style.setProperty('--torch-y', `${torch.y.toFixed(2)}px`);
-      document.documentElement.style.setProperty('--torch-size', `${torchSize.toFixed(1)}px`);
+      document.documentElement.style.setProperty('--torch-size', `${activeTorchSize.toFixed(1)}px`);
     }
 
     // Dynamic scale interpolation (no feedback loop)
@@ -401,6 +413,27 @@
     class:active={isActive}
     aria-hidden="true"
   ></div>
+
+  <!-- SVG Filter for Organic Flame Light Distortion -->
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <filter id="flame-flicker-distortion">
+        <feTurbulence 
+          type="fractalNoise" 
+          baseFrequency="{baseFreqX.toFixed(5)} {baseFreqY.toFixed(5)}" 
+          numOctaves="2" 
+          result="noise" 
+        />
+        <feDisplacementMap 
+          in="SourceGraphic" 
+          in2="noise" 
+          scale="32" 
+          xChannelSelector="R" 
+          yChannelSelector="G" 
+        />
+      </filter>
+    </defs>
+  </svg>
 {/if}
 
 <style>
@@ -584,6 +617,7 @@
     background-color: #0b0a08;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: url(#flame-flicker-distortion);
     
     mask-image: radial-gradient(
       circle var(--torch-size) at var(--torch-x) var(--torch-y),
@@ -617,6 +651,7 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: url(#flame-flicker-distortion);
     background: radial-gradient(
       circle,
       rgba(255, 225, 140, 0.35) 0%,
