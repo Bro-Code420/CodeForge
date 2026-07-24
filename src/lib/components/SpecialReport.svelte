@@ -1,5 +1,39 @@
 <script>
+  import { onMount } from 'svelte';
   import { themeData } from '../data/gazetteData.js';
+  import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext';
+
+  let containerWidth = 0;
+  let lines = [];
+  let prepared;
+
+  onMount(() => {
+    try {
+      prepared = prepareWithSegments(themeData.themeText, '15px Garamond, Georgia, serif');
+      updateLayout();
+    } catch (e) {
+      console.warn("Pretext layout prep failed, using default fallback:", e);
+    }
+
+    window.addEventListener('resize', updateLayout);
+    return () => {
+      window.removeEventListener('resize', updateLayout);
+    };
+  });
+
+  function updateLayout() {
+    if (!prepared || containerWidth <= 0) return;
+    try {
+      const result = layoutWithLines(prepared, containerWidth, 22);
+      lines = result.lines.map(l => l.text);
+    } catch (e) {
+      lines = [themeData.themeText];
+    }
+  }
+
+  $: if (containerWidth) {
+    updateLayout();
+  }
 </script>
 
 <section class="mb-24 bg-primary text-background p-8 md:p-12 relative overflow-hidden" id="theme">
@@ -20,10 +54,18 @@
       {/if}
 
       <div class="space-y-5 font-body text-sm md:text-base opacity-95 leading-relaxed">
-        <p>
+        <div bind:clientWidth={containerWidth}>
           <strong class="font-headline text-lg block text-background mb-1">The Theme:</strong>
-          {themeData.themeText}
-        </p>
+          {#if lines.length > 0}
+            <div class="space-y-1 font-serif-alt">
+              {#each lines as line}
+                <div class="text-justify leading-relaxed text-background/90">{line}</div>
+              {/each}
+            </div>
+          {:else}
+            <p class="font-serif-alt leading-relaxed text-background/90">{themeData.themeText}</p>
+          {/if}
+        </div>
         
         {#if themeData.objectives}
           <div>
