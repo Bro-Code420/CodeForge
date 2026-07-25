@@ -15,7 +15,7 @@
   }
 </script>
 
-<section class="mt-24 border-t-2 border-primary pt-12 space-y-8" id="contact">
+<section class="mt-12 border-t-2 border-primary pt-12 space-y-8" id="contact">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
     <!-- Left Side: CONTACT & INFORMATION -->
     <div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between">

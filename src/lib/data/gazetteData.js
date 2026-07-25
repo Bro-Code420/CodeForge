@@ -9,8 +9,7 @@ export const headerData = {
     { label: "The Vision", href: "#about" },
     { label: "Special Report", href: "#theme" },
     { label: "Features", href: "#areas" },
-    { label: "Chronology", href: "#timeline" },
-    { label: "Registry", href: "#registry" }
+    { label: "Chronology", href: "#timeline" }
   ]
 };
 

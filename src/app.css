@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,4 +86,56 @@
   text-shadow: 2px 2px 0px rgba(0,0,0,0.08);
   letter-spacing: -0.04em;
 }
+
+/* CRT Screen Glow and Scanline overlay */
+.crt-glow-backdrop {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 170, 70, 0.25) 0%,
+    rgba(140, 30, 20, 0.12) 50%,
+    transparent 75%
+  );
+  filter: blur(25px);
+  pointer-events: none;
+  animation: crtPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes crtPulse {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+.scanlines-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 3D Tilt Card Base Styles */
+.tilt-card-container {
+  perspective: 1000px;
+}
+
+.tilt-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
 

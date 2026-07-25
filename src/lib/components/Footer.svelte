@@ -2,24 +2,24 @@
   import TriangleMarquee from './TriangleMarquee.svelte';
 </script>
 
-<footer class="bg-[#FAF6EE] pt-12 pb-16 px-6 md:px-12 mt-12 border-t-8 border-double border-primary select-none">
+<footer class="bg-[#FAF6EE] pt-8 pb-8 px-6 md:px-12 mt-6 border-t-8 border-double border-primary select-none">
   <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
     <!-- Top Geometric Border Pattern -->
-    <TriangleMarquee className="w-full mb-12 opacity-80" speed="1s" reverse={true} />
+    <TriangleMarquee className="w-full mb-6 opacity-80" speed="1s" reverse={true} />
 
     <!-- Newspaper Logo Head -->
-    <h5 class="font-masthead text-5xl md:text-8xl font-black uppercase tracking-tighter mb-10 text-primary">
+    <h5 class="font-masthead text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary">
       CODE FORGE 2026
     </h5>
     
     <!-- 3-Column Editorial Links Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mb-12 font-mono text-xs uppercase tracking-widest border-t-2 border-b-2 border-primary py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-6 font-mono text-xs uppercase tracking-widest border-t-2 border-b-2 border-primary py-6">
       <!-- Legal Notices -->
       <div class="flex flex-col items-center">
-        <p class="font-bold text-sm mb-5 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
+        <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
           Legal Notices
         </p>
-        <ul class="space-y-3 text-primary font-bold text-[11px]">
+        <ul class="space-y-2 text-primary font-bold text-[11px]">
           <li>
             <a href="#privacy" class="hover:italic hover:text-burgundy transition-all flex items-center gap-1">
               <span>✦ PRIVACY POLICY</span>
@@ -39,11 +39,11 @@
       </div>
       
       <!-- Affiliations -->
-      <div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-primary/30 py-8 md:py-0">
-        <p class="font-bold text-sm mb-5 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
+      <div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-primary/30 py-6 md:py-0">
+        <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
           Affiliations
         </p>
-        <ul class="space-y-3 text-primary/80 font-bold text-[11px]">
+        <ul class="space-y-2 text-primary/80 font-bold text-[11px]">
           <li>G.H. RAISONI COLLEGE</li>
           <li>SCIENCE & TECHNOLOGY DEPT.</li>
           <li>NAGPUR INNOVATION HUB</li>
@@ -52,10 +52,10 @@
       
       <!-- Social Media Connections -->
       <div class="flex flex-col items-center">
-        <p class="font-bold text-sm mb-5 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
+        <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
           Social Media
         </p>
-        <div class="flex flex-col items-center gap-3">
+        <div class="flex flex-col items-center gap-2">
           <a
             href="https://instagram.com"
             target="_blank"
@@ -73,16 +73,16 @@
     </div>
     
     <!-- Redesigned Editorial Colophon Badge Certificate -->
-    <div class="w-full max-w-3xl border-4 border-double border-primary p-8 bg-[#FAF6EE] text-primary shadow-[6px_6px_0px_rgba(43,43,42,0.15)] rounded-sm my-4 font-mono relative">
+    <div class="w-full max-w-3xl border-4 border-double border-primary p-6 bg-[#FAF6EE] text-primary shadow-[4px_4px_0px_rgba(43,43,42,0.15)] rounded-sm my-2 font-mono relative">
       <!-- Vintage Corner Ornaments -->
       <div class="absolute top-2 left-2 text-[10px] opacity-40">❖ CERTIFIED</div>
       <div class="absolute top-2 right-2 text-[10px] opacity-40">PRESS NO. 901</div>
       
-      <p class="text-[11px] md:text-xs font-bold uppercase tracking-widest mb-4 border-b border-primary/40 pb-3 mt-2">
+      <p class="text-[11px] md:text-xs font-bold uppercase tracking-widest mb-3 border-b border-primary/40 pb-2 mt-1">
         VOL. I // ISSUE NO. 01 // 21 AUGUST 2026 // NAGPUR, INDIA
       </p>
 
-      <div class="flex flex-col items-center gap-4 my-6">
+      <div class="flex flex-col items-center gap-3 my-4">
         <span class="text-[11px] font-bold tracking-widest text-primary/75">© 2026 CODE FORGE PRESS • DESIGNED & DEVELOPED BY</span>
         
         <div class="flex flex-wrap items-center justify-center gap-3">
@@ -117,7 +117,7 @@
       </div>
 
       <!-- Footer Motto -->
-      <p class="text-[10px] uppercase tracking-widest text-primary font-bold border-t border-primary/40 pt-4 mt-4">
+      <p class="text-[10px] uppercase tracking-widest text-primary font-bold border-t border-primary/40 pt-3 mt-3">
         ★ PRINTED IN THE TERMINAL. NO ELECTRONS WERE HARMED IN THE MAKING OF THIS MANIFESTO. ★
       </p>
     </div>
