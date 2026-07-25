@@ -1,4 +1,5 @@
 <script>
+  // Code Forge 2026 Gazette Release Build
   import Preloader from './lib/components/Preloader.svelte';
   import Header from './lib/components/Header.svelte';
   import EditorialVision from './lib/components/EditorialVision.svelte';
