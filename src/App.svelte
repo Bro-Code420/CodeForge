@@ -12,16 +12,18 @@
   import ProblemStatements from './lib/components/ProblemStatements.svelte';
   import CodeOfConduct from './lib/components/CodeOfConduct.svelte';
   import FaqSection from './lib/components/FaqSection.svelte';
-  import RegistrySection from './lib/components/RegistrySection.svelte';
   import ContactSection from './lib/components/ContactSection.svelte';
   import Footer from './lib/components/Footer.svelte';
   import SpotlightTorch from './lib/components/SpotlightTorch.svelte';
+  import DesktopNoticeModal from './lib/components/DesktopNoticeModal.svelte';
 
   let showPreloader = true;
   let isAppRevealing = false;
+  let showDesktopNotice = false;
 </script>
 
 <SpotlightTorch />
+<DesktopNoticeModal isOpen={showDesktopNotice} on:close={() => (showDesktopNotice = false)} />
 
 {#if showPreloader}
   <Preloader
@@ -29,6 +31,10 @@
     on:complete={() => {
       showPreloader = false;
       isAppRevealing = true;
+      // Triggers editorial advisory modal right after preloader loading finishes
+      setTimeout(() => {
+        showDesktopNotice = true;
+      }, 400);
     }}
   />
 {/if}
@@ -58,7 +64,6 @@
     <ProblemStatements />
     <CodeOfConduct />
     <FaqSection />
-    <RegistrySection />
     <ContactSection />
   </main>
 
