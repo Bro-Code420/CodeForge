@@ -105,7 +105,12 @@
 
       <!-- CTA Action Button & Live Status -->
       <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full max-w-md">
-        <a href="#registry" class="group relative inline-block flex-1">
+        <a 
+          href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="group relative inline-block flex-1"
+        >
           <div class="absolute inset-0 bg-primary translate-x-1.5 translate-y-1.5 transition-transform group-hover:translate-x-0 group-hover:translate-y-0 duration-200"></div>
           <button class="relative w-full bg-burgundy text-background px-8 py-4 font-mono text-lg font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2 group-hover:bg-[#800000] active:scale-[0.98]">
             REGISTER STATION <span class="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
