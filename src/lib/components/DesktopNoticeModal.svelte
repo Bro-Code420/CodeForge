@@ -33,39 +33,44 @@
       <div class="absolute top-2 left-2 text-[9px] opacity-30">❖ GAZETTE NOTICE</div>
       <div class="absolute top-2 right-2 text-[9px] opacity-30">CERTIFIED</div>
 
-      <!-- Icon Stamp -->
+      <!-- Vintage Engraved Desktop Terminal Icon Stamp -->
       <div class="w-16 h-16 mx-auto mb-4 border-2 border-primary bg-primary/5 flex items-center justify-center p-3 shadow-inner">
-        <svg class="w-full h-full text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="2" y="3" width="20" height="14" rx="2" stroke-width="2"/>
-          <line x1="8" y1="21" x2="16" y2="21" stroke-width="2"/>
-          <line x1="12" y1="17" x2="12" y2="21" stroke-width="2"/>
-          <path d="M7 8h10M7 12h7" stroke-dasharray="2 2" stroke-width="1.5"/>
+        <svg class="w-full h-full text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Retro CRT Monitor Outer Shell -->
+          <rect x="2" y="3" width="20" height="13" rx="1.5" stroke-width="1.8"/>
+          <!-- CRT Screen Area -->
+          <rect x="4" y="5" width="16" height="9" rx="0.5" stroke-width="1.2" fill="currentColor" fill-opacity="0.08"/>
+          <!-- Vintage Terminal Code Prompt -->
+          <path d="M6 8l2 2-2 2M10 12h4" stroke-width="1.6"/>
+          <!-- Heavy Cast-Iron Monitor Neck & Base -->
+          <path d="M10 16l-1 3h6l-1-3" stroke-width="1.5"/>
+          <rect x="3" y="19" width="18" height="2" rx="0.5" stroke-width="1.5"/>
+          <!-- Status Light Ornament -->
+          <circle cx="18" cy="7" r="0.75" fill="currentColor"/>
         </svg>
       </div>
 
       <!-- Notice Title -->
-      <h3 class="font-headline font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight distressed-text mb-2 text-primary leading-tight">
-        BEST EXPERIENCED ON PC & LAPTOP
+      <h3 class="font-headline font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-wide distressed-text mb-3 text-primary leading-tight space-x-1">
+        <span>BEST</span> <span>VIEWED</span> <span>ON</span> <span>PC</span>
       </h3>
 
       <div class="flex justify-center items-center gap-2 font-serif-alt italic text-xs md:text-sm text-primary/85 mb-4">
         <span>☙</span>
-        <span>For the Best Visuals & Smooth 3D Animations</span>
+        <span>Official Press Advisory</span>
         <span>❧</span>
       </div>
 
       <div class="w-16 h-[2px] bg-primary mx-auto mb-5"></div>
 
       <!-- Body Copy -->
-      <p class="font-serif-alt text-sm md:text-base leading-relaxed text-primary/90 mb-6 px-2">
-        Welcome to <strong>CODE FORGE 2026</strong>! For the smoothest 3D animations, full interactive effects, and the best creative experience, we recommend viewing this site on a <strong>Laptop or Desktop PC</strong>.
+      <p class="font-serif-alt text-sm md:text-base leading-relaxed text-primary/95 mb-6 px-2">
+        For the best visuals and smooth interactions, use a desktop or laptop.
       </p>
 
-      <!-- Feature Pill Badges -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8 text-[10px] font-bold uppercase tracking-wider">
-        <span class="px-2.5 py-1 border border-primary/60 bg-white/70">✦ SMOOTH 3D EFFECTS</span>
-        <span class="px-2.5 py-1 border border-primary/60 bg-white/70">✦ FULL INTERACTIVE SITE</span>
-        <span class="px-2.5 py-1 border border-primary/60 bg-white/70">✦ BEST DISPLAY</span>
+      <!-- Feature Pill Badge -->
+      <div class="flex justify-center mb-8 text-xs font-bold uppercase tracking-wider font-mono">
+        <span class="px-4 py-1.5 border border-primary/60 bg-white/80 shadow-xs">✦ FULL EXPERIENCE</span>
       </div>
 
       <!-- Action Button -->

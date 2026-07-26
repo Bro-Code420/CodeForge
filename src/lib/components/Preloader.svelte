@@ -177,10 +177,23 @@
     class="preloader-btn-container group cursor-pointer focus:outline-none"
     aria-label="Engage Code Forge"
   >
-    <!-- Logo SVG Icon: Newspaper Icon -->
+    <!-- Logo SVG Icon: Retro Terminal Monitor Icon -->
     <div id="pbc-logo" class="w-16 h-16 flex items-center justify-center text-background">
-      <svg class="w-10 h-10 fill-current text-white/90" viewBox="0 0 24 24">
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm-4 8H7v-2h6v2z"/>
+      <svg class="w-12 h-12 text-white/90" viewBox="0 0 32 32" fill="none" stroke="currentColor">
+        <!-- Heavy Outer Terminal Frame with Rounded Corners -->
+        <rect x="5" y="6" width="22" height="15" rx="3" stroke-width="2.5" />
+        <!-- Inner Screen Area -->
+        <rect x="7" y="8" width="18" height="11" rx="1.5" stroke-width="1.5" fill="currentColor" fill-opacity="0.12" />
+        <!-- Top-Right Solid Dot Indicator -->
+        <circle cx="21" cy="11.5" r="1.5" fill="currentColor" stroke="none" />
+        <!-- Terminal Prompt: > -->
+        <path d="M10 12l2.5 2.5L10 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Terminal Cursor: _ -->
+        <line x1="14" y1="17" x2="17" y2="17" stroke-width="2" stroke-linecap="round" />
+        <!-- Stand Neck -->
+        <path d="M13 21v2.5M19 21v2.5" stroke-width="2" stroke-linecap="round" />
+        <!-- Heavy Base Bar -->
+        <rect x="8" y="24" width="16" height="2.5" rx="1" fill="currentColor" stroke="none" />
       </svg>
     </div>
 

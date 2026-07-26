@@ -55,6 +55,20 @@
             </div>
           {/each}
         </div>
+
+        <!-- Vintage Gazette Editorial Quote Banner -->
+        <div class="mt-4 p-4 md:p-5 border-2 border-primary bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] relative font-mono text-center flex flex-col justify-center items-center">
+          <div class="flex justify-center items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-burgundy mb-2">
+            <span>★ GAZETTE EDITORIAL DIRECTIVE ★</span>
+          </div>
+          <blockquote class="font-serif-alt italic text-xs md:text-sm text-primary/95 leading-relaxed max-w-lg mx-auto">
+            “Great ideas aren’t discovered by chance — they are forged through curiosity, collaboration, and relentless engineering execution.”
+          </blockquote>
+          <div class="mt-2.5 pt-2 border-t border-dotted border-primary/40 w-full flex justify-between items-center text-[9px] font-mono uppercase text-primary/70">
+            <span>CODE FORGE GAZETTE • 2026</span>
+            <span>DISPATCH NO. 02</span>
+          </div>
+        </div>
       </div>
     </div>
 
