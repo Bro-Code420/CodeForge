@@ -8,6 +8,7 @@
   let animationFrameId;
 
   let isHolding = false;
+  let dragDistance = 0;
   let startX = 0;
   let startY = 0;
   let startTheta = 0;
@@ -18,8 +19,31 @@
   let currentPhi = 75;
   let targetPhi = 75;
 
+  // Forge Robot Dialogue State
+  const forgeMessages = [
+    "HI Coder! 👋",
+    "I'm Forge! 🤖",
+    "All the Best for Hackathon! 🚀"
+  ];
+  let tapIndex = 0;
+  let showSpeechBubble = false;
+  let currentMessage = "";
+  let speechTimer;
+
+  function triggerRobotSpeech() {
+    currentMessage = forgeMessages[tapIndex];
+    tapIndex = (tapIndex + 1) % forgeMessages.length;
+    showSpeechBubble = true;
+
+    if (speechTimer) clearTimeout(speechTimer);
+    speechTimer = setTimeout(() => {
+      showSpeechBubble = false;
+    }, 4000);
+  }
+
   function handleStart(clientX, clientY) {
     isHolding = true;
+    dragDistance = 0;
     startX = clientX;
     startY = clientY;
     startTheta = targetTheta;
@@ -31,12 +55,17 @@
     const deltaX = clientX - startX;
     const deltaY = clientY - startY;
 
+    dragDistance += Math.abs(deltaX) + Math.abs(deltaY);
+
     // Inverted delta so dragging left/right/up/down rotates the robot directly in the cursor direction
     targetTheta = startTheta - deltaX * 0.7;
     targetPhi = Math.max(15, Math.min(135, startPhi - deltaY * 0.4));
   }
 
   function handleEnd() {
+    if (isHolding && dragDistance < 12) {
+      triggerRobotSpeech();
+    }
     isHolding = false;
   }
 
@@ -87,6 +116,7 @@
 
     return () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (speechTimer) clearTimeout(speechTimer);
       window.removeEventListener('mousemove', onGlobalMouseMove);
       window.removeEventListener('mouseup', onGlobalMouseUp);
       window.removeEventListener('touchmove', onGlobalTouchMove);
@@ -147,7 +177,7 @@
       </div>
     </div>
 
-    <!-- Right Column: Interactive 3D Robot Model (Hold & Drag to Rotate 360°) -->
+    <!-- Right Column: Interactive 3D Robot Model (Hold & Drag to Rotate 360° / Tap for Dialogue) -->
     <div class="lg:col-span-6 relative w-full flex justify-center lg:justify-end -mt-4 lg:mt-0">
       <div 
         bind:this={robotContainerRef}
@@ -157,6 +187,17 @@
         role="region"
         aria-label="3D Robot Display"
       >
+        <!-- Interactive Speech Bubble Tag from Forge -->
+        {#if showSpeechBubble}
+          <div class="absolute -top-3 sm:top-2 left-1/2 -translate-x-1/2 z-30 pointer-events-none transition-all duration-300 transform scale-100 animate-bounce">
+            <div class="relative bg-primary text-background font-mono text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2 border-2 border-background shadow-xl whitespace-nowrap rounded-xs">
+              <span>{currentMessage}</span>
+              <!-- Speech Bubble Tail Arrow -->
+              <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[8px] border-t-primary"></div>
+            </div>
+          </div>
+        {/if}
+
         <!-- Ambient Warm CRT Glow Backdrop -->
         <div class="crt-glow-backdrop opacity-80 pointer-events-none"></div>
 
