@@ -21,6 +21,14 @@
   let showPreloader = true;
   let isAppRevealing = false;
   let showDesktopNotice = false;
+
+  function isMobileDevice() {
+    if (typeof window === 'undefined') return false;
+    return (
+      window.innerWidth < 1024 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
+  }
 </script>
 
 <SpotlightTorch />
@@ -32,9 +40,11 @@
     on:complete={() => {
       showPreloader = false;
       isAppRevealing = true;
-      // Triggers editorial advisory modal right after preloader loading finishes
+      // Triggers advisory modal ONLY on mobile devices after preloader loading finishes
       setTimeout(() => {
-        showDesktopNotice = true;
+        if (isMobileDevice()) {
+          showDesktopNotice = true;
+        }
       }, 400);
     }}
   />
