@@ -8,7 +8,7 @@
   import ValueAndHighlights from './lib/components/ValueAndHighlights.svelte';
   import GrantsAllocation from './lib/components/GrantsAllocation.svelte';
   import JudgingCriteria from './lib/components/JudgingCriteria.svelte';
-  import Timeline from './lib/components/Timeline.svelte';
+
   import ScrollVelocity from './lib/components/ScrollVelocity.svelte';
   import ProblemStatements from './lib/components/ProblemStatements.svelte';
   import CodeOfConduct from './lib/components/CodeOfConduct.svelte';
@@ -50,7 +50,7 @@
     <ValueAndHighlights />
     <GrantsAllocation />
     <JudgingCriteria />
-    <Timeline />
+
 
     <!-- React Bits ScrollVelocity Marquee Component -->
     <ScrollVelocity
