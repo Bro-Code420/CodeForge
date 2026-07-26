@@ -7,10 +7,12 @@
 </script>
 
 <section id="evaluation" class="mb-24">
-  <!-- Section Title Header Bar -->
-  <div class="border-t-2 border-b-2 border-primary py-3 mb-10 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2 bg-primary/5">
-    <span>SECTION IV // EVALUATION & ADJUDICATION</span>
-    <span>GAZETTE STANDARDS 2026</span>
+  <!-- Section Title Header Bar (Full UI Space) -->
+  <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-2 border-b-2 border-primary py-3 mb-10 bg-primary/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2">
+      <span>SECTION IV // EVALUATION & ADJUDICATION</span>
+      <span>GAZETTE STANDARDS 2026</span>
+    </div>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">

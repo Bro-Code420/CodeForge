@@ -1,39 +1,55 @@
 <script>
-  import { valueProps, eventHighlights } from '../data/gazetteData.js';
+  import { prizeTiers, eventHighlights } from '../data/gazetteData.js';
 </script>
 
 <section class="mb-24 select-none">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
     
-    <!-- Left Column: Value Proposition -->
+    <!-- Left Column: Prize Pool Allocation (Img2 Blocks in Img1 Card Size) -->
     <div class="lg:col-span-7 flex flex-col justify-between">
       <div>
         <div class="flex items-center justify-between border-b-2 border-primary pb-3 mb-6">
           <h3 class="font-headline text-3xl md:text-4xl font-black uppercase tracking-tight distressed-text">
-            VALUE PROPOSITION
+            PRIZE ALLOCATION
           </h3>
           <span class="font-mono text-xs font-bold uppercase tracking-widest bg-primary text-background px-2.5 py-1">
-            CORE PILLARS
+            ₹15,000+ POOL
           </span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-          {#each valueProps as prop, idx}
-            <div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+          {#each prizeTiers as tier, idx}
+            {@const isWinner = idx === 1}
+            <div class="border-2 {isWinner ? 'border-burgundy bg-[#F4EFE6]' : 'border-primary bg-white/90'} p-4 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
               <div>
-                <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3">
-                  <span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">
-                    PILLAR 0{idx + 1}
+                <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-2">
+                  <span class="font-mono text-[9px] md:text-[10px] font-bold uppercase {isWinner ? 'text-burgundy' : 'text-primary/70'} tracking-wider truncate">
+                    {isWinner ? '★ GRAND PRIZE' : tier.tier}
                   </span>
-                  <span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">
-                    {prop.symbol}
+                  <span class="font-mono text-[9px] font-bold uppercase opacity-60">
+                    {isWinner ? 'TOP' : `0${idx + 1}`}
                   </span>
                 </div>
-                <h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">
-                  {prop.title}
+
+                {#if isWinner}
+                  <div class="bg-burgundy text-white font-mono text-[8px] font-bold uppercase tracking-widest px-1.5 py-0.5 mb-1.5 text-center shadow-xs">
+                    ★ CHAMPION ★
+                  </div>
+                {/if}
+
+                <h4 class="font-headline font-black text-sm md:text-base uppercase text-primary mb-1 group-hover:text-burgundy transition-colors leading-tight">
+                  {tier.title}
                 </h4>
-                <p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">
-                  {prop.desc}
+
+                <div class="my-2 p-2 border border-primary/40 bg-white/80 text-center">
+                  <span class="font-mono text-[8px] font-bold uppercase tracking-widest text-primary/60 block">BOUNTY</span>
+                  <p class="font-mono font-black text-xs md:text-sm uppercase tracking-tight text-burgundy">
+                    {tier.reward}
+                  </p>
+                </div>
+
+                <p class="font-serif-alt text-[11px] md:text-xs text-primary/85 leading-snug">
+                  {tier.note}
                 </p>
               </div>
             </div>

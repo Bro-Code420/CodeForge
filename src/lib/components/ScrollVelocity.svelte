@@ -95,7 +95,7 @@
   });
 </script>
 
-<section class="scroll-velocity-container border-t-2 border-b-2 border-primary py-3 my-8 bg-primary/5 select-none overflow-hidden" aria-label="Scroll Velocity Banner">
+<section class="scroll-velocity-container border-t-2 border-b-2 border-primary py-3 my-8 bg-primary/5 select-none overflow-hidden w-full" aria-label="Scroll Velocity Banner">
   {#each texts as text, index}
     <div class="parallax relative overflow-hidden py-1">
       <div 

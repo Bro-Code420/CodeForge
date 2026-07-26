@@ -4,65 +4,93 @@
   import TriangleMarquee from './TriangleMarquee.svelte';
 
   let modelViewerRef;
-  let mouseX = 0;
-  let mouseY = 0;
-  let targetMouseX = 0;
-  let targetMouseY = 0;
+  let robotContainerRef;
   let animationFrameId;
 
-  // Parallax position and camera variables with smooth physics lerp
-  let objectOffsetX = 0;
-  let objectOffsetY = 0;
-  let objectRotationY = 0;
-  let objectRotationX = 0;
-  let cameraOrbitTheta = 0;
-  let cameraOrbitPhi = 75;
+  let isHolding = false;
+  let startX = 0;
+  let startY = 0;
+  let startTheta = 0;
+  let startPhi = 75;
 
-  let isHovered = false;
-  let time = 0;
+  let currentTheta = 0;
+  let targetTheta = 0;
+  let currentPhi = 75;
+  let targetPhi = 75;
 
-  function handleMouseMove(e) {
-    // Normalize mouse position: center = 0, left = -1, right = +1, top = -1, bottom = +1
-    targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    targetMouseY = (e.clientY / window.innerHeight) * 2 - 1;
+  function handleStart(clientX, clientY) {
+    isHolding = true;
+    startX = clientX;
+    startY = clientY;
+    startTheta = targetTheta;
+    startPhi = targetPhi;
   }
 
-  function updateParallax() {
-    time += 0.03;
+  function handleMove(clientX, clientY) {
+    if (!isHolding) return;
+    const deltaX = clientX - startX;
+    const deltaY = clientY - startY;
 
-    // Organic floating levitation effect
-    const floatY = Math.sin(time * 0.8) * 6;
-    const floatX = Math.cos(time * 0.6) * 4;
-    const floatTilt = Math.sin(time * 0.7) * 2;
+    // Inverted delta so dragging left/right/up/down rotates the robot directly in the cursor direction
+    targetTheta = startTheta - deltaX * 0.7;
+    targetPhi = Math.max(15, Math.min(135, startPhi - deltaY * 0.4));
+  }
 
-    // Smooth spring lerp for fluid cursor tracking
-    mouseX += (targetMouseX - mouseX) * 0.05;
-    mouseY += (targetMouseY - mouseY) * 0.05;
+  function handleEnd() {
+    isHolding = false;
+  }
 
-    // Subtle 3D position translation & 3D tilt
-    objectOffsetX = -mouseX * 22 + floatX;
-    objectOffsetY = -mouseY * 12 + floatY;
-    objectRotationY = mouseX * 14 + floatTilt;
-    objectRotationX = -mouseY * 8;
+  function onMouseDown(e) {
+    handleStart(e.clientX, e.clientY);
+  }
 
-    // Camera tracking: camera angle follows cursor direction smoothly
-    cameraOrbitTheta = mouseX * 25 + Math.sin(time * 0.5) * 3;
-    cameraOrbitPhi = 75 + mouseY * 8 + Math.cos(time * 0.6) * 2;
+  function onMouseMove(e) {
+    handleMove(e.clientX, e.clientY);
+  }
+
+  function onTouchStart(e) {
+    if (e.touches && e.touches[0]) {
+      handleStart(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }
+
+  function onTouchMove(e) {
+    if (e.touches && e.touches[0]) {
+      handleMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }
+
+  function animate() {
+    // Smooth lerp physics towards target orbit angle
+    currentTheta += (targetTheta - currentTheta) * 0.15;
+    currentPhi += (targetPhi - currentPhi) * 0.15;
 
     if (modelViewerRef) {
-      modelViewerRef.cameraOrbit = `${cameraOrbitTheta.toFixed(2)}deg ${cameraOrbitPhi.toFixed(2)}deg 100%`;
+      modelViewerRef.cameraOrbit = `${currentTheta.toFixed(2)}deg ${currentPhi.toFixed(2)}deg 100%`;
     }
 
-    animationFrameId = requestAnimationFrame(updateParallax);
+    animationFrameId = requestAnimationFrame(animate);
   }
 
   onMount(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    animationFrameId = requestAnimationFrame(updateParallax);
+    animationFrameId = requestAnimationFrame(animate);
+
+    const onGlobalMouseMove = (e) => onMouseMove(e);
+    const onGlobalMouseUp = () => handleEnd();
+    const onGlobalTouchMove = (e) => onTouchMove(e);
+    const onGlobalTouchEnd = () => handleEnd();
+
+    window.addEventListener('mousemove', onGlobalMouseMove);
+    window.addEventListener('mouseup', onGlobalMouseUp);
+    window.addEventListener('touchmove', onGlobalTouchMove, { passive: true });
+    window.addEventListener('touchend', onGlobalTouchEnd);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('mousemove', onGlobalMouseMove);
+      window.removeEventListener('mouseup', onGlobalMouseUp);
+      window.removeEventListener('touchmove', onGlobalTouchMove);
+      window.removeEventListener('touchend', onGlobalTouchEnd);
     };
   });
 </script>
@@ -119,29 +147,26 @@
       </div>
     </div>
 
-    <!-- Right Column: Interactive 3D Retro Monitor with Physics & CRT Glow -->
-    <div 
-      class="lg:col-span-6 relative w-full flex justify-center lg:justify-end -mt-4 lg:mt-0 tilt-card-container"
-      on:mouseenter={() => (isHovered = true)}
-      on:mouseleave={() => (isHovered = false)}
-      role="region"
-      aria-label="3D CRT Monitor Display"
-    >
+    <!-- Right Column: Interactive 3D Robot Model (Hold & Drag to Rotate 360°) -->
+    <div class="lg:col-span-6 relative w-full flex justify-center lg:justify-end -mt-4 lg:mt-0">
       <div 
-        style="transform: translate3d({objectOffsetX}px, {objectOffsetY}px, 0px) rotateY({objectRotationY}deg) rotateX({objectRotationX}deg);"
-        class="relative w-full max-w-[580px] h-[320px] sm:h-[400px] md:h-[480px] flex items-center justify-center will-change-transform transition-transform duration-100 ease-out"
+        bind:this={robotContainerRef}
+        on:mousedown={onMouseDown}
+        on:touchstart={onTouchStart}
+        class="relative w-full max-w-[580px] h-[320px] sm:h-[400px] md:h-[480px] flex items-center justify-center select-none {isHolding ? 'cursor-grabbing' : 'cursor-grab'}"
+        role="region"
+        aria-label="3D Robot Display"
       >
         <!-- Ambient Warm CRT Glow Backdrop -->
-        <div class="crt-glow-backdrop opacity-80"></div>
+        <div class="crt-glow-backdrop opacity-80 pointer-events-none"></div>
 
-        <!-- 3D Model Viewer with Drag, Touch and Orbit Physics -->
+        <!-- 3D Model Viewer -->
         <model-viewer
           bind:this={modelViewerRef}
-          src="/monitor.glb"
-          alt="3D Retro CRT Monitor - CODE FORGE"
-          touch-action="pan-y"
-          camera-controls
-          auto-rotate-delay="0"
+          src="/robo_v1.glb"
+          alt="3D Robot Model - CODE FORGE"
+          touch-action="none"
+          autoplay
           interaction-prompt="none"
           disable-zoom
           shadow-intensity="1.6"
@@ -149,18 +174,12 @@
           exposure="1.2"
           camera-orbit="0deg 75deg 100%"
           field-of-view="28deg"
-          style="width: 100%; height: 100%; background-color: transparent;"
-          class="w-full h-full cursor-grab active:cursor-grabbing relative z-10"
+          style="width: 100%; height: 100%; background-color: transparent; pointer-events: none;"
+          class="w-full h-full relative z-10"
         >
         </model-viewer>
-
-        <!-- Interactive Hint Badge on Hover -->
-        <div class="absolute bottom-2 right-4 z-20 pointer-events-none opacity-70 font-mono text-[9px] uppercase tracking-widest bg-primary text-background px-2.5 py-1 border border-background shadow-sm transition-opacity duration-300">
-          ✦ DRAG TO ROTATE 3D DISPLAY ✦
-        </div>
       </div>
     </div>
-
   </div>
 
   <!-- Integrated Metrics Data Grid Row with Hover Elevation -->

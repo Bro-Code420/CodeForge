@@ -8,7 +8,7 @@
   </h2>
 
   <p class="font-body text-base md:text-lg max-w-3xl mx-auto mb-8 opacity-90 leading-relaxed px-4">
-    Registrations for CODE FORGE 2026 are now open. Form a team of 2–4 members, compete for a ₹25,000+ Prize Pool, and showcase your innovation, technical skills, and creativity in an exciting one-day hackathon.
+    Registrations for CODE FORGE 2026 are now open. Form a team of 2–4 members, compete for a ₹15,000+ Prize Pool, and showcase your innovation, technical skills, and creativity in an exciting one-day hackathon.
   </p>
 
   <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">

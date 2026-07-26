@@ -33,15 +33,15 @@
     <div class="border border-primary px-2 py-0.5 font-bold text-[9px] tracking-normal">EST. 2026</div>
   </div>
 
-  <!-- Section Title Header Bar -->
-  <div class="border-t-2 border-b-2 border-primary py-6 mb-3 text-center bg-primary/5">
-    <h3 class="font-headline text-3xl sm:text-4xl md:text-6xl uppercase font-black tracking-tight distressed-text mb-3 leading-none">
-      FEATURE REPORT: APPLICATION AREAS
-    </h3>
-    <div class="flex justify-center items-center gap-2 font-serif-alt italic text-xs md:text-sm text-primary max-w-3xl mx-auto px-4">
-      <span class="opacity-60 text-lg">☙</span>
-      <span>Explore the global domains where intelligent systems and innovation create real-world impact.</span>
-      <span class="opacity-60 text-lg">❧</span>
+  <!-- Section Title Header Bar (Full UI Space) -->
+  <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-2 border-b-2 border-primary py-6 mb-3 text-center bg-primary/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <h3 class="font-headline text-3xl sm:text-4xl md:text-6xl uppercase font-black tracking-tight distressed-text mb-3 leading-none">
+        FEATURE REPORT: APPLICATION AREAS
+      </h3>
+      <p class="font-serif-alt italic text-sm sm:text-base text-primary/80 max-w-2xl mx-auto leading-relaxed">
+        Explore the primary domains where technical solutions are being engineered for this edition.
+      </p>
     </div>
   </div>
 

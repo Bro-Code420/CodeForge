@@ -38,14 +38,16 @@
 </script>
 
 <section class="mb-24 select-none" id="problem-statements">
-  <!-- Header Title -->
-  <div class="border-t-2 border-b-2 border-primary py-3 mb-10 text-center bg-primary/5">
-    <h3 class="font-headline text-3xl md:text-5xl uppercase font-black tracking-tight distressed-text mb-1">
-      OFFICIAL DISPATCH: PROBLEM STATEMENTS
-    </h3>
-    <p class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto">
-      Subject to release exactly 24 hours prior to coding commencement.
-    </p>
+  <!-- Header Title (Full UI Space) -->
+  <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-2 border-b-2 border-primary py-4 mb-10 text-center bg-primary/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <h3 class="font-headline text-3xl md:text-5xl uppercase font-black tracking-tight distressed-text mb-1">
+        OFFICIAL DISPATCH: PROBLEM STATEMENTS
+      </h3>
+      <p class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto">
+        Subject to release exactly 24 hours prior to coding commencement.
+      </p>
+    </div>
   </div>
 
   <!-- Locked Content Box -->

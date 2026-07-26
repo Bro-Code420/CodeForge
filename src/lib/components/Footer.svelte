@@ -2,44 +2,20 @@
   import TriangleMarquee from './TriangleMarquee.svelte';
 </script>
 
-<footer class="bg-[#FAF6EE] pt-8 pb-8 px-6 md:px-12 mt-6 border-t-8 border-double border-primary select-none">
-  <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-    <!-- Top Geometric Border Pattern -->
-    <TriangleMarquee className="w-full mb-6 opacity-80" speed="1s" reverse={true} />
+<footer class="bg-[#FAF6EE] pt-8 pb-8 mt-6 border-t-8 border-double border-primary select-none w-full">
+  <!-- Top Geometric Border Pattern (Full UI Width Edge-to-Edge) -->
+  <TriangleMarquee className="w-full mb-6 opacity-80" speed="1s" reverse={true} />
 
+  <div class="w-full px-4 md:px-8 flex flex-col items-center text-center">
     <!-- Newspaper Logo Head -->
-    <h5 class="font-masthead text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary">
+    <h5 class="font-masthead text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 text-primary w-full">
       CODE FORGE 2026
     </h5>
     
-    <!-- 3-Column Editorial Links Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-6 font-mono text-xs uppercase tracking-widest border-t-2 border-b-2 border-primary py-6">
-      <!-- Legal Notices -->
-      <div class="flex flex-col items-center">
-        <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
-          Legal Notices
-        </p>
-        <ul class="space-y-2 text-primary font-bold text-[11px]">
-          <li>
-            <a href="#privacy" class="hover:italic hover:text-burgundy transition-all flex items-center gap-1">
-              <span>✦ PRIVACY POLICY</span>
-            </a>
-          </li>
-          <li>
-            <a href="#terms" class="hover:italic hover:text-burgundy transition-all flex items-center gap-1">
-              <span>✦ TERMS OF SERVICE</span>
-            </a>
-          </li>
-          <li>
-            <a href="#conduct" class="hover:italic hover:text-burgundy transition-all flex items-center gap-1">
-              <span>✦ CODE OF CONDUCT</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      
+    <!-- 2-Column Editorial Links Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-6 font-mono text-xs uppercase tracking-widest border-t-2 border-b-2 border-primary py-6">
       <!-- Affiliations -->
-      <div class="flex flex-col items-center border-y md:border-y-0 md:border-x border-primary/30 py-6 md:py-0">
+      <div class="flex flex-col items-center border-b md:border-b-0 md:border-r border-primary/30 pb-6 md:pb-0">
         <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
           Affiliations
         </p>
@@ -51,7 +27,7 @@
       </div>
       
       <!-- Social Media Connections -->
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center pt-2 md:pt-0">
         <p class="font-bold text-sm mb-4 underline decoration-double decoration-primary decoration-2 underline-offset-8 text-primary">
           Social Media
         </p>
@@ -73,7 +49,7 @@
     </div>
     
     <!-- Redesigned Editorial Colophon Badge Certificate -->
-    <div class="w-full max-w-3xl border-4 border-double border-primary p-6 bg-[#FAF6EE] text-primary shadow-[4px_4px_0px_rgba(43,43,42,0.15)] rounded-sm my-2 font-mono relative">
+    <div class="w-full border-4 border-double border-primary p-6 bg-[#FAF6EE] text-primary shadow-[4px_4px_0px_rgba(43,43,42,0.15)] rounded-sm my-2 font-mono relative">
       <!-- Vintage Corner Ornaments -->
       <div class="absolute top-2 left-2 text-[10px] opacity-40">❖ CERTIFIED</div>
       <div class="absolute top-2 right-2 text-[10px] opacity-40">PRESS NO. 901</div>

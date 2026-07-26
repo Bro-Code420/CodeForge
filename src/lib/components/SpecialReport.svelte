@@ -1,44 +1,10 @@
 <script>
-  import { onMount } from 'svelte';
   import { themeData } from '../data/gazetteData.js';
-  import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext';
-
-  let containerWidth = 0;
-  let lines = [];
-  let prepared;
-
-  onMount(() => {
-    try {
-      prepared = prepareWithSegments(themeData.themeText, '15px Garamond, Georgia, serif');
-      updateLayout();
-    } catch (e) {
-      console.warn("Pretext layout prep failed, using default fallback:", e);
-    }
-
-    window.addEventListener('resize', updateLayout);
-    return () => {
-      window.removeEventListener('resize', updateLayout);
-    };
-  });
-
-  function updateLayout() {
-    if (!prepared || containerWidth <= 0) return;
-    try {
-      const result = layoutWithLines(prepared, containerWidth, 22);
-      lines = result.lines.map(l => l.text);
-    } catch (e) {
-      lines = [themeData.themeText];
-    }
-  }
-
-  $: if (containerWidth) {
-    updateLayout();
-  }
 </script>
 
 <section class="mb-24 bg-primary text-background p-8 md:p-12 relative overflow-hidden" id="theme">
-  <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-    <div>
+  <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-7">
       <span class="font-mono text-xs font-bold border border-background px-3 py-1 uppercase tracking-widest">
         {themeData.badge}
       </span>
@@ -53,43 +19,38 @@
         </p>
       {/if}
 
-      <div class="space-y-5 font-body text-sm md:text-base opacity-95 leading-relaxed">
-        <div bind:clientWidth={containerWidth}>
-          <strong class="font-headline text-lg block text-background mb-1">The Theme:</strong>
-          {#if lines.length > 0}
-            <div class="space-y-1 font-serif-alt">
-              {#each lines as line}
-                <div class="text-justify leading-relaxed text-background/90">{line}</div>
-              {/each}
-            </div>
-          {:else}
-            <p class="font-serif-alt leading-relaxed text-background/90">{themeData.themeText}</p>
-          {/if}
+      <div class="space-y-6 font-body text-sm md:text-base opacity-95 leading-relaxed">
+        <!-- ✦ The Challenge -->
+        <div>
+          <strong class="font-headline text-xl block text-background mb-1.5">{themeData.challengeTitle}</strong>
+          <p class="font-serif-alt text-sm md:text-base leading-relaxed text-background/95">{themeData.challengeText}</p>
+        </div>
+
+        <!-- ⚙ Technology Freedom -->
+        <div>
+          <strong class="font-headline text-xl block text-background mb-1.5">{themeData.techTitle}</strong>
+          <p class="font-serif-alt text-sm md:text-base leading-relaxed text-background/95">{themeData.techText}</p>
         </div>
         
-        {#if themeData.objectives}
-          <div>
-            <strong class="font-headline text-lg block text-background mb-1.5">Objectives:</strong>
-            <ul class="list-disc list-inside space-y-1 pl-1 font-mono text-xs md:text-sm">
-              {#each themeData.objectives as obj}
-                <li>{obj}</li>
-              {/each}
-            </ul>
-          </div>
-        {/if}
+        <!-- 📜 Competition Rules -->
+        <div>
+          <strong class="font-headline text-xl block text-background mb-2.5">{themeData.rulesTitle}</strong>
+          <ul class="space-y-2 font-mono text-xs md:text-sm text-background/90 pl-1">
+            {#each themeData.rules as rule}
+              <li class="leading-snug">{rule}</li>
+            {/each}
+          </ul>
+        </div>
         
-        <p>
-          <strong class="font-headline text-lg block text-background mb-1">Technology Scope:</strong>
-          <span class="font-mono text-xs md:text-sm leading-relaxed block text-background/90">{themeData.scopeText}</span>
-        </p>
+
       </div>
     </div>
 
-    <div class="flex flex-col justify-center">
+    <div class="lg:col-span-5 flex flex-col justify-center sticky top-8">
       <div class="border-2 border-background/40 p-1.5 bg-primary">
         <img
           alt={themeData.figureCaption}
-          class="w-full grayscale contrast-125 opacity-85 block"
+          class="w-full grayscale contrast-125 opacity-85 block object-cover max-h-[500px]"
           src={themeData.figureImg}
         />
       </div>

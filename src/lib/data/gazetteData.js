@@ -4,11 +4,10 @@ export const headerData = {
   location: "NAGPUR, INDIA",
   title: "CODE FORGE",
   motto: "Code • Create • Innovate",
-  breakingTicker: "BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — UP TO ₹25,000 PRIZE POOL — 8 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —",
+  breakingTicker: "BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — ₹15,000+ PRIZE POOL — 8 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —",
   navLinks: [
     { label: "The Vision", href: "#about" },
-    { label: "Special Report", href: "#theme" },
-    { label: "Features", href: "#areas" }
+    { label: "Special Report", href: "#theme" }
   ]
 };
 
@@ -24,7 +23,7 @@ export const heroData = {
     { label: "Venue", value: "G.H. Raisoni, Nagpur" },
     { label: "Team Size", value: "2–4 Members" },
     { label: "Registration", value: "₹400 / Team" },
-    { label: "Prize Pool", value: "Up to ₹25K" }
+    { label: "Prize Pool", value: "₹15K+" }
   ],
   eventDate: "August 21, 2026",
   countdownText: "Latest Dispatch: 24 Days Remaining Until Close"
@@ -44,15 +43,29 @@ export const themeData = {
   badge: "OFFICIAL THEME",
   title: "INTELLIGENT SYSTEMS",
   tagline: "Research • Engineer • Build • Impact",
-  themeText: "The Intelligent Systems theme challenges participants to design and develop innovative software solutions that solve complex real-world problems through computational thinking, intelligent decision-making, and modern software engineering.",
-  objectives: [
-    "Solve meaningful real-world challenges.",
-    "Demonstrate intelligent decision-making.",
-    "Apply strong software engineering principles.",
-    "Deliver scalable, secure, and production-ready solutions.",
-    "Create measurable value for users, organizations, and society."
+  challengeTitle: "✦ The Challenge",
+  challengeText: "CODE FORGE 2026 invites participants to design and develop intelligent software solutions that solve real-world challenges. Build a functional prototype that demonstrates innovation, technical excellence, and practical impact while addressing one of the official problem statements.",
+  techTitle: "⚙ Technology Freedom",
+  techText: "There are no restrictions on the technology stack. Participants are free to use any programming language, framework, IDE, open-source library, API, cloud platform, database, or AI-assisted development tool to build their solution.",
+  rulesTitle: "📜 Competition Rules",
+  rules: [
+    "👥 Teams must consist of 2–4 members.",
+    "📝 Each participant may register with only one team.",
+    "💻 All development must take place during the official hackathon period. Pre-built projects are not permitted.",
+    "⚙ Open-source libraries, APIs, frameworks, and AI tools are allowed, provided their licenses are respected.",
+    "🤝 Maintain professionalism and respect toward fellow participants, mentors, judges, volunteers, and organizers.",
+    "⚖ The decisions of the judging panel and organizing committee shall be final and binding."
   ],
-  scopeText: "Artificial Intelligence & Machine Learning, Cloud Computing, Cybersecurity, Data Analytics, APIs & Microservices, Internet of Things (IoT), Computer Vision, Natural Language Processing, Blockchain (where applicable), Mobile & Web Technologies.",
+  evalTitle: "🏆 Evaluation Criteria",
+  evalSubtitle: "Projects will be evaluated on:",
+  evalCriteria: [
+    "◈ Innovation & Creativity",
+    "◈ Technical Implementation",
+    "◈ Problem Solving Approach",
+    "◈ Scalability & User Experience",
+    "◈ Practical Impact",
+    "◈ Final Demonstration & Presentation"
+  ],
   figureImg: "/52d35407-2a50-4542-890e-eb8970e4858c.jpg",
   figureCaption: "FIG 03: Engineering Workstations & Systems"
 };
@@ -104,7 +117,7 @@ export const valueProps = [
 ];
 
 export const eventHighlights = [
-  { metric: "Up to ₹25K", label: "Prize Pool" },
+  { metric: "₹15K+", label: "Prize Pool" },
   { metric: "8 HRS", label: "Active Coding" },
   { metric: "OFFLINE", label: "Physical Presence" },
   { metric: "SWAG", label: "Limited Kits" }
@@ -112,7 +125,7 @@ export const eventHighlights = [
 
 export const prizeData = {
   title: "PRIZE POOL ALLOCATION",
-  poolBadge: "TOTAL PRIZE POOL: UP TO ₹25,000",
+  poolBadge: "TOTAL PRIZE POOL: ₹15,000+",
   subtitle: "Rewarding Innovation. Celebrating Excellence.",
   description: "The best ideas deserve recognition. CODE FORGE celebrates teams that demonstrate exceptional creativity, technical excellence, and real-world impact. Compete and earn recognition for your innovation."
 };

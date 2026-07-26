@@ -1,18 +1,15 @@
+
 <script>
   // Code Forge 2026 Gazette Release Build
   import Preloader from './lib/components/Preloader.svelte';
   import Header from './lib/components/Header.svelte';
   import EditorialVision from './lib/components/EditorialVision.svelte';
   import SpecialReport from './lib/components/SpecialReport.svelte';
-  import IndustryVerticals from './lib/components/IndustryVerticals.svelte';
   import ValueAndHighlights from './lib/components/ValueAndHighlights.svelte';
-  import GrantsAllocation from './lib/components/GrantsAllocation.svelte';
   import JudgingCriteria from './lib/components/JudgingCriteria.svelte';
 
   import ScrollVelocity from './lib/components/ScrollVelocity.svelte';
   import ProblemStatements from './lib/components/ProblemStatements.svelte';
-  import CodeOfConduct from './lib/components/CodeOfConduct.svelte';
-  import FaqSection from './lib/components/FaqSection.svelte';
   import ContactSection from './lib/components/ContactSection.svelte';
   import Footer from './lib/components/Footer.svelte';
   import SpotlightTorch from './lib/components/SpotlightTorch.svelte';
@@ -50,33 +47,30 @@
   />
 {/if}
 
-<div class="w-full min-h-screen flex flex-col transition-all duration-1000 ease-out origin-center {isAppRevealing ? 'scale-100 opacity-100' : 'scale-[0.88] opacity-90'}">
+<div class="w-full min-h-screen flex flex-col overflow-x-hidden transition-all duration-1000 ease-out origin-center {isAppRevealing ? 'scale-100 opacity-100' : 'scale-[0.88] opacity-90'}">
   <Header />
 
   <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-2">
     <EditorialVision />
-    <SpecialReport />
-    <IndustryVerticals />
     <ValueAndHighlights />
-    <GrantsAllocation />
-    <JudgingCriteria />
-
-
-    <!-- React Bits ScrollVelocity Marquee Component -->
-    <ScrollVelocity
-      texts={[
-        'CODE FORGE 2026 ✦ THE EDITORIAL GAZETTE',
-        'INNOVATION IN MOTION ✦ BUILD FOR IMPACT'
-      ]}
-      velocity={90}
-      className="font-headline text-primary font-black uppercase tracking-wider distressed-text"
-    />
-
-    <ProblemStatements />
-    <CodeOfConduct />
-    <FaqSection />
-    <ContactSection />
   </main>
+
+  <!-- React Bits ScrollVelocity Marquee Component (Full UI Space) -->
+  <ScrollVelocity
+    texts={[
+      'CODE FORGE 2026 ✦ THE EDITORIAL GAZETTE',
+      'INNOVATION IN MOTION ✦ BUILD FOR IMPACT'
+    ]}
+    velocity={90}
+    className="font-headline text-primary font-black uppercase tracking-wider distressed-text"
+  />
+
+  <div class="w-full max-w-7xl mx-auto px-6 md:px-12 pb-2">
+    <SpecialReport />
+    <JudgingCriteria />
+    <ProblemStatements />
+    <ContactSection />
+  </div>
 
   <Footer />
 </div>
