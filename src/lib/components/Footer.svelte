@@ -19,7 +19,7 @@
       <div class="absolute top-2 right-2 text-[10px] opacity-40">PRESS NO. 901</div>
       
       <p class="text-[11px] md:text-xs font-bold uppercase tracking-widest mb-6 border-b border-primary/40 pb-3 mt-1">
-        VOL. I // ISSUE NO. 01 // 21 AUGUST 2026 // NAGPUR, INDIA
+        VOL. I // ISSUE NO. 01 // 25 AUGUST 2026 // NAGPUR, INDIA
       </p>
 
       <!-- Merged 2-Column Links Grid Inside Certificate -->

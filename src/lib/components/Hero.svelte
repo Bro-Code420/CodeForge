@@ -135,7 +135,7 @@
       <span class="inline-block w-2 h-2 rounded-full bg-burgundy animate-pulse"></span>
       CODE FORGE 2026 // VOL. I ISSUE 01
     </span>
-    <span>NAGPUR, INDIA — AUGUST 21, 2026</span>
+    <span>NAGPUR, INDIA — AUGUST 25, 2026</span>
   </div>
 
   <!-- Hero Main Content Grid -->

@@ -1,6 +1,6 @@
 export const headerData = {
   vol: "VOL. I // ISSUE NO. 01",
-  date: "21 AUGUST 2026",
+  date: "25 AUGUST 2026",
   location: "NAGPUR, INDIA",
   title: "CODE FORGE",
   motto: "Code • Create • Innovate",
@@ -25,7 +25,7 @@ export const heroData = {
     { label: "Registration", value: "₹400 / Team" },
     { label: "Prize Pool", value: "₹15K+" }
   ],
-  eventDate: "August 21, 2026",
+  eventDate: "August 25, 2026",
   countdownText: "Latest Dispatch: 24 Days Remaining Until Close"
 };
 
