@@ -21,9 +21,9 @@
 
   // Forge Robot Dialogue State
   const forgeMessages = [
-    "HI Coder! 👋",
-    "I'm Forge! 🤖",
-    "All the Best for Hackathon! 🚀"
+    "HI Coder!",
+    "I'm Forge!",
+    "All the Best for Hackathon!"
   ];
   let tapIndex = 0;
   let showSpeechBubble = false;
