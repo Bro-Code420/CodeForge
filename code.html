@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en" style="overflow-x: hidden;"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en" style="overflow-x: hidden;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         try {
             tailwind.config = {
                 darkMode: "class",
@@ -40,9 +46,9 @@
                     },
                 },
             }
-        } catch (_e) {}
+        } catch (_e) { }
     </script>
-<style>
+    <style>
         .drop-cap::first-letter {
             float: left;
             font-size: 5rem;
@@ -52,20 +58,26 @@
             font-family: 'Playfair Display', serif;
             font-weight: 900;
         }
+
         .paper-texture {
             background-color: #F6F1E8;
             background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
         }
+
         .ink-bleed {
             filter: contrast(1.2) grayscale(1) brightness(0.9);
         }
+
         .newspaper-border-double {
             border-top: 4px double #161616;
             border-bottom: 4px double #161616;
         }
+
         .terminal-overlay {
-            display: none; /* Hidden by default after initial load simulation */
+            display: none;
+            /* Hidden by default after initial load simulation */
         }
+
         .breaking-news {
             overflow: hidden;
             white-space: nowrap;
@@ -73,561 +85,850 @@
             color: #F6F1E8;
             padding: 4px 0;
         }
+
         .scroll-text {
             display: inline-block;
             animation: scroll 30s linear infinite;
         }
+
         @keyframes scroll {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
-<body class="paper-texture text-primary min-h-screen flex flex-col selection:bg-primary selection:text-background font-body">
-<!-- Header -->
-<header class="w-full flex flex-col border-b-2 border-primary">
 
-<div class="px-6 md:px-12 py-10 md:py-20 text-center">
-<h1 class="font-masthead text-7xl md:text-[160px] font-black uppercase tracking-tighter leading-none mb-2">CODE FORGE</h1>
-<p class="font-serif-alt text-2xl md:text-4xl italic tracking-wide">Code • Create • Innovate</p>
-</div>
-<div class="breaking-news">
-<div class="scroll-text font-mono text-xs uppercase tracking-widest">
-            BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — UP TO ₹25,000 PRIZE POOL — 8 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —
+<body
+    class="paper-texture text-primary min-h-screen flex flex-col selection:bg-primary selection:text-background font-body">
+    <!-- Header -->
+    <header class="w-full flex flex-col border-b-2 border-primary">
+
+        <div class="px-6 md:px-12 py-10 md:py-20 text-center">
+            <h1 class="font-masthead text-7xl md:text-[160px] font-black uppercase tracking-tighter leading-none mb-2">
+                CODE FORGE</h1>
+            <p class="font-serif-alt text-2xl md:text-4xl italic tracking-wide">Code • Create • Innovate</p>
         </div>
-</div>
-<nav class="flex justify-center items-center py-4 border-t border-primary gap-4 md:gap-12 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest overflow-x-auto no-scrollbar px-6">
-<a class="hover:italic" href="#about">The Vision</a>
-<span class="opacity-30">/</span>
-<a class="hover:italic" href="#theme">Special Report</a>
-<span class="opacity-30">/</span>
-<a class="hover:italic" href="#areas">Features</a>
-<span class="opacity-30">/</span>
-<a class="hover:italic" href="#timeline">Chronology</a>
-<span class="opacity-30">/</span>
-<a class="hover:italic" href="#registry">Registry</a>
-</nav>
-</header>
-<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
-<!-- Hero Section -->
-<section class="mb-24">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-16">
-<!-- Headline and Intro -->
-<div class="md:col-span-12 mb-12">
-<h2 class="font-headline text-5xl md:text-8xl uppercase font-black leading-[0.85] mb-12 tracking-tighter text-center">
-                    In Pursuit of Structural <br class="hidden md:block"/> Digital Integrity
-                </h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<p class="text-xl md:text-2xl leading-relaxed text-justify drop-cap">
-                        In the heart of India's geographic center, a new digital dawn rises. CODE FORGE 2026 isn't merely a competition; it is a gathering of the finest minds tasked with hand-crafting the next generation of infrastructure. 
+        <div class="breaking-news">
+            <div class="scroll-text font-mono text-xs uppercase tracking-widest">
+                BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — UP TO ₹25,000 PRIZE POOL —
+                8 HOURS OF PURE INNOVATION — LIMIT 50 TEAMS — SECURE YOUR STATION NOW —
+            </div>
+        </div>
+        <nav
+            class="flex justify-center items-center py-4 border-t border-primary gap-4 md:gap-12 font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest overflow-x-auto no-scrollbar px-6">
+            <a class="hover:italic" href="#about">The Vision</a>
+            <span class="opacity-30">/</span>
+            <a class="hover:italic" href="#theme">Special Report</a>
+            <span class="opacity-30">/</span>
+            <a class="hover:italic" href="#areas">Features</a>
+            <span class="opacity-30">/</span>
+            <a class="hover:italic" href="#timeline">Chronology</a>
+            <span class="opacity-30">/</span>
+            <a class="hover:italic" href="#registry">Registry</a>
+        </nav>
+    </header>
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
+        <!-- Hero Section -->
+        <section class="mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-x-16">
+                <!-- Headline and Intro -->
+                <div class="md:col-span-12 mb-12">
+                    <h2
+                        class="font-headline text-5xl md:text-8xl uppercase font-black leading-[0.85] mb-12 tracking-tighter text-center">
+                        In Pursuit of Structural <br class="hidden md:block" /> Digital Integrity
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <p class="text-xl md:text-2xl leading-relaxed text-justify drop-cap">
+                            In the heart of India's geographic center, a new digital dawn rises. CODE FORGE 2026 isn't
+                            merely a competition; it is a gathering of the finest minds tasked with hand-crafting the
+                            next generation of infrastructure.
+                        </p>
+                        <p class="text-xl md:text-2xl leading-relaxed text-justify">
+                            This inaugural event challenges participants to transcend the ephemeral. We seek
+                            architectures that exhibit the resilience of tempered steel and the precision of a master
+                            watchmaker. Join us in Nagpur for an odyssey of pure creation.
+                        </p>
+                    </div>
+                </div>
+                <!-- Visual Interest & Data Grid Row -->
+                <div class="md:col-span-7">
+                    <div class="border-[6px] border-primary p-2 bg-white">
+                        <img alt="Fig 01: The Central Engine." class="w-full grayscale ink-bleed"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLvIIRv_ifIBCgi9U2FIctBJh_mINR1CqefHmW6IgomrjQnSLF3Odv8b72vhl1Ovs7qpNTqhBzLvokm-HP10a1YHtlanVaGkj5R-fN17bZEkkyjUzHVil4QJl6nkwXRlgyasqGT1OHuIM5KNa5kBh9_gRCRTnQVhDHc0mL7F7ba5BQdHj1x0VdHDYY3cmpdJ26xmE1xGK1AFXeAUoDEwkkIRcRwOMCQZ6l04dGoSCAqdJ408uz9h4tRFT8Zd" />
+                    </div>
+                    <p
+                        class="font-mono text-xs italic mt-4 uppercase tracking-tighter text-left border-l-4 border-primary pl-4">
+                        Fig 01: The Central Engine. ARCHIVE 2026. A documentation of the core processing unit designed
+                        for high-integrity protocol execution.
                     </p>
-<p class="text-xl md:text-2xl leading-relaxed text-justify">
-                        This inaugural event challenges participants to transcend the ephemeral. We seek architectures that exhibit the resilience of tempered steel and the precision of a master watchmaker. Join us in Nagpur for an odyssey of pure creation.
-                    </p>
-</div>
-</div>
-<!-- Visual Interest & Data Grid Row -->
-<div class="md:col-span-7">
-<div class="border-[6px] border-primary p-2 bg-white">
-<img alt="Fig 01: The Central Engine." class="w-full grayscale ink-bleed" src="https://lh3.googleusercontent.com/aida/AP1WRLvIIRv_ifIBCgi9U2FIctBJh_mINR1CqefHmW6IgomrjQnSLF3Odv8b72vhl1Ovs7qpNTqhBzLvokm-HP10a1YHtlanVaGkj5R-fN17bZEkkyjUzHVil4QJl6nkwXRlgyasqGT1OHuIM5KNa5kBh9_gRCRTnQVhDHc0mL7F7ba5BQdHj1x0VdHDYY3cmpdJ26xmE1xGK1AFXeAUoDEwkkIRcRwOMCQZ6l04dGoSCAqdJ408uz9h4tRFT8Zd"/>
-</div>
-<p class="font-mono text-xs italic mt-4 uppercase tracking-tighter text-left border-l-4 border-primary pl-4">
-                    Fig 01: The Central Engine. ARCHIVE 2026. A documentation of the core processing unit designed for high-integrity protocol execution.
-                </p>
-</div>
-<div class="md:col-span-5 flex flex-col justify-between h-full">
-<!-- Data Grid -->
-<div class="border border-primary bg-white/50 mb-12">
-<div class="grid grid-cols-2 border-b border-primary">
-<div class="p-4 border-r border-primary">
-<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Venue</span>
-<span class="font-headline font-bold text-lg">G.H. Raisoni, Nagpur</span>
-</div>
-<div class="p-4">
-<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Team Size</span>
-<span class="font-headline font-bold text-lg">2–4 Members</span>
-</div>
-</div>
-<div class="grid grid-cols-2 border-b border-primary">
-<div class="p-4 border-r border-primary">
-<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Registration</span>
-<span class="font-headline font-bold text-lg">₹400 / Team</span>
-</div>
-<div class="p-4">
-<span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Prize Pool</span>
-<span class="font-headline font-bold text-lg">₹10K+</span>
-</div>
-</div>
-<div class="p-4 bg-primary text-background text-center">
-<span class="font-mono text-[10px] uppercase tracking-widest block mb-1">Chronology</span>
-<span class="font-headline font-bold text-xl uppercase italic">August 25, 2026</span>
-</div>
-</div>
-<!-- Call to Action -->
-<div class="text-center md:text-left">
-<h4 class="font-mono text-xs font-bold uppercase mb-4 tracking-[0.2em] opacity-80 border-b border-primary/20 pb-2 inline-block">SECURE YOUR STATION</h4>
-<div class="flex flex-col gap-6">
-<a class="group relative inline-block" href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-<div class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></div>
-<button class="relative w-full bg-burgundy text-background px-12 py-6 font-mono text-xl font-black uppercase border-2 border-primary transition-all">
-                                REGISTER STATION
-                            </button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<hr class="border-primary border-t-2 mb-24"/>
-<!-- About Section -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 mb-24 items-stretch" id="about">
-<div class="md:col-span-3 font-body text-xs md:text-sm border-r border-primary/50 pr-6 flex flex-col justify-start">
-<div class="mb-6">
-<h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">PRESENTATION</h4>
-<p class="leading-relaxed opacity-95 text-justify">CODE FORGE is a one-day offline hackathon where student teams collaborate, design, and build innovative software solutions that solve real-world challenges through technology.</p>
-</div>
-<hr class="border-t border-primary/40 my-2 mb-6"/>
-<div>
-<h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">COLLABORATION</h4>
-<p class="leading-relaxed opacity-95 text-justify">We believe the best ideas emerge when developers, designers, innovators, and problem-solvers work together to transform ambitious concepts into impactful digital solutions.</p>
-</div>
-</div>
-<div class="md:col-span-6 flex flex-col justify-between">
-<div>
-<h3 class="font-mono text-sm font-bold uppercase mb-6 underline decoration-1 underline-offset-4 tracking-wider">ABOUT CODE FORGE</h3>
-<div class="space-y-4 font-body text-base md:text-lg leading-relaxed text-justify mb-6">
-<p class="drop-cap">Innovation is more than writing code—it's about solving meaningful problems with creativity, collaboration, and engineering excellence.</p>
-<p>At CODE FORGE, participants are challenged to think critically, build intelligently, and create software that delivers real-world impact. Whether improving healthcare, securing digital systems, enabling smarter cities, or transforming businesses, every project begins with a bold idea and ends with a working solution.</p>
-<p>Our mission is to provide a platform where students learn by building, compete with purpose, and push the boundaries of technology through innovation.</p>
-</div>
-</div>
-<div class="bg-primary/5 p-6 italic font-headline text-base md:text-lg border-l-4 border-primary mt-4">
-"Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code."
-</div>
-</div>
-<div class="md:col-span-3 border-2 border-primary p-3 md:p-4 bg-white/40 shadow-sm flex flex-col justify-between h-full relative">
-<div>
-<div class="border-2 border-primary bg-white p-1 mb-3">
-<img alt="FIG 02: COLLABORATION. INNOVATION. IMPACT." class="w-full grayscale contrast-125 ink-bleed block" src="/551fd7c8-a797-468a-b2c9-2bb9e7c448db.png"/>
-</div>
-<p class="font-mono text-[10px] font-bold uppercase text-center tracking-wider text-primary border-t border-b border-primary/40 py-2 mb-4">FIG 02: COLLABORATION. INNOVATION. IMPACT.</p>
-</div>
-<div class="mt-auto pt-2">
-<a href="/Hackathon-Theme.pdf" download="Hackathon-Theme.pdf" target="_blank" rel="noopener noreferrer" class="group relative inline-block w-full">
-<div class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></div>
-<button class="relative w-full bg-burgundy text-background px-3 py-3 font-mono text-xs md:text-sm font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-base">download</span> DOWNLOAD THEME PDF
-</button>
-</a>
-</div>
-</div>
-</section>
-<!-- Theme Section -->
-<section class="mb-24 bg-primary text-background p-8 md:p-12 relative overflow-hidden" id="theme">
-<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-<div>
-<span class="font-mono text-xs font-bold border border-background px-3 py-1 uppercase tracking-widest">OFFICIAL THEME</span>
-<h3 class="font-headline text-4xl md:text-6xl font-black mt-6 mb-2 uppercase leading-none">INTELLIGENT SYSTEMS</h3>
-<p class="font-mono text-xs md:text-sm uppercase tracking-widest text-background/80 mb-8 border-b border-background/20 pb-4">Research • Engineer • Build • Impact</p>
-<div class="space-y-5 font-body text-sm md:text-base opacity-95 leading-relaxed">
-<p><strong class="font-headline text-lg block text-background mb-1">The Theme:</strong> The Intelligent Systems theme challenges participants to design and develop innovative software solutions that solve complex real-world problems through computational thinking, intelligent decision-making, and modern software engineering.</p>
-<div>
-<strong class="font-headline text-lg block text-background mb-1.5">Objectives:</strong>
-<ul class="list-disc list-inside space-y-1 pl-1 font-mono text-xs md:text-sm">
-<li>Solve meaningful real-world challenges.</li>
-<li>Demonstrate intelligent decision-making.</li>
-<li>Apply strong software engineering principles.</li>
-<li>Deliver scalable, secure, and production-ready solutions.</li>
-<li>Create measurable value for users, organizations, and society.</li>
-</ul>
-</div>
-<p><strong class="font-headline text-lg block text-background mb-1">Technology Scope:</strong> <span class="font-mono text-xs md:text-sm leading-relaxed block text-background/90">Artificial Intelligence &amp; Machine Learning, Cloud Computing, Cybersecurity, Data Analytics, APIs &amp; Microservices, Internet of Things (IoT), Computer Vision, Natural Language Processing, Blockchain (where applicable), Mobile &amp; Web Technologies.</span></p>
-</div>
-</div>
-<div class="flex flex-col justify-center">
-<div class="border-2 border-background/40 p-1.5 bg-primary">
-<img alt="FIG 03: Engineering Workstations & Systems" class="w-full grayscale contrast-125 opacity-85 block" src="/52d35407-2a50-4542-890e-eb8970e4858c.jpg"/>
-</div>
-<p class="font-mono text-[10px] font-bold mt-3 uppercase text-center opacity-75 tracking-wider">FIG 03: Engineering Workstations &amp; Systems</p>
-</div>
-</div>
-</section>
-<!-- Application Areas -->
-<section id="areas" class="mb-24 select-none">
-<div class="border-t-2 border-b-2 border-primary py-3 mb-10 text-center bg-primary/5">
-<h3 class="font-headline text-3xl md:text-5xl uppercase font-black tracking-tight distressed-text mb-1">FEATURE REPORT: APPLICATION AREAS</h3>
-<p class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto">Explore the official domains from which problem statements will be released.</p>
-</div>
-<div class="border-2 border-primary paper-texture bg-background shadow-sm">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-primary">
-<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 01</span><span class="opacity-40">§ 2026</span></div>
-<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">medical_services</span></div>
-<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Healthcare &amp; Well-Being</h4>
-<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Intelligent software solutions elevating healthcare accessibility, diagnostics, emergency response, and patient management.</p>
-</div>
-<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 01</span><span>GAZETTE SPEC</span></div>
-</div>
-<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 02</span><span class="opacity-40">§ 2026</span></div>
-<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">location_city</span></div>
-<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Smart Cities</h4>
-<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Urban systems enhancing public transit, municipal utilities, resource optimization, and civic efficiency.</p>
-</div>
-<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 02</span><span>GAZETTE SPEC</span></div>
-</div>
-<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 03</span><span class="opacity-40">§ 2026</span></div>
-<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">eco</span></div>
-<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Sustainability</h4>
-<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Technology-driven solutions promoting resource efficiency, climate resilience, and eco-friendly development.</p>
-</div>
-<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 03</span><span>GAZETTE SPEC</span></div>
-</div>
-<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 04</span><span class="opacity-40">§ 2026</span></div>
-<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">shield_lock</span></div>
-<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Cybersecurity</h4>
-<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Fortified digital systems strengthening data security, privacy, identity management, and threat protection.</p>
-</div>
-<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 04</span><span>GAZETTE SPEC</span></div>
-</div>
-<div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy"><span>FEATURE 05</span><span class="opacity-40">§ 2026</span></div>
-<div class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors"><span class="material-symbols-outlined text-2xl font-bold">domain</span></div>
-<h4 class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">Enterprise Productivity</h4>
-<p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">Software solutions optimizing organizational workflows, productivity, automation, and decision intelligence.</p>
-</div>
-<div class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60"><span>COL. 05</span><span>GAZETTE SPEC</span></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Why Participate & Highlights -->
-<section class="mb-24 select-none">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-<div class="lg:col-span-7 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between border-b-2 border-primary pb-3 mb-6">
-<h3 class="font-headline text-3xl md:text-4xl font-black uppercase tracking-tight distressed-text">VALUE PROPOSITION</h3>
-<span class="font-mono text-xs font-bold uppercase tracking-widest bg-primary text-background px-2.5 py-1">CORE PILLARS</span>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 01</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">engineering</span></div>
-<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Build Solutions</h4>
-<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Address real-world crises with engineering precision.</p>
-</div>
-</div>
-<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 02</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">groups</span></div>
-<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Network</h4>
-<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Connect with the subcontinent's finest engineering minds.</p>
-</div>
-</div>
-<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 03</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">terminal</span></div>
-<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Collaborate</h4>
-<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Experience the friction and flow of rapid development.</p>
-</div>
-</div>
-<div class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
-<div>
-<div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3"><span class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR 04</span><span class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">workspace_premium</span></div>
-<h4 class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">Rewards</h4>
-<p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Win significant innovation grants and industry swags.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="lg:col-span-5 border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between relative">
-<div>
-<div class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider"><span>GAZETTE METRICS</span><span class="bg-burgundy text-background px-2 py-0.5">DISPATCH 03</span></div>
-<h3 class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">EVENT HIGHLIGHTS</h3>
-<p class="font-serif-alt italic text-xs md:text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">Key Operating Metrics &amp; Allocation Overview</p>
-<div class="grid grid-cols-2 gap-4">
-<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">Up to ₹25K</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Prize Pool</span></div>
-<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">8 HRS</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Active Coding</span></div>
-<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">OFFLINE</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Physical Presence</span></div>
-<div class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center"><span class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">SWAG</span><span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Limited Kits</span></div>
-</div>
-</div>
-<div class="mt-6 pt-3 border-t-2 border-primary"><p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70">★ OFFICIAL HACKATHON DISPATCH SPECIFICATIONS — 2026</p></div>
-</div>
-</div>
-</section>
-<!-- Prize Pool Section -->
-<section class="mb-24 border border-primary p-8 md:p-12">
-<h3 class="font-headline text-4xl font-black uppercase text-center mb-12 italic">Innovation Grants Allocation</h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
-<span class="font-mono text-xs uppercase opacity-60">The Grand Prize</span>
-<h4 class="font-headline text-4xl font-bold my-4">Winner</h4>
-<p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
-<p class="text-xs mt-4">Recognition in the National Press Archives.</p>
-</div>
-<div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
-<span class="font-mono text-xs uppercase opacity-60">The Runner Up</span>
-<h4 class="font-headline text-4xl font-bold my-4">Second Place</h4>
-<p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
-<p class="text-xs mt-4">Commendation for Engineering Excellence.</p>
-</div>
-<div class="text-center p-6">
-<span class="font-mono text-xs uppercase opacity-60">Universal Tier</span>
-<h4 class="font-headline text-4xl font-bold my-4">Participants</h4>
-<p class="font-mono font-bold text-xl uppercase tracking-tighter">Certificates</p>
-<p class="text-xs mt-4">Entry into the Forge Alumni Network.</p>
-</div>
-</section>
-<!-- Evaluation Matrix & Board of Inquiry -->
-<section class="mb-24" id="evaluation">
-<div class="border-t-2 border-b-2 border-primary py-3 mb-10 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2 bg-primary/5">
-<span>SECTION IV // EVALUATION & ADJUDICATION</span>
-<span>GAZETTE STANDARDS 2026</span>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-<div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between h-full relative">
-<div>
-<div class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
-<span>DOC. REF: FORGE-EVAL-2026</span>
-<span class="bg-primary text-background px-2 py-0.5">FORM 04-A</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">OFFICIAL SCORE SHEET</h3>
-<p class="font-serif-alt italic text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">Standardized Criteria &amp; Weightage Matrix (100 Marks Base)</p>
-<div class="flex justify-between font-mono text-xs font-bold uppercase border-b-2 border-primary pb-2 mb-4 bg-primary/10 px-3 py-1.5">
-<span>EVALUATION DOMAIN</span>
-<span>MARKS</span>
-</div>
-<div class="space-y-3.5 font-mono text-xs md:text-sm">
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">Problem Understanding</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span></div>
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">Technical Implementation</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">25</span></div>
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">Innovation &amp; Uniqueness</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">20</span></div>
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">UI/UX Interface</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span></div>
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">PPT Presentation</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">10</span></div>
-<div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40"><span class="font-bold text-primary">Final Demo</span><span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span></div>
-<div class="pt-3 mt-3 border-t-2 border-dashed border-primary/30">
-<p class="font-mono text-[11px] font-bold uppercase tracking-wider text-burgundy mb-2">★ EXTRA / BONUS CRITERIA</p>
-<div class="flex items-center justify-between py-1.5 px-2.5 bg-burgundy/5 border border-burgundy/30"><span class="font-bold text-burgundy">Deployment</span><span class="flex-grow mx-2 border-b border-dotted border-burgundy/40 opacity-40"></span><span class="font-bold font-mono px-2 py-0.5 bg-burgundy text-background text-xs">+5 EXTRA</span></div>
-</div>
-</div>
-</div>
-<div class="mt-8 pt-4 border-t-2 border-primary">
-<div class="flex justify-between items-center bg-primary text-background p-4 font-mono font-bold text-sm md:text-base">
-<span>TOTAL MARKS</span>
-<span class="text-lg">100 <span class="text-xs font-normal text-background/80">(+5 EXTRA)</span></span>
-</div>
-<p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70 mt-3">★ CERTIFIED EVALUATION MATRIX — ALL SCORES AUDITED BY BOARD OF INQUIRY</p>
-</div>
-</div>
-<div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between h-full relative">
-<div>
-<div class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
-<span>PANEL OF ADJUDICATORS</span>
-<span class="bg-primary text-background px-2 py-0.5">DISPATCH 04-B</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">BOARD OF INQUIRY</h3>
-<p class="font-body text-xs md:text-sm text-center leading-relaxed opacity-85 mb-6 border-b border-primary/20 pb-4 max-w-lg mx-auto">Our panel of distinguished adjudicators will evaluate entries based on structural density and operational efficiency.</p>
-<!--
+                </div>
+                <div class="md:col-span-5 flex flex-col justify-between h-full">
+                    <!-- Data Grid -->
+                    <div class="border border-primary bg-white/50 mb-12">
+                        <div class="grid grid-cols-2 border-b border-primary">
+                            <div class="p-4 border-r border-primary">
+                                <span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Venue</span>
+                                <span class="font-headline font-bold text-lg">G.H. Raisoni, Nagpur</span>
+                            </div>
+                            <div class="p-4">
+                                <span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Team Size</span>
+                                <span class="font-headline font-bold text-lg">2–4 Members</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 border-b border-primary">
+                            <div class="p-4 border-r border-primary">
+                                <span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Registration</span>
+                                <span class="font-headline font-bold text-lg">₹400 / Team</span>
+                            </div>
+                            <div class="p-4">
+                                <span class="font-mono text-[10px] uppercase opacity-60 block mb-1">Prize Pool</span>
+                                <span class="font-headline font-bold text-lg">₹10K+</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-primary text-background text-center">
+                            <span class="font-mono text-[10px] uppercase tracking-widest block mb-1">Chronology</span>
+                            <span class="font-headline font-bold text-xl uppercase italic">August 25, 2026</span>
+                        </div>
+                    </div>
+                    <!-- Call to Action -->
+                    <div class="text-center md:text-left">
+                        <h4
+                            class="font-mono text-xs font-bold uppercase mb-4 tracking-[0.2em] opacity-80 border-b border-primary/20 pb-2 inline-block">
+                            SECURE YOUR STATION</h4>
+                        <div class="flex flex-col gap-6">
+                            <a class="group relative inline-block"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor"
+                                target="_blank" rel="noopener noreferrer">
+                                <div
+                                    class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0">
+                                </div>
+                                <button
+                                    class="relative w-full bg-burgundy text-background px-12 py-6 font-mono text-xl font-black uppercase border-2 border-primary transition-all">
+                                    REGISTER STATION
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <hr class="border-primary border-t-2 mb-24" />
+        <!-- About Section -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 mb-24 items-stretch" id="about">
+            <div
+                class="md:col-span-3 font-body text-xs md:text-sm border-r border-primary/50 pr-6 flex flex-col justify-start">
+                <div class="mb-6">
+                    <h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">
+                        PRESENTATION</h4>
+                    <p class="leading-relaxed opacity-95 text-justify">CODE FORGE is a one-day offline hackathon where
+                        student teams collaborate, design, and build innovative software solutions that solve real-world
+                        challenges through technology.</p>
+                </div>
+                <hr class="border-t border-primary/40 my-2 mb-6" />
+                <div>
+                    <h4 class="font-headline font-bold uppercase underline tracking-wider mb-2 text-primary">
+                        COLLABORATION</h4>
+                    <p class="leading-relaxed opacity-95 text-justify">We believe the best ideas emerge when developers,
+                        designers, innovators, and problem-solvers work together to transform ambitious concepts into
+                        impactful digital solutions.</p>
+                </div>
+            </div>
+            <div class="md:col-span-6 flex flex-col justify-between">
+                <div>
+                    <h3
+                        class="font-mono text-sm font-bold uppercase mb-6 underline decoration-1 underline-offset-4 tracking-wider">
+                        ABOUT CODE FORGE</h3>
+                    <div class="space-y-4 font-body text-base md:text-lg leading-relaxed text-justify mb-6">
+                        <p class="drop-cap">Innovation is more than writing code—it's about solving meaningful problems
+                            with creativity, collaboration, and engineering excellence.</p>
+                        <p>At CODE FORGE, participants are challenged to think critically, build intelligently, and
+                            create software that delivers real-world impact. Whether improving healthcare, securing
+                            digital systems, enabling smarter cities, or transforming businesses, every project begins
+                            with a bold idea and ends with a working solution.</p>
+                        <p>Our mission is to provide a platform where students learn by building, compete with purpose,
+                            and push the boundaries of technology through innovation.</p>
+                    </div>
+                </div>
+                <div class="bg-primary/5 p-6 italic font-headline text-base md:text-lg border-l-4 border-primary mt-4">
+                    "Great ideas aren't discovered by chance—they're forged through curiosity, collaboration, and code."
+                </div>
+            </div>
+            <div
+                class="md:col-span-3 border-2 border-primary p-3 md:p-4 bg-white/40 shadow-sm flex flex-col justify-between h-full relative">
+                <div>
+                    <div class="border-2 border-primary bg-white p-1 mb-3">
+                        <img alt="FIG 02: COLLABORATION. INNOVATION. IMPACT."
+                            class="w-full grayscale contrast-125 ink-bleed block"
+                            src="/551fd7c8-a797-468a-b2c9-2bb9e7c448db.png" />
+                    </div>
+                    <p
+                        class="font-mono text-[10px] font-bold uppercase text-center tracking-wider text-primary border-t border-b border-primary/40 py-2 mb-4">
+                        FIG 02: COLLABORATION. INNOVATION. IMPACT.</p>
+                </div>
+                <div class="mt-auto pt-2">
+                    <a href="/Hackathon-Theme.pdf" download="Hackathon-Theme.pdf" target="_blank"
+                        rel="noopener noreferrer" class="group relative inline-block w-full">
+                        <div
+                            class="absolute inset-0 bg-primary translate-x-1 translate-y-1 transition-transform group-hover:translate-x-0 group-hover:translate-y-0">
+                        </div>
+                        <button
+                            class="relative w-full bg-burgundy text-background px-3 py-3 font-mono text-xs md:text-sm font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-base">download</span> DOWNLOAD THEME PDF
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Theme Section -->
+        <section class="mb-24 bg-primary text-background p-8 md:p-12 relative overflow-hidden" id="theme">
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div>
+                    <span
+                        class="font-mono text-xs font-bold border border-background px-3 py-1 uppercase tracking-widest">OFFICIAL
+                        THEME</span>
+                    <h3 class="font-headline text-4xl md:text-6xl font-black mt-6 mb-2 uppercase leading-none">
+                        INTELLIGENT SYSTEMS</h3>
+                    <p
+                        class="font-mono text-xs md:text-sm uppercase tracking-widest text-background/80 mb-8 border-b border-background/20 pb-4">
+                        Research • Engineer • Build • Impact</p>
+                    <div class="space-y-5 font-body text-sm md:text-base opacity-95 leading-relaxed">
+                        <p><strong class="font-headline text-lg block text-background mb-1">The Theme:</strong> The
+                            Intelligent Systems theme challenges participants to design and develop innovative software
+                            solutions that solve complex real-world problems through computational thinking, intelligent
+                            decision-making, and modern software engineering.</p>
+                        <div>
+                            <strong class="font-headline text-lg block text-background mb-1.5">Objectives:</strong>
+                            <ul class="list-disc list-inside space-y-1 pl-1 font-mono text-xs md:text-sm">
+                                <li>Solve meaningful real-world challenges.</li>
+                                <li>Demonstrate intelligent decision-making.</li>
+                                <li>Apply strong software engineering principles.</li>
+                                <li>Deliver scalable, secure, and production-ready solutions.</li>
+                                <li>Create measurable value for users, organizations, and society.</li>
+                            </ul>
+                        </div>
+                        <p><strong class="font-headline text-lg block text-background mb-1">Technology Scope:</strong>
+                            <span
+                                class="font-mono text-xs md:text-sm leading-relaxed block text-background/90">Artificial
+                                Intelligence &amp; Machine Learning, Cloud Computing, Cybersecurity, Data Analytics,
+                                APIs &amp; Microservices, Internet of Things (IoT), Computer Vision, Natural Language
+                                Processing, Blockchain (where applicable), Mobile &amp; Web Technologies.</span></p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <div class="border-2 border-background/40 p-1.5 bg-primary">
+                        <img alt="FIG 03: Engineering Workstations & Systems"
+                            class="w-full grayscale contrast-125 opacity-85 block"
+                            src="/52d35407-2a50-4542-890e-eb8970e4858c.jpg" />
+                    </div>
+                    <p class="font-mono text-[10px] font-bold mt-3 uppercase text-center opacity-75 tracking-wider">FIG
+                        03: Engineering Workstations &amp; Systems</p>
+                </div>
+            </div>
+        </section>
+        <!-- Application Areas -->
+        <section id="areas" class="mb-24 select-none">
+            <div class="border-t-2 border-b-2 border-primary py-3 mb-10 text-center bg-primary/5">
+                <h3 class="font-headline text-3xl md:text-5xl uppercase font-black tracking-tight distressed-text mb-1">
+                    FEATURE REPORT: APPLICATION AREAS</h3>
+                <p class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto">Explore the
+                    official domains from which problem statements will be released.</p>
+            </div>
+            <div class="border-2 border-primary paper-texture bg-background shadow-sm">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-primary">
+                    <div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+                        <div>
+                            <div
+                                class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy">
+                                <span>FEATURE 01</span><span class="opacity-40">§ 2026</span></div>
+                            <div
+                                class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors">
+                                <span class="material-symbols-outlined text-2xl font-bold">medical_services</span></div>
+                            <h4
+                                class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">
+                                Healthcare &amp; Well-Being</h4>
+                            <p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">
+                                Intelligent software solutions elevating healthcare accessibility, diagnostics,
+                                emergency response, and patient management.</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60">
+                            <span>COL. 01</span><span>GAZETTE SPEC</span></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+                        <div>
+                            <div
+                                class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy">
+                                <span>FEATURE 02</span><span class="opacity-40">§ 2026</span></div>
+                            <div
+                                class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors">
+                                <span class="material-symbols-outlined text-2xl font-bold">location_city</span></div>
+                            <h4
+                                class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">
+                                Smart Cities</h4>
+                            <p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">
+                                Urban systems enhancing public transit, municipal utilities, resource optimization, and
+                                civic efficiency.</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60">
+                            <span>COL. 02</span><span>GAZETTE SPEC</span></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+                        <div>
+                            <div
+                                class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy">
+                                <span>FEATURE 03</span><span class="opacity-40">§ 2026</span></div>
+                            <div
+                                class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors">
+                                <span class="material-symbols-outlined text-2xl font-bold">eco</span></div>
+                            <h4
+                                class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">
+                                Sustainability</h4>
+                            <p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">
+                                Technology-driven solutions promoting resource efficiency, climate resilience, and
+                                eco-friendly development.</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60">
+                            <span>COL. 03</span><span>GAZETTE SPEC</span></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+                        <div>
+                            <div
+                                class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy">
+                                <span>FEATURE 04</span><span class="opacity-40">§ 2026</span></div>
+                            <div
+                                class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors">
+                                <span class="material-symbols-outlined text-2xl font-bold">shield_lock</span></div>
+                            <h4
+                                class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">
+                                Cybersecurity</h4>
+                            <p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">
+                                Fortified digital systems strengthening data security, privacy, identity management, and
+                                threat protection.</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60">
+                            <span>COL. 04</span><span>GAZETTE SPEC</span></div>
+                    </div>
+                    <div class="p-5 md:p-6 flex flex-col justify-between hover:bg-primary/5 transition-colors group">
+                        <div>
+                            <div
+                                class="flex items-center justify-between border-b border-primary/30 pb-2 mb-4 font-mono text-[10px] font-bold uppercase tracking-widest text-burgundy">
+                                <span>FEATURE 05</span><span class="opacity-40">§ 2026</span></div>
+                            <div
+                                class="w-12 h-12 mb-4 border-2 border-primary p-2 bg-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] group-hover:bg-primary group-hover:text-background transition-colors">
+                                <span class="material-symbols-outlined text-2xl font-bold">domain</span></div>
+                            <h4
+                                class="font-headline font-black uppercase text-base md:text-lg mb-2.5 leading-snug tracking-tight text-primary border-b border-dotted border-primary/40 pb-2">
+                                Enterprise Productivity</h4>
+                            <p class="font-serif-alt text-xs md:text-sm leading-relaxed text-justify text-primary/90">
+                                Software solutions optimizing organizational workflows, productivity, automation, and
+                                decision intelligence.</p>
+                        </div>
+                        <div
+                            class="mt-6 pt-2 border-t border-dotted border-primary/30 flex justify-between items-center font-mono text-[9px] uppercase opacity-60">
+                            <span>COL. 05</span><span>GAZETTE SPEC</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Participate & Highlights -->
+        <section class="mb-24 select-none">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                <div class="lg:col-span-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b-2 border-primary pb-3 mb-6">
+                            <h3
+                                class="font-headline text-3xl md:text-4xl font-black uppercase tracking-tight distressed-text">
+                                VALUE PROPOSITION</h3>
+                            <span
+                                class="font-mono text-xs font-bold uppercase tracking-widest bg-primary text-background px-2.5 py-1">CORE
+                                PILLARS</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                            <div
+                                class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3">
+                                        <span
+                                            class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR
+                                            01</span><span
+                                            class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">engineering</span>
+                                    </div>
+                                    <h4
+                                        class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">
+                                        Build Solutions</h4>
+                                    <p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Address
+                                        real-world crises with engineering precision.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3">
+                                        <span
+                                            class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR
+                                            02</span><span
+                                            class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">groups</span>
+                                    </div>
+                                    <h4
+                                        class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">
+                                        Network</h4>
+                                    <p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Connect
+                                        with the subcontinent's finest engineering minds.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3">
+                                        <span
+                                            class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR
+                                            03</span><span
+                                            class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">terminal</span>
+                                    </div>
+                                    <h4
+                                        class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">
+                                        Collaborate</h4>
+                                    <p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">
+                                        Experience the friction and flow of rapid development.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="border-2 border-primary p-5 bg-white/90 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+                                <div>
+                                    <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-3">
+                                        <span
+                                            class="font-mono text-[10px] font-bold uppercase text-burgundy tracking-widest">PILLAR
+                                            04</span><span
+                                            class="material-symbols-outlined text-xl text-primary group-hover:scale-110 transition-transform">workspace_premium</span>
+                                    </div>
+                                    <h4
+                                        class="font-headline font-bold text-base md:text-lg uppercase text-primary mb-2">
+                                        Rewards</h4>
+                                    <p class="font-serif-alt text-xs md:text-sm text-primary/85 leading-relaxed">Win
+                                        significant innovation grants and industry swags.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="lg:col-span-5 border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between relative">
+                    <div>
+                        <div
+                            class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
+                            <span>GAZETTE METRICS</span><span class="bg-burgundy text-background px-2 py-0.5">DISPATCH
+                                03</span></div>
+                        <h3
+                            class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">
+                            EVENT HIGHLIGHTS</h3>
+                        <p
+                            class="font-serif-alt italic text-xs md:text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">
+                            Key Operating Metrics &amp; Allocation Overview</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center">
+                                <span
+                                    class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">Up
+                                    to ₹25K</span><span
+                                    class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Prize
+                                    Pool</span></div>
+                            <div
+                                class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center">
+                                <span
+                                    class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">8
+                                    HRS</span><span
+                                    class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Active
+                                    Coding</span></div>
+                            <div
+                                class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center">
+                                <span
+                                    class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">OFFLINE</span><span
+                                    class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Physical
+                                    Presence</span></div>
+                            <div
+                                class="p-4 border-2 border-primary bg-background/80 shadow-[2px_2px_0px_0px_rgba(22,22,22,1)] flex flex-col justify-center items-center text-center">
+                                <span
+                                    class="font-headline text-2xl md:text-3xl font-black text-primary tracking-tight block mb-1">SWAG</span><span
+                                    class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy">Limited
+                                    Kits</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t-2 border-primary">
+                        <p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70">★
+                            OFFICIAL HACKATHON DISPATCH SPECIFICATIONS — 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Prize Pool Section -->
+        <section class="mb-24 border border-primary p-8 md:p-12">
+            <h3 class="font-headline text-4xl font-black uppercase text-center mb-12 italic">Innovation Grants
+                Allocation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
+                    <span class="font-mono text-xs uppercase opacity-60">The Grand Prize</span>
+                    <h4 class="font-headline text-4xl font-bold my-4">Winner</h4>
+                    <p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
+                    <p class="text-xs mt-4">Recognition in the National Press Archives.</p>
+                </div>
+                <div class="text-center p-6 border-r border-primary md:border-r-0 md:border-b-0 border-b">
+                    <span class="font-mono text-xs uppercase opacity-60">The Runner Up</span>
+                    <h4 class="font-headline text-4xl font-bold my-4">Second Place</h4>
+                    <p class="font-mono font-bold text-xl uppercase tracking-tighter">Cash + Swag Kit</p>
+                    <p class="text-xs mt-4">Commendation for Engineering Excellence.</p>
+                </div>
+                <div class="text-center p-6">
+                    <span class="font-mono text-xs uppercase opacity-60">Universal Tier</span>
+                    <h4 class="font-headline text-4xl font-bold my-4">Participants</h4>
+                    <p class="font-mono font-bold text-xl uppercase tracking-tighter">Certificates</p>
+                    <p class="text-xs mt-4">Entry into the Forge Alumni Network.</p>
+                </div>
+        </section>
+        <!-- Evaluation Matrix & Board of Inquiry -->
+        <section class="mb-24" id="evaluation">
+            <div
+                class="border-t-2 border-b-2 border-primary py-3 mb-10 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2 bg-primary/5">
+                <span>SECTION IV // EVALUATION & ADJUDICATION</span>
+                <span>GAZETTE STANDARDS 2026</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                <div
+                    class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between h-full relative">
+                    <div>
+                        <div
+                            class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
+                            <span>DOC. REF: FORGE-EVAL-2026</span>
+                            <span class="bg-primary text-background px-2 py-0.5">FORM 04-A</span>
+                        </div>
+                        <h3
+                            class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">
+                            OFFICIAL SCORE SHEET</h3>
+                        <p
+                            class="font-serif-alt italic text-sm text-center opacity-80 mb-6 border-b border-primary/20 pb-4">
+                            Standardized Criteria &amp; Weightage Matrix (100 Marks Base)</p>
+                        <div
+                            class="flex justify-between font-mono text-xs font-bold uppercase border-b-2 border-primary pb-2 mb-4 bg-primary/10 px-3 py-1.5">
+                            <span>EVALUATION DOMAIN</span>
+                            <span>MARKS</span>
+                        </div>
+                        <div class="space-y-3.5 font-mono text-xs md:text-sm">
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">Problem Understanding</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">Technical Implementation</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">25</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">Innovation &amp; Uniqueness</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">20</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">UI/UX Interface</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">PPT Presentation</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">10</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
+                                <span class="font-bold text-primary">Final Demo</span><span
+                                    class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span><span
+                                    class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">15</span>
+                            </div>
+                            <div class="pt-3 mt-3 border-t-2 border-dashed border-primary/30">
+                                <p class="font-mono text-[11px] font-bold uppercase tracking-wider text-burgundy mb-2">★
+                                    EXTRA / BONUS CRITERIA</p>
+                                <div
+                                    class="flex items-center justify-between py-1.5 px-2.5 bg-burgundy/5 border border-burgundy/30">
+                                    <span class="font-bold text-burgundy">Deployment</span><span
+                                        class="flex-grow mx-2 border-b border-dotted border-burgundy/40 opacity-40"></span><span
+                                        class="font-bold font-mono px-2 py-0.5 bg-burgundy text-background text-xs">+5
+                                        EXTRA</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-4 border-t-2 border-primary">
+                        <div
+                            class="flex justify-between items-center bg-primary text-background p-4 font-mono font-bold text-sm md:text-base">
+                            <span>TOTAL MARKS</span>
+                            <span class="text-lg">100 <span class="text-xs font-normal text-background/80">(+5
+                                    EXTRA)</span></span>
+                        </div>
+                        <p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70 mt-3">
+                            ★ CERTIFIED EVALUATION MATRIX — ALL SCORES AUDITED BY BOARD OF INQUIRY</p>
+                    </div>
+                </div>
+                <div
+                    class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between h-full relative">
+                    <div>
+                        <div
+                            class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
+                            <span>PANEL OF ADJUDICATORS</span>
+                            <span class="bg-primary text-background px-2 py-0.5">DISPATCH 04-B</span>
+                        </div>
+                        <h3
+                            class="font-headline text-3xl md:text-4xl font-black uppercase text-center mb-2 tracking-tight">
+                            BOARD OF INQUIRY</h3>
+                        <p
+                            class="font-body text-xs md:text-sm text-center leading-relaxed opacity-85 mb-6 border-b border-primary/20 pb-4 max-w-lg mx-auto">
+                            Our panel of distinguished adjudicators will evaluate entries based on structural density
+                            and operational efficiency.</p>
+                        <!--
 <div class="border-2 border-primary p-2 bg-white">
 <img alt="The Board" class="w-full grayscale contrast-125 ink-bleed" src="https://lh3.googleusercontent.com/aida/AP1WRLuuwbmjrA6qXNi1-vSBXIxJ9LYBYT5PpH59ZmuqSfrBunbsH7LtaHyqPazF-dEGU86dC8jztw2ElxqhuAJ86MMuf0JG2G5JZjK6-jOO-d_mxjDtk11sCL5_IZ5Xx5VINiJw4oPdGPrOuN3Q7k5VvRYDI75wiRhZuSNGhhyR_zbeSbL-avRmrCyQdqaeUrw1tNkXnVcY61ckBCvCeZJuQIRwT3BbQPUaQHtUAd3MyvMCLaXCIqc2JH6Np5ls"/>
 </div>
 -->
-<div class="border-2 border-dashed border-primary/40 p-8 text-center bg-primary/5 my-4 font-mono">
-<span class="material-symbols-outlined text-3xl opacity-60 mb-2 block">person_search</span>
-<p class="text-xs font-bold uppercase tracking-wider text-primary opacity-80">adjudicator panel details &amp; photos coming soon</p>
-</div>
-</div>
-<div class="mt-6 pt-3 border-t-2 border-primary">
-<p class="font-mono text-[11px] uppercase text-center font-bold tracking-wider text-primary opacity-70">Fig 04: The Board of Inquiry — Official Adjudication Panel</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Timeline -->
-<section class="mb-24" id="timeline">
-<h3 class="font-headline text-5xl font-black uppercase mb-12 text-center">Chronology of Events</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-mono text-xs">
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">09:00 AM</span>
-<span class="uppercase">Registration &amp; Station Security</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">10:00 AM</span>
-<span class="uppercase">The Press Opens (Opening Ceremony)</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">10:15 AM</span>
-<span class="uppercase">Coding Commencement</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">01:00 PM</span>
-<span class="uppercase">Logistics Break (Lunch)</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">01:30 PM</span>
-<span class="uppercase">Technical Development Phase II</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">04:00 PM</span>
-<span class="uppercase">Cease Coding</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">04:30 PM</span>
-<span class="uppercase">Inquiry &amp; Evaluation</span>
-</div>
-<div class="flex justify-between border-b border-primary py-4">
-<span class="font-bold">06:30 PM</span>
-<span class="uppercase">Manifesto Results</span>
-</div>
-</div>
-</section>
-<!-- Official Rules -->
-<section class="mb-24 bg-primary/5 p-6 md:p-10 border-4 border-double border-primary">
-<h3 class="font-mono text-base md:text-lg font-black uppercase mb-6 text-center underline tracking-wider">OFFICIAL CODE OF CONDUCT</h3>
-<ul class="font-mono text-xs md:text-sm space-y-4 leading-relaxed">
-<li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">I.</span><span>Teams must consist of 2 to 4 members. Each participant may register as a member of only one team.</span></li>
-<li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">II.</span><span>All project development must take place during the official hackathon duration. Pre-built projects are not permitted.</span></li>
-<li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">III.</span><span>Participants may use open-source libraries, APIs, and AI tools, provided they comply with their respective licenses and are properly acknowledged where applicable.</span></li>
-<li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">IV.</span><span>Maintain professionalism and respect toward fellow participants, mentors, judges, volunteers, and organizers throughout the event.</span></li>
-<li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">V.</span><span>The decisions made by the judging panel and organizing committee regarding evaluation, awards, and eligibility shall be final and binding.</span></li>
-</ul>
-</section>
-<!-- FAQ -->
-<section class="mb-24">
-<h3 class="font-headline text-3xl font-bold uppercase mb-10">Frequently Asked Questions</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-body">
-<div class="border border-primary p-6">
-<h5 class="font-bold mb-2">Who can participate?</h5>
-<p class="text-sm opacity-80">Students from eligible colleges and universities are welcome to participate in CODE FORGE 2026.</p>
-</div>
-<div class="border border-primary p-6">
-<h5 class="font-bold mb-2">What is the team size?</h5>
-<p class="text-sm opacity-80">Each team must consist of 2 to 4 members.</p>
-</div>
-<div class="border border-primary p-6">
-<h5 class="font-bold mb-2">How do I register?</h5>
-<p class="text-sm opacity-80">Click Register Now, complete the official registration form, make the registration payment, and upload the payment proof to confirm your participation.</p>
-</div>
-<div class="border border-primary p-6">
-<h5 class="font-bold mb-2">When will the problem statements be released?</h5>
-<p class="text-sm opacity-80">The official problem statements will be released one day before the hackathon to all registered participants.</p>
-</div>
-<div class="border border-primary p-6 md:col-span-2">
-<h5 class="font-bold mb-2">Will food and certificates be provided?</h5>
-<p class="text-sm opacity-80">Yes. Lunch, refreshments, and an official Certificate of Participation will be provided to all eligible participants.</p>
-</div>
-</div>
-</section>
-<!-- Registry Section -->
-<section class="text-center py-20 bg-primary/5 border-t-4 border-b-4 border-double border-primary" id="registry">
-<h2 class="font-headline text-5xl md:text-7xl font-black uppercase mb-6">READY TO BUILD THE FUTURE?</h2>
-<p class="font-body text-base md:text-lg max-w-3xl mx-auto mb-8 opacity-90 leading-relaxed px-4">
-    Registrations for CODE FORGE 2026 are now open. Form a team of 2–4 members, compete for a ₹25,000+ Prize Pool, and showcase your innovation, technical skills, and creativity in an exciting one-day hackathon.
-</p>
-<div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="bg-burgundy text-background px-16 py-6 font-mono text-lg font-bold uppercase border-2 border-primary hover:bg-transparent hover:text-primary transition-all inline-block text-center">
-                REGISTER NOW
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-[10px] uppercase opacity-70 border-t border-primary/20 pt-12">
-<div>
-<p class="font-bold text-primary mb-2">Host Institution</p>
-<p>G.H. Raisoni College of Engineering &amp; Management, Nagpur</p>
-</div>
-<div>
-<p class="font-bold text-primary mb-2">Organizing Department</p>
-<p>Department of Science &amp; Technology</p>
-</div>
-<div>
-<p class="font-bold text-primary mb-2">Organized By</p>
-<p>Deadline Dodgers</p>
-</div>
-</div>
-</section>
-<!-- Contact & Information / Official Help Desk -->
-<section class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t-2 border-primary pt-12">
-<div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between">
-<div>
-<h4 class="font-headline text-2xl md:text-3xl font-black uppercase mb-6 border-b-2 border-primary pb-3 tracking-tight">CONTACT &amp; INFORMATION</h4>
-<div class="font-mono text-xs md:text-sm space-y-4">
-<div>
-<p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Venue:</p>
-<p class="opacity-90 leading-snug">G.H. Raisoni College of Engineering &amp; Management, Main Block, Nagpur, Maharashtra</p>
-</div>
-<div class="border-t border-dotted border-primary/40 pt-3">
-<p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Faculty Coordinator:</p>
-<p class="font-bold text-sm">Pratham Nagture</p>
-<p class="opacity-80 text-xs mt-0.5">📞 Phone: +91 7276636754</p>
-</div>
-<div class="border-t border-dotted border-primary/40 pt-3">
-<p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student Coordinator:</p>
-<p class="font-bold text-sm">Deadline Dodgers</p>
-<p class="opacity-80 text-xs mt-0.5">📞 Phone: +91 8788591592</p>
-</div>
-</div>
-</div>
-</div>
-<div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between items-center text-center">
-<div class="w-full">
-<div class="flex justify-center mb-4">
-<span class="material-symbols-outlined text-5xl p-3 bg-primary text-background">mail</span>
-</div>
-<h4 class="font-headline text-2xl md:text-3xl font-black uppercase mb-4 tracking-tight">OFFICIAL HELP DESK</h4>
-<p class="font-body text-xs md:text-sm leading-relaxed opacity-90 max-w-md mx-auto mb-6">Have questions about CODE FORGE? Contact our organizing team for assistance with registration, payments, event details, or participation.</p>
-</div>
-<div class="w-full pt-4 border-t border-primary/30">
-<button class="w-full py-4 bg-primary text-background font-mono text-sm font-bold uppercase tracking-wider border-2 border-primary hover:bg-burgundy transition-all shadow-sm">CONTACT ORGANIZERS</button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-background border-t-4 border-primary py-16 px-6 md:px-12">
-<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-<h5 class="font-masthead text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8">CODE FORGE 2026</h5>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mb-12 font-mono text-[10px] uppercase tracking-widest border-b border-primary/10 pb-12">
-<div>
-<p class="font-bold mb-4 underline">Legal Notices</p>
-<ul class="space-y-2 opacity-60">
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Service</a></li>
-<li><a href="#">Code of Conduct</a></li>
-</ul>
-</div>
-<div>
-<p class="font-bold mb-4 underline">Affiliations</p>
-<ul class="space-y-2 opacity-60">
-<li>G.H. Raisoni College</li>
-<li>Science &amp; Technology Dept.</li>
-<li>Nagpur Innovation Hub</li>
-</ul>
-</div>
-<div>
-<p class="font-bold mb-4 underline">Social Media</p>
-<div class="flex justify-center items-center gap-3">
-<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-burgundy transition-colors group">
-<svg class="w-6 h-6 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
-<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-</svg>
-<span class="font-bold text-xs">INSTAGRAM</span>
-</a>
-</div>
-</div>
-</div>
-<p class="font-mono text-[9px] uppercase leading-relaxed opacity-50 max-w-2xl">
-            VOL. I // ISSUE NO. 01 // 25 AUGUST 2026 // NAGPUR, INDIA<br/>
-            © 2026 CODE FORGE PRESS. DESIGNED &amp; DEVELOPED BY DEADLINE DODGERS.<br/>
-            PRINTED IN THE TERMINAL. NO ELECTRONS WERE HARMED IN THE MAKING OF THIS MANIFESTO.
-        </p>
-</div>
-</footer>
-</body></html>
+                        <div
+                            class="border-2 border-dashed border-primary/40 p-8 text-center bg-primary/5 my-4 font-mono">
+                            <span class="material-symbols-outlined text-3xl opacity-60 mb-2 block">person_search</span>
+                            <p class="text-xs font-bold uppercase tracking-wider text-primary opacity-80">adjudicator
+                                panel details &amp; photos coming soon</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t-2 border-primary">
+                        <p
+                            class="font-mono text-[11px] uppercase text-center font-bold tracking-wider text-primary opacity-70">
+                            Fig 04: The Board of Inquiry — Official Adjudication Panel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Timeline -->
+        <section class="mb-24" id="timeline">
+            <h3 class="font-headline text-5xl font-black uppercase mb-12 text-center">Chronology of Events</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-mono text-xs">
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">09:00 AM</span>
+                    <span class="uppercase">Registration &amp; Station Security</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">10:00 AM</span>
+                    <span class="uppercase">The Press Opens (Opening Ceremony)</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">10:15 AM</span>
+                    <span class="uppercase">Coding Commencement</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">01:00 PM</span>
+                    <span class="uppercase">Logistics Break (Lunch)</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">01:30 PM</span>
+                    <span class="uppercase">Technical Development Phase II</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">04:00 PM</span>
+                    <span class="uppercase">Cease Coding</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">04:30 PM</span>
+                    <span class="uppercase">Inquiry &amp; Evaluation</span>
+                </div>
+                <div class="flex justify-between border-b border-primary py-4">
+                    <span class="font-bold">06:30 PM</span>
+                    <span class="uppercase">Manifesto Results</span>
+                </div>
+            </div>
+        </section>
+        <!-- Official Rules -->
+        <section class="mb-24 bg-primary/5 p-6 md:p-10 border-4 border-double border-primary">
+            <h3 class="font-mono text-base md:text-lg font-black uppercase mb-6 text-center underline tracking-wider">
+                OFFICIAL CODE OF CONDUCT</h3>
+            <ul class="font-mono text-xs md:text-sm space-y-4 leading-relaxed">
+                <li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">I.</span><span>Teams must
+                        consist of 2 to 4 members. Each participant may register as a member of only one team.</span>
+                </li>
+                <li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">II.</span><span>All project
+                        development must take place during the official hackathon duration. Pre-built projects are not
+                        permitted.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">III.</span><span>Participants
+                        may use open-source libraries, APIs, and AI tools, provided they comply with their respective
+                        licenses and are properly acknowledged where applicable.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">IV.</span><span>Maintain
+                        professionalism and respect toward fellow participants, mentors, judges, volunteers, and
+                        organizers throughout the event.</span></li>
+                <li class="flex items-start gap-3"><span class="font-bold min-w-[28px]">V.</span><span>The decisions
+                        made by the judging panel and organizing committee regarding evaluation, awards, and eligibility
+                        shall be final and binding.</span></li>
+            </ul>
+        </section>
+        <!-- FAQ -->
+        <section class="mb-24">
+            <h3 class="font-headline text-3xl font-bold uppercase mb-10">Frequently Asked Questions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-body">
+                <div class="border border-primary p-6">
+                    <h5 class="font-bold mb-2">Who can participate?</h5>
+                    <p class="text-sm opacity-80">Students from eligible colleges and universities are welcome to
+                        participate in CODE FORGE 2026.</p>
+                </div>
+                <div class="border border-primary p-6">
+                    <h5 class="font-bold mb-2">What is the team size?</h5>
+                    <p class="text-sm opacity-80">Each team must consist of 2 to 4 members.</p>
+                </div>
+                <div class="border border-primary p-6">
+                    <h5 class="font-bold mb-2">How do I register?</h5>
+                    <p class="text-sm opacity-80">Click Register Now, complete the official registration form, make the
+                        registration payment, and upload the payment proof to confirm your participation.</p>
+                </div>
+                <div class="border border-primary p-6">
+                    <h5 class="font-bold mb-2">When will the problem statements be released?</h5>
+                    <p class="text-sm opacity-80">The official problem statements will be released one day before the
+                        hackathon to all registered participants.</p>
+                </div>
+                <div class="border border-primary p-6 md:col-span-2">
+                    <h5 class="font-bold mb-2">Will food and certificates be provided?</h5>
+                    <p class="text-sm opacity-80">Yes. Lunch, refreshments, and an official Certificate of Participation
+                        will be provided to all eligible participants.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Registry Section -->
+        <section class="text-center py-20 bg-primary/5 border-t-4 border-b-4 border-double border-primary"
+            id="registry">
+            <h2 class="font-headline text-5xl md:text-7xl font-black uppercase mb-6">READY TO BUILD THE FUTURE?</h2>
+            <p class="font-body text-base md:text-lg max-w-3xl mx-auto mb-8 opacity-90 leading-relaxed px-4">
+                Registrations for CODE FORGE 2026 are now open. Form a team of 2–4 members, compete for a ₹25,000+ Prize
+                Pool, and showcase your innovation, technical skills, and creativity in an exciting one-day hackathon.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor"
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-burgundy text-background px-16 py-6 font-mono text-lg font-bold uppercase border-2 border-primary hover:bg-transparent hover:text-primary transition-all inline-block text-center">
+                    REGISTER NOW
+                </a>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-12 font-mono text-[10px] uppercase opacity-70 border-t border-primary/20 pt-12">
+                <div>
+                    <p class="font-bold text-primary mb-2">Host Institution</p>
+                    <p>G.H. Raisoni College of Engineering &amp; Management, Nagpur</p>
+                </div>
+                <div>
+                    <p class="font-bold text-primary mb-2">Organizing Department</p>
+                    <p>Department of Science &amp; Technology</p>
+                </div>
+                <div>
+                    <p class="font-bold text-primary mb-2">Organized By</p>
+                    <p>Deadline Dodgers</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact & Information / Official Help Desk -->
+        <section class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t-2 border-primary pt-12">
+            <div class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between">
+                <div>
+                    <h4
+                        class="font-headline text-2xl md:text-3xl font-black uppercase mb-6 border-b-2 border-primary pb-3 tracking-tight">
+                        CONTACT &amp; INFORMATION</h4>
+                    <div class="font-mono text-xs md:text-sm space-y-4">
+                        <div>
+                            <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Venue:</p>
+                            <p class="opacity-90 leading-snug">G.H. Raisoni College of Engineering &amp; Management,
+                                Main Block, Nagpur, Maharashtra</p>
+                        </div>
+                        <div class="border-t border-dotted border-primary/40 pt-3">
+                            <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student
+                                Coordinator:</p>
+                            <p class="font-bold text-sm">Pratham Nagture</p>
+                            <p class="opacity-80 text-xs mt-0.5">📞 Phone: +91 7276636754</p>
+                        </div>
+                        <div class="border-t border-dotted border-primary/40 pt-3">
+                            <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student
+                                Coordinator:</p>
+                            <p class="font-bold text-sm">Deadline Dodgers</p>
+                            <p class="opacity-80 text-xs mt-0.5">📞 Phone: +91 8788591592</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-2 border-primary p-6 md:p-8 bg-white/90 shadow-sm flex flex-col justify-between items-center text-center">
+                <div class="w-full">
+                    <div class="flex justify-center mb-4">
+                        <span class="material-symbols-outlined text-5xl p-3 bg-primary text-background">mail</span>
+                    </div>
+                    <h4 class="font-headline text-2xl md:text-3xl font-black uppercase mb-4 tracking-tight">OFFICIAL
+                        HELP DESK</h4>
+                    <p class="font-body text-xs md:text-sm leading-relaxed opacity-90 max-w-md mx-auto mb-6">Have
+                        questions about CODE FORGE? Contact our organizing team for assistance with registration,
+                        payments, event details, or participation.</p>
+                </div>
+                <div class="w-full pt-4 border-t border-primary/30">
+                    <button
+                        class="w-full py-4 bg-primary text-background font-mono text-sm font-bold uppercase tracking-wider border-2 border-primary hover:bg-burgundy transition-all shadow-sm">CONTACT
+                        ORGANIZERS</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-background border-t-4 border-primary py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <h5 class="font-masthead text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8">CODE FORGE 2026
+            </h5>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mb-12 font-mono text-[10px] uppercase tracking-widest border-b border-primary/10 pb-12">
+                <div>
+                    <p class="font-bold mb-4 underline">Legal Notices</p>
+                    <ul class="space-y-2 opacity-60">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Code of Conduct</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 underline">Affiliations</p>
+                    <ul class="space-y-2 opacity-60">
+                        <li>G.H. Raisoni College</li>
+                        <li>Science &amp; Technology Dept.</li>
+                        <li>Nagpur Innovation Hub</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 underline">Social Media</p>
+                    <div class="flex justify-center items-center gap-3">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-2 hover:text-burgundy transition-colors group">
+                            <svg class="w-6 h-6 fill-current group-hover:scale-110 transition-transform"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                            <span class="font-bold text-xs">INSTAGRAM</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="font-mono text-[9px] uppercase leading-relaxed opacity-50 max-w-2xl">
+                VOL. I // ISSUE NO. 01 // 25 AUGUST 2026 // NAGPUR, INDIA<br />
+                © 2026 CODE FORGE PRESS. DESIGNED &amp; DEVELOPED BY DEADLINE DODGERS.<br />
+                PRINTED IN THE TERMINAL. NO ELECTRONS WERE HARMED IN THE MAKING OF THIS MANIFESTO.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
