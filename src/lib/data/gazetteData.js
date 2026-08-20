@@ -23,7 +23,7 @@ export const heroData = {
     { label: "Venue", value: "G.H. Raisoni, Nagpur" },
     { label: "Team Size", value: "2–4 Members" },
     { label: "Registration", value: "₹400 / Team" },
-    { label: "Prize Pool", value: "₹15K+" }
+    { label: "Prize Pool", value: "₹25K" }
   ],
   eventDate: "August 25, 2026",
   countdownText: "Latest Dispatch: 24 Days Remaining Until Close"
@@ -117,15 +117,15 @@ export const valueProps = [
 ];
 
 export const eventHighlights = [
-  { metric: "₹15K+", label: "Prize Pool" },
-  { metric: "8 HRS", label: "Active Coding" },
+  { metric: "₹25K", label: "Prize Pool" },
+  { metric: "12 HRS", label: "Active Coding" },
   { metric: "OFFLINE", label: "Physical Presence" },
   { metric: "SWAG", label: "Limited Kits" }
 ];
 
 export const prizeData = {
   title: "PRIZE POOL ALLOCATION",
-  poolBadge: "TOTAL PRIZE POOL: ₹15,000+",
+  poolBadge: "TOTAL PRIZE POOL: ₹25,000",
   subtitle: "Rewarding Innovation. Celebrating Excellence.",
   description: "The best ideas deserve recognition. CODE FORGE celebrates teams that demonstrate exceptional creativity, technical excellence, and real-world impact. Compete and earn recognition for your innovation."
 };

@@ -13,7 +13,7 @@
             PRIZE ALLOCATION
           </h3>
           <span class="font-mono text-xs font-bold uppercase tracking-widest bg-primary text-background px-2.5 py-1">
-            ₹15,000+ POOL
+            ₹25,000 POOL
           </span>
         </div>
 
