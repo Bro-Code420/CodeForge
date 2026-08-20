@@ -20,7 +20,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
           {#each prizeTiers as tier, idx}
             {@const isWinner = idx === 1}
-            <div class="border-2 {isWinner ? 'border-burgundy bg-[#F4EFE6]' : 'border-primary bg-white/90'} p-4 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group">
+            <div class="border-2 {isWinner ? 'border-burgundy bg-[#F4EFE6]' : 'border-primary bg-white/90'} p-4 shadow-[3px_3px_0px_0px_rgba(22,22,22,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-transform flex flex-col justify-between group text-center">
               <div>
                 <div class="flex items-center justify-between border-b border-primary/30 pb-2 mb-2">
                   <span class="font-mono text-[9px] md:text-[10px] font-bold uppercase {isWinner ? 'text-burgundy' : 'text-primary/70'} tracking-wider truncate">
@@ -37,7 +37,7 @@
                   </div>
                 {/if}
 
-                <h4 class="font-headline font-black text-sm md:text-base uppercase text-primary mb-1 group-hover:text-burgundy transition-colors leading-tight">
+                <h4 class="font-headline font-black text-sm md:text-base uppercase text-primary mb-1 group-hover:text-burgundy transition-colors leading-tight text-center">
                   {tier.title}
                 </h4>
 
@@ -48,7 +48,7 @@
                   </p>
                 </div>
 
-                <p class="font-serif-alt text-[11px] md:text-xs text-primary/85 leading-snug">
+                <p class="font-serif-alt text-[11px] md:text-xs text-primary/85 leading-snug text-center">
                   {tier.note}
                 </p>
               </div>
