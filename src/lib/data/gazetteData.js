@@ -221,11 +221,19 @@ export const contactDetails = {
   collegePhone: "+91 7350631900",
   website: "ghrcemn.raisoni.net",
   openingHours: "10:00 AM – 6:00 PM",
-  StudentCoordName: "Pratham Nagture",
-  StudentCoordPhone: "+91 7276636754",
-  StudentCoordName: "Deadline Dodgers",
-  StudentCoordPhone: "+91 8788591592",
-  email: "[EMAIL_ADDRESS]",
+  studentCoordinators: [
+    {
+      name: "Pratham Nagture",
+      phone: "+91 7276636754"
+    },    
+    {
+      name: "Rupesh Bobde",
+      phone: "+91 8788591592"
+    }
+  ],
+  studentCoordName: "Pratham Nagture",
+  studentCoordPhone: "+91 7276636754",
+  email: "codeforge2026@gmail.com",
   helpDeskTitle: "OFFICIAL HELP DESK",
   helpDeskDesc: "Have questions about CODE FORGE? Contact our organizing team for assistance with registration, payments, event details, or participation.",
   helpDeskButton: "CONTACT ORGANIZERS",

@@ -18,17 +18,31 @@
             <p class="opacity-80 text-xs mt-1 leading-relaxed">{contactDetails.address}</p>
           </div>
 
-          <div class="border-t border-dotted border-primary/40 pt-4">
-            <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Faculty Coordinator:</p>
-            <p class="font-bold text-sm">{contactDetails.facultyCoordName}</p>
-            <p class="opacity-80 text-xs mt-0.5">📞 Phone: {contactDetails.facultyCoordPhone}</p>
-          </div>
+          {#if contactDetails.facultyCoordName}
+            <div class="border-t border-dotted border-primary/40 pt-4">
+              <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Faculty Coordinator:</p>
+              <p class="font-bold text-sm">{contactDetails.facultyCoordName}</p>
+              {#if contactDetails.facultyCoordPhone}
+                <p class="opacity-80 text-xs mt-0.5">📞 Phone: <a href="tel:{contactDetails.facultyCoordPhone}" class="hover:underline">{contactDetails.facultyCoordPhone}</a></p>
+              {/if}
+            </div>    
+          {/if}
 
-          <div class="border-t border-dotted border-primary/40 pt-4">
-            <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student Coordinator:</p>
-            <p class="font-bold text-sm">{contactDetails.studentCoordName}</p>
-            <p class="opacity-80 text-xs mt-0.5">📞 Phone: {contactDetails.studentCoordPhone}</p>
-          </div>
+          {#if contactDetails.studentCoordinators && contactDetails.studentCoordinators.length > 0}
+            {#each contactDetails.studentCoordinators as coord}
+              <div class="border-t border-dotted border-primary/40 pt-4">
+                <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student Coordinator:</p>
+                <p class="font-bold text-sm">{coord.name}</p>
+                <p class="opacity-80 text-xs mt-0.5">📞 Phone: <a href="tel:{coord.phone}" class="hover:underline font-bold text-primary">{coord.phone}</a></p>
+              </div>
+            {/each}
+          {:else if contactDetails.studentCoordName}
+            <div class="border-t border-dotted border-primary/40 pt-4">
+              <p class="font-bold text-primary uppercase text-[11px] tracking-wider mb-1">Student Coordinator:</p>
+              <p class="font-bold text-sm">{contactDetails.studentCoordName}</p>
+              <p class="opacity-80 text-xs mt-0.5">📞 Phone: <a href="tel:{contactDetails.studentCoordPhone}" class="hover:underline font-bold text-primary">{contactDetails.studentCoordPhone}</a></p>
+            </div>
+          {/if}
         </div>
       </div>
     </div>
