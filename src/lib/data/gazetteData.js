@@ -120,7 +120,7 @@ export const eventHighlights = [
   { metric: "₹25K", label: "Prize Pool" },
   { metric: "12 HRS", label: "Active Coding" },
   { metric: "OFFLINE", label: "Physical Presence" },
-  { metric: "SWAG", label: "Limited Kits" }
+  { metric: "WI-FI", label: "Available On-Site" }
 ];
 
 export const prizeData = {
@@ -134,19 +134,19 @@ export const prizeTiers = [
   {
     tier: "THE FIRST RUNNER-UP",
     title: "First Runner-Up",
-    reward: "Cash Prize",
+    reward: "₹7,000 CASH PRIZE",
     note: "Recognizing outstanding technical execution, innovative thinking, and exceptional overall performance."
   },
   {
     tier: "THE GRAND PRIZE",
     title: "Winner",
-    reward: "Cash Prize + Trophy",
+    reward: "₹15,000 + TROPHY",
     note: "Awarded to the team with the highest overall score for innovation, technical excellence, creativity, and impact."
   },
   {
     tier: "THE SECOND RUNNER-UP",
     title: "Second Runner-Up",
-    reward: "Cash Prize",
+    reward: "₹3,000 CASH PRIZE",
     note: "Awarded to the team that demonstrates strong problem-solving, creativity, and effective implementation."
   }
 ];
