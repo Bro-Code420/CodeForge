@@ -2,6 +2,9 @@
   import { onMount } from 'svelte';
   import { heroData } from '../data/gazetteData.js';
   import TriangleMarquee from './TriangleMarquee.svelte';
+  import RegistrationsClosedModal from './RegistrationsClosedModal.svelte';
+
+  let showClosedModal = false;
 
   let modelViewerRef;
   let robotContainerRef;
@@ -152,7 +155,7 @@
       <!-- Black Ribbon Badge with Swallowtail Cutout -->
       <div class="swallowtail-ribbon shadow-md hover:scale-[1.02] transition-transform duration-300">
         <span class="font-mono text-sm md:text-base font-bold uppercase tracking-[0.25em] text-background">
-          REGISTRATION OPEN
+          REGISTRATIONS CLOSED
         </span>
       </div>
 
@@ -163,19 +166,20 @@
 
       <!-- CTA Action Button & Live Status -->
       <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full max-w-md">
-        <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLScIqUcQI_jO5ibbkqkskaU0V4VvyHvb1WGR0U_l6GuKS8tXEg/viewform?usp=publish-editor" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="group relative inline-block flex-1"
-        >
+        <div class="group relative inline-block flex-1">
           <div class="absolute inset-0 bg-primary translate-x-1.5 translate-y-1.5 transition-transform group-hover:translate-x-0 group-hover:translate-y-0 duration-200"></div>
-          <button class="relative w-full bg-burgundy text-background px-8 py-4 font-mono text-lg font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2 group-hover:bg-[#800000] active:scale-[0.98]">
+          <button 
+            type="button"
+            on:click={() => (showClosedModal = true)}
+            class="relative w-full bg-burgundy text-background px-8 py-4 font-mono text-lg font-black uppercase border-2 border-primary transition-all hover:cursor-pointer flex items-center justify-center gap-2 group-hover:bg-[#800000] active:scale-[0.98]"
+          >
             REGISTER STATION <span class="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
           </button>
-        </a>
+        </div>
       </div>
     </div>
+
+
 
     <!-- Right Column: Interactive 3D Robot Model (Hold & Drag to Rotate 360° / Tap for Dialogue) -->
     <div class="lg:col-span-6 relative w-full flex justify-center lg:justify-end -mt-4 lg:mt-0">
@@ -239,5 +243,8 @@
 
   <!-- Bottom Framing Horizontal Rule -->
   <div class="border-b-2 border-primary w-full mt-6"></div>
+
+  <!-- Registration Closed Modal – anchored to Hero section (absolute, not fixed) -->
+  <RegistrationsClosedModal isOpen={showClosedModal} on:close={() => (showClosedModal = false)} sectionScoped={true} />
 </section>
 

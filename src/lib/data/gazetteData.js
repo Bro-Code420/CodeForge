@@ -4,7 +4,7 @@ export const headerData = {
   location: "NAGPUR, INDIA",
   title: "CODE FORGE",
   motto: "Code • Create • Innovate",
-  breakingTicker: "BREAKING: REGISTRATION NOW OPEN — PREMIER HACKATHON AT G.H. RAISONI COLLEGE — ₹25,000 PRIZE POOL — 12 HOURS OF PURE INNOVATION ",
+  breakingTicker: "BREAKING: REGISTRATIONS OFFICIALLY CLOSED — PROBLEM STATEMENTS RELEASING 22ND AUGUST 10 PM — ₹25,000 PRIZE POOL — 12 HOURS OF PURE INNOVATION ",
   navLinks: [
     { label: "The Vision", href: "#about" },
     { label: "Special Report", href: "#theme" }
