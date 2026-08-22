@@ -8,4 +8,4 @@
 //    false → Everything works normally.
 // ─────────────────────────────────────────────────────────────
 
-export const TORCH_DISABLED = ture;
+export const TORCH_DISABLED = true;
