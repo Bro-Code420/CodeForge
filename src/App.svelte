@@ -16,13 +16,14 @@
   import Footer from './lib/components/Footer.svelte';
   import SpotlightTorch from './lib/components/SpotlightTorch.svelte';
   import DesktopNoticeModal from './lib/components/DesktopNoticeModal.svelte';
+  import { TORCH_DISABLED } from './lib/config.js';
 
   let showPreloader = true;
   let isAppRevealing = false;
   let showDesktopNotice = false;
 
-  // Torch system toggle via .env configuration (true = disabled/removed, false = enabled)
-  const isTorchDisabled = import.meta.env.VITE_DISABLE_TORCH === 'true';
+  // Torch system toggle — controlled via src/lib/config.js (committed to git)
+  const isTorchDisabled = TORCH_DISABLED;
 
   function isMobileDevice() {
     if (typeof window === 'undefined') return false;
