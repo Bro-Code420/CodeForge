@@ -1,5 +1,5 @@
 <script>
-  import { scoreSheet, boardPanel } from '../data/gazetteData.js';
+  import { scoreSheet, boardPanel, evaluationFramework } from '../data/gazetteData.js';
 
   $: baseScoreSheet = scoreSheet.filter(item => !item.isBonus);
   $: bonusScoreSheet = scoreSheet.filter(item => item.isBonus);
@@ -11,7 +11,7 @@
   <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-2 border-b-2 border-primary py-3 mb-10 bg-primary/5">
     <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center font-mono text-xs md:text-sm font-bold tracking-widest uppercase gap-2">
       <span>SECTION IV // EVALUATION & ADJUDICATION</span>
-      <span>GAZETTE STANDARDS 2026</span>
+      <span>OFFICIAL 100-MARK FRAMEWORK • {evaluationFramework?.docRef || 'FORGE-EVAL-2026'}</span>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
       <div>
         <!-- Gazette Header -->
         <div class="flex justify-between items-center border-b-2 border-primary pb-3 mb-6 font-mono text-xs font-bold uppercase tracking-wider">
-          <span>DOC. REF: FORGE-EVAL-2026</span>
+          <span>DOC. REF: {evaluationFramework?.docRef || 'FORGE-EVAL-2026'}</span>
           <span class="bg-primary text-background px-2 py-0.5">FORM 04-A</span>
         </div>
 
@@ -40,12 +40,19 @@
         </div>
 
         <!-- Criteria Item List with Dotted Leaders -->
-        <div class="space-y-3.5 font-mono text-xs md:text-sm">
+        <div class="space-y-2.5 font-mono text-xs md:text-sm">
           {#each baseScoreSheet as item}
-            <div class="flex items-center justify-between py-1 border-b border-dotted border-primary/40">
-              <span class="font-bold text-primary">{item.criterion}</span>
-              <span class="flex-grow mx-2 border-b border-dotted border-primary/50 opacity-40"></span>
-              <span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30">
+            <div class="flex items-baseline justify-between py-1 border-b border-dotted border-primary/30 group hover:bg-primary/5 transition-colors px-1">
+              <div class="flex flex-col pr-2">
+                <span class="font-bold text-primary">{item.criterion}</span>
+                {#if item.focus}
+                  <span class="font-serif-alt italic text-[11px] text-primary/70 leading-tight mt-0.5">
+                    {item.focus}
+                  </span>
+                {/if}
+              </div>
+              <span class="flex-grow mx-2 border-b border-dotted border-primary/40 opacity-40 self-center"></span>
+              <span class="font-bold font-mono px-2 py-0.5 bg-primary/5 border border-primary/30 self-center whitespace-nowrap">
                 {item.marks}
               </span>
             </div>
@@ -74,7 +81,7 @@
       <div class="mt-8 pt-4 border-t-2 border-primary">
         <div class="flex justify-between items-center bg-primary text-background p-4 font-mono font-bold text-sm md:text-base">
           <span>TOTAL MARKS</span>
-          <span class="text-lg">{baseTotalMarks} <span class="text-xs font-normal text-background/80">(+5 EXTRA)</span></span>
+          <span class="text-lg tracking-wider">{baseTotalMarks} / 100</span>
         </div>
         <p class="font-mono text-[10px] uppercase text-center font-bold tracking-wider opacity-70 mt-3">
           ★ CERTIFIED EVALUATION MATRIX — ALL SCORES AUDITED BY BOARD OF INQUIRY
@@ -97,17 +104,6 @@
         <p class="font-body text-xs md:text-sm text-center leading-relaxed opacity-85 mb-6 border-b border-primary/20 pb-4 max-w-lg mx-auto">
           {boardPanel.description}
         </p>
-
-        <!-- Framed Press Image (Hidden for now - can be restored later) -->
-        <!--
-        <div class="border-2 border-primary p-2 bg-white">
-          <img
-            alt="Fig 04: The Board of Inquiry"
-            class="w-full grayscale contrast-125 ink-bleed object-cover block"
-            src={boardPanel.figureImg}
-          />
-        </div>
-        -->
 
         <!-- Placeholder card while photos/names are hidden -->
         <div class="border-2 border-dashed border-primary/40 p-8 text-center bg-primary/5 my-4 font-mono">

@@ -7,7 +7,11 @@ export const headerData = {
   breakingTicker: "BREAKING: REGISTRATIONS OFFICIALLY CLOSED — PROBLEM STATEMENTS RELEASING 22ND AUGUST 10 PM — ₹25,000 PRIZE POOL — 12 HOURS OF PURE INNOVATION ",
   navLinks: [
     { label: "The Vision", href: "#about" },
-    { label: "Special Report", href: "#theme" }
+    { label: "Special Report", href: "#theme" },
+    { label: "Evaluation", href: "#evaluation" },
+    { label: "Schedule", href: "#schedule" },
+    { label: "Problem Statements", href: "#problem-statements" },
+    { label: "PPT Template", href: "#ppt-template" }
   ]
 };
 
@@ -118,7 +122,7 @@ export const valueProps = [
 
 export const eventHighlights = [
   { metric: "₹25K", label: "Prize Pool" },
-  { metric: "12 HRS", label: "Active Coding" },
+  { metric: "12 HRS", label: "Event Timeline" },
   { metric: "OFFLINE", label: "Physical Presence" },
   { metric: "WI-FI", label: "Available On-Site" }
 ];
@@ -158,30 +162,165 @@ export const specialAwards = [
 ];
 
 export const scoreSheet = [
-  { criterion: "Problem Understanding", marks: 15, isBonus: false },
-  { criterion: "Technical Implementation", marks: 25, isBonus: false },
-  { criterion: "Innovation & Uniqueness", marks: 20, isBonus: false },
-  { criterion: "UI/UX Interface", marks: 15, isBonus: false },
-  { criterion: "PPT Presentation", marks: 10, isBonus: false },
-  { criterion: "Final Demo", marks: 15, isBonus: false },
-  { criterion: "Deployment", marks: 5, isBonus: true }
+  { criterion: "01 — Problem Understanding", marks: 10, weight: "10%", focus: "Actual problem, assumptions, constraints, and hardest challenge", isBonus: false },
+  { criterion: "02 — Research Depth", marks: 10, weight: "10%", focus: "Prior approaches, alternatives, theory, and technical reasoning", isBonus: false },
+  { criterion: "03 — Architecture & Technical Depth", marks: 20, weight: "20%", focus: "Defensible architecture and meaningful core mechanism", isBonus: false },
+  { criterion: "04 — Working Prototype", marks: 15, weight: "15%", focus: "Whether the central technical idea actually works", isBonus: false },
+  { criterion: "05 — Experimental Evidence", marks: 10, weight: "10%", focus: "Measurable claim supported by baseline or controlled experiment", isBonus: false },
+  { criterion: "06 — Resilience / Live Evaluation", marks: 15, weight: "15%", focus: "Sensible behavior under failure or changed conditions", isBonus: false },
+  { criterion: "07 — Security / Privacy / Correctness", marks: 5, weight: "5%", focus: "Relevant guarantees and threat/correctness considerations", isBonus: false },
+  { criterion: "08 — Technical Defense", marks: 10, weight: "10%", focus: "Ability to explain, modify, adapt, and defend the system", isBonus: false },
+  { criterion: "09 — Real-World Impact", marks: 5, weight: "5%", focus: "Practical relevance and potential beyond the prototype", isBonus: false }
 ];
+
+export const evaluationFramework = {
+  docRef: "FORGE-EVAL-2026",
+  track: "Intelligent Systems",
+  format: "Software-only",
+  mode: "Research + Engineering + Live Defense",
+  corePrinciple: "Build the smallest system that proves the hardest idea.",
+  judgeChain: ["Explain", "Justify", "Measure", "Break", "Adapt"],
+  performanceAnchors: [
+    { score: "0", label: "Not Demonstrated", desc: "Absent, non-functional, or impossible to evaluate." },
+    { score: "1", label: "Weak", desc: "Superficial, substantially unsupported, or dominated by major gaps." },
+    { score: "2", label: "Developing", desc: "Partial mechanism with significant technical or evidentiary gaps." },
+    { score: "3", label: "Competent", desc: "Credible prototype, sound reasoning, meaningful evidence (reference anchor)." },
+    { score: "4", label: "Strong", desc: "Technically mature, well-validated, and resilient within stated scope." },
+    { score: "5", label: "Exceptional", desc: "Unusually rigorous, deeply understood, well-evidenced, and defended." }
+  ]
+};
 
 export const boardPanel = {
   description: "Our panel of distinguished adjudicators will evaluate entries based on structural density and operational efficiency.",
   figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLuuwbmjrA6qXNi1-vSBXIxJ9LYBYT5PpH59ZmuqSfrBunbsH7LtaHyqPazF-dEGU86dC8jztw2ElxqhuAJ86MMuf0JG2G5JZjK6-jOO-d_mxjDtk11sCL5_IZ5Xx5VINiJw4oPdGPrOuN3Q7k5VvRYDI75wiRhZuSNGhhyR_zbeSbL-avRmrCyQdqaeUrw1tNkXnVcY61ckBCvCeZJuQIRwT3BbQPUaQHtUAd3MyvMCLaXCIqc2JH6Np5ls"
 };
 
-export const timelineEvents = [
-  { time: "09:00 AM", event: "Registration & Station Security" },
-  { time: "10:00 AM", event: "The Press Opens (Opening Ceremony)" },
-  { time: "10:15 AM", event: "Coding Commencement" },
-  { time: "01:00 PM", event: "Logistics Break (Lunch)" },
-  { time: "01:30 PM", event: "Technical Development Phase II" },
-  { time: "04:00 PM", event: "Cease Coding" },
-  { time: "04:30 PM", event: "Inquiry & Evaluation" },
-  { time: "06:30 PM", event: "Manifesto Results" }
-];
+export const scheduleData = {
+  sectionRef: "SECTION V // ITINERARY & CHRONOLOGY",
+  badge: "OFFICIAL TIMETABLE",
+  docRef: "FORGE-SCHED-2026",
+  dispatchCode: "DISPATCH 05-A",
+  title: "OFFICIAL HACKATHON SCHEDULE",
+  subtitle: "Chronological Sequence of Events, Coding Phases & Evaluation Milestones",
+  eventDate: "25 AUGUST 2026",
+  venue: "G.H. Raisoni College of Engineering & Management, Nagpur",
+  events: [
+    {
+      time: "7:00 AM – 8:30 AM",
+      title: "Participant Reporting & Registration",
+      details: "Verification desk open. Collect food coupons, participant kits & official ID cards.",
+      category: "CHECK-IN",
+      symbol: "how_to_reg",
+      isHighlight: false
+    },
+    {
+      time: "8:30 AM – 9:30 AM",
+      title: "Participant Seating & Event Preparations",
+      details: "Station allocation, power socket configuration, workspace prep & LAN connection checks.",
+      category: "SETUP",
+      symbol: "chair",
+      isHighlight: false
+    },
+    {
+      time: "9:30 AM – 10:00 AM",
+      title: "Inaugural Session",
+      details: "Traditional lamp lighting ceremony, felicitation of Dean and Student Coordinator, keynote welcome & event inauguration.",
+      category: "CEREMONY",
+      symbol: "flare",
+      isHighlight: false
+    },
+    {
+      time: "10:00 AM",
+      title: "Hackathon Begins – Event Starts Sharp",
+      details: "Official countdown concludes. Coding commences across all stations. Problem statements unlocked.",
+      category: "COMMENCEMENT",
+      symbol: "rocket_launch",
+      customIcon: "🦅",
+      isHighlight: true,
+      highlightType: "launch"
+    },
+    {
+      time: "10:00 AM – 12:00 PM",
+      title: "Hackathon Development – Phase 1",
+      details: "Initial development sprint: Problem breakdown, architecture design, database setup & baseline UI drafting.",
+      category: "DEV PHASE 1",
+      symbol: "terminal",
+      isHighlight: false
+    },
+    {
+      time: "12:00 PM",
+      title: "First Round Evaluation",
+      details: "Presentation of problem statement, proposed solution architecture & initial idea progress through PPT.",
+      category: "EVALUATION 01",
+      symbol: "slideshow",
+      isHighlight: false
+    },
+    {
+      time: "2:00 PM",
+      title: "Elimination Round – Shortlist Announcement",
+      details: "Official elimination results and shortlisted teams dispatched. Qualifying teams advance to the final development sprint and live defense evaluation.",
+      category: "ELIMINATION",
+      symbol: "fact_check",
+      customIcon: "📋",
+      isHighlight: true,
+      highlightType: "alert"
+    },
+    {
+      time: "3:30 PM",
+      title: "Final Round Evaluation",
+      details: "Judges visit shortlisted team stations to inspect functional live prototypes, systems architecture & live defense.",
+      category: "FINAL JURY",
+      symbol: "rate_review",
+      isHighlight: false
+    },
+    {
+      time: "5:00 PM",
+      title: "Winner Announcement",
+      details: "Adjudication jury results declared. Winners and runners-up revealed with cash prizes & certificates.",
+      category: "PODIUM",
+      symbol: "military_tech",
+      customIcon: "🏆",
+      isHighlight: true,
+      highlightType: "award"
+    },
+    {
+      time: "5:30 PM",
+      title: "Winners' Presentation Round",
+      details: "Grand prize and category winners demonstrate their winning projects live before the audience and jury.",
+      category: "SHOWCASE",
+      symbol: "podium",
+      isHighlight: false
+    },
+    {
+      time: "6:00 PM",
+      title: "Vote of Thanks & Closing Ceremony",
+      details: "Formal concluding remarks, token of appreciation to mentors/judges, group photographs & event adjournment.",
+      category: "VALEDICTORY",
+      symbol: "celebration",
+      isHighlight: false
+    }
+  ],
+  advisories: [
+    {
+      title: "STRICT PUNCTUALITY",
+      text: "All teams must report before 8:30 AM for verification and ID badge issuance."
+    },
+    {
+      title: "PRESENTATION READINESS",
+      text: "Keep PPT presentations pre-loaded and offline-ready for Round 1 Evaluation at 12:00 PM."
+    },
+    {
+      title: "LIVE DEMO PROTOCOL",
+      text: "Final evaluation at 3:30 PM is conducted directly at your designated engineering workstation."
+    }
+  ]
+};
+
+export const timelineEvents = scheduleData.events.map(item => ({
+  time: item.time,
+  event: item.title,
+  details: item.details
+}));
 
 export const codeOfConductRules = [
   "Teams must consist of 2 to 4 members. Each participant may register as a member of only one team.",
@@ -225,7 +364,7 @@ export const contactDetails = {
     {
       name: "Pratham Nagture",
       phone: "+91 7276636754"
-    },    
+    },
     {
       name: "Rupesh Bobde",
       phone: "+91 8788591592"
@@ -240,4 +379,16 @@ export const contactDetails = {
   hostInstitution: "G.H. Raisoni College of Engineering & Management, Nagpur",
   department: "Department of Science & Technology",
   editorialCrew: "Deadline Dodgers"
+};
+
+export const pptTemplateData = {
+  docRef: "FORGE-PPT-2026",
+  sectionRef: "OFFICIAL DISPATCH: PRESENTATION TEMPLATE",
+  subtitle: "Standardized Slide Deck Architecture for Round 1 Evaluation & Defense",
+  title: "OFFICIAL PPT TEMPLATE",
+  badge: "OFFICIAL SPECIFICATION",
+  format: "POWERPOINT (.PPTX) & GOOGLE SLIDES",
+  cipherTag: "PPT_TEMPLATE_FORMAT_V2.0_STANDARDIZED",
+  description: "All participating teams are required to utilize the standardized presentation template for Round 1 evaluation. Ensure your slides focus on problem decomposition, system architecture, core engineering mechanisms, and experimental metrics.",
+  downloadUrl: "/CodeForge_PPT_Template.pptx"
 };

@@ -1,6 +1,6 @@
 <script>
   let isHovered = false;
-  let cipherText = "ENCRYPTED_SHA256_FORGE_2026_DECRYPT_STATUS_LOCKED";
+  let cipherText = "FORGE_2026_DECRYPT_STATUS_UNLOCKED_OFFICIAL_RELEASE";
 
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&$@!";
   let displayCipher = cipherText;
@@ -51,28 +51,28 @@
       <p
         class="font-serif-alt italic text-sm md:text-base text-primary/80 max-w-2xl mx-auto"
       >
-        Subject to release exactly 24 hours prior to coding commencement.
+        Officially decrypted and released for all registered participants.
       </p>
     </div>
   </div>
 
-  <!-- Locked Content Box -->
+  <!-- Unlocked Content Box -->
   <div
     class="border-2 border-primary p-8 md:p-12 bg-[#F6F1E8] paper-texture shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center text-center relative overflow-hidden group"
     on:mouseenter={handleMouseEnter}
     on:mouseleave={handleMouseLeave}
     role="region"
-    aria-label="Problem Statements Encryption Protocol"
+    aria-label="Official Problem Statements Download"
   >
     <!-- Decorative Corner Ornaments -->
     <div class="absolute top-2 left-2 font-mono text-xs opacity-40">
-      § SECURE
+      § OFFICIAL RELEASE
     </div>
     <div class="absolute top-2 right-2 font-mono text-xs opacity-40">
-      REF: FORGE-LOCKED
+      REF: FORGE-UNLOCKED
     </div>
 
-    <!-- Hand-drawn Vintage Style SVG Padlock -->
+    <!-- Hand-drawn Vintage Style SVG Unlocked Padlock -->
     <div
       class="mb-6 relative group-hover:scale-105 transition-transform duration-300"
     >
@@ -83,16 +83,16 @@
         stroke="currentColor"
         stroke-width="2"
       >
-        <!-- Shackle (the loop) -->
+        <!-- Shackle (Unlocked open position) -->
         <path
-          d="M32 46 V32 Q32 18 50 18 Q68 18 68 32 V46"
+          d="M32 44 V26 Q32 12 50 12 Q68 12 68 26 V32"
           stroke-width="4.5"
           stroke-linecap="round"
           class="group-hover:-translate-y-1 transition-transform duration-300"
         />
         <!-- Shackle shadow shading -->
         <path
-          d="M38 46 V32 Q38 24 50 24"
+          d="M38 44 V26 Q38 18 50 18"
           stroke-width="1.5"
           stroke-dasharray="1 1"
         />
@@ -153,12 +153,12 @@
     <h4
       class="font-headline font-black uppercase text-xl md:text-2xl mb-2 leading-snug tracking-tight text-primary"
     >
-      TRANSMISSION DECRYPTION PENDING
+      TRANSMISSION DECRYPTED // OFFICIAL RELEASE
     </h4>
 
     <!-- Animated Cipher Stream Badge -->
     <div
-      class="font-mono text-xs text-burgundy font-bold bg-burgundy/5 px-3 py-1 border border-burgundy/20 mb-4 rounded-sm"
+      class="font-mono text-xs text-burgundy font-bold bg-burgundy/5 px-3 py-1 border border-burgundy/20 mb-4 rounded-sm max-w-full overflow-x-auto whitespace-nowrap"
     >
       {displayCipher}
     </div>
@@ -166,36 +166,35 @@
     <p
       class="font-serif-alt text-sm md:text-base leading-relaxed text-primary/95 max-w-2xl mb-8"
     >
-      The official problem statements are sealed under cryptographic security
-      protocols. In accordance with event standards, they will be decrypted and
-      made available for public download precisely 48 hours before the hackathon
-      begins.
+      The official problem statements have been decrypted under cryptographic security
+      protocols. Participants may now download the complete official problem statements
+      dossier to review challenges, tracks, and requirements.
     </p>
 
-    <!-- Locked Download Button -->
-    <div class="relative group/btn">
+    <!-- Active Download Button -->
+    <div class="relative group/btn z-10">
       <!-- Background shadow blocks for vintage look -->
       <div
         class="absolute inset-0 bg-primary/20 translate-x-1 translate-y-1 rounded-sm"
       ></div>
 
-      <button
-        disabled
-        class="relative bg-[#d3cbbd] text-primary/60 px-6 py-4 font-mono text-xs md:text-sm font-black uppercase border-2 border-primary/40 cursor-not-allowed flex items-center gap-3 transition-colors"
-        title="Decrypting 24 hours prior to launch"
+      <a
+        href="/Problem_Statements.pdf"
+        download="Problem_Statements.pdf"
+        class="relative bg-primary text-[#F6F1E8] hover:bg-primary/90 px-6 py-4 font-mono text-xs md:text-sm font-black uppercase border-2 border-primary flex items-center gap-3 transition-all transform active:translate-x-0.5 active:translate-y-0.5 cursor-pointer shadow-sm"
+        title="Download Problem Statements PDF"
       >
-        <span class="material-symbols-outlined text-base animate-pulse"
-          >lock</span
-        >
-        DOWNLOAD PROBLEM STATEMENTS (ENCRYPTED)
-      </button>
+        <span class="material-symbols-outlined text-base">download</span>
+        DOWNLOAD PROBLEM STATEMENTS (.PDF)
+      </a>
     </div>
 
     <!-- Time Release Status -->
     <p
       class="font-mono text-[10px] font-bold mt-6 uppercase opacity-70 tracking-wider"
     >
-      ★ DECRYPTION KEY DISPATCH: AUGUST 22, 2026 // 10:00 PM ★
+      ★ OFFICIAL DISPATCH: AUGUST 22, 2026 // 10:00 PM • DECRYPTED & AUDITED ★
     </p>
   </div>
 </section>
+
