@@ -105,12 +105,62 @@
           {boardPanel.description}
         </p>
 
-        <!-- Placeholder card while photos/names are hidden -->
-        <div class="border-2 border-dashed border-primary/40 p-8 text-center bg-primary/5 my-4 font-mono">
-          <span class="material-symbols-outlined text-3xl opacity-60 mb-2 block">person_search</span>
-          <p class="text-xs font-bold uppercase tracking-wider text-primary opacity-80">
-            adjudicator panel details & photos coming soon
-          </p>
+        <!-- Official Adjudicator Panel List -->
+        <div class="space-y-4 my-4">
+          {#if boardPanel.judges && boardPanel.judges.length > 0}
+            {#each boardPanel.judges as judge}
+              <div class="border border-primary/40 bg-primary/[0.02] hover:bg-primary/[0.04] transition-colors p-4 md:p-5 relative group">
+                <!-- Top Badge Row -->
+                <div class="flex flex-wrap items-center justify-between gap-2 pb-2 mb-2 border-b border-dashed border-primary/30">
+                  <div class="flex items-center gap-1.5 font-mono text-[11px] font-bold tracking-wider uppercase text-primary">
+                    <span class="material-symbols-outlined text-sm">{judge.icon || 'verified'}</span>
+                    <span class="bg-primary text-background px-1.5 py-0.5 text-[10px]">{judge.id}</span>
+                    <span class="text-primary/70">{judge.domain}</span>
+                  </div>
+                  <span class="font-mono text-[10px] uppercase font-bold tracking-widest text-burgundy bg-burgundy/10 px-2 py-0.5 border border-burgundy/30">
+                    ADJUDICATOR
+                  </span>
+                </div>
+
+                <!-- Judge Identity -->
+                <div class="mb-2">
+                  <h4 class="font-headline text-xl md:text-2xl font-black uppercase tracking-tight text-primary">
+                    {judge.name}
+                  </h4>
+                  <p class="font-mono text-xs font-bold text-primary/90 mt-0.5">
+                    {judge.title}
+                  </p>
+                  <p class="font-serif-alt italic text-xs text-primary/75 mt-0.5">
+                    {judge.qualifications}
+                  </p>
+                </div>
+
+                <!-- Short Overview -->
+                <p class="font-body text-xs leading-relaxed opacity-85 text-primary/90 mb-3">
+                  {judge.summary}
+                </p>
+
+                <!-- Tags / Competency Badges -->
+                {#if judge.tags}
+                  <div class="flex flex-wrap gap-1.5 pt-2 border-t border-dotted border-primary/20">
+                    {#each judge.tags as tag}
+                      <span class="font-mono text-[10px] uppercase font-semibold px-2 py-0.5 bg-primary/5 border border-primary/30 text-primary/80">
+                        {tag}
+                      </span>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          {:else}
+            <!-- Placeholder fallback -->
+            <div class="border-2 border-dashed border-primary/40 p-8 text-center bg-primary/5 my-4 font-mono">
+              <span class="material-symbols-outlined text-3xl opacity-60 mb-2 block">person_search</span>
+              <p class="text-xs font-bold uppercase tracking-wider text-primary opacity-80">
+                adjudicator panel details & photos coming soon
+              </p>
+            </div>
+          {/if}
         </div>
       </div>
 

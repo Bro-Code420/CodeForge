@@ -191,8 +191,30 @@ export const evaluationFramework = {
 };
 
 export const boardPanel = {
-  description: "Our panel of distinguished adjudicators will evaluate entries based on structural density and operational efficiency.",
-  figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLuuwbmjrA6qXNi1-vSBXIxJ9LYBYT5PpH59ZmuqSfrBunbsH7LtaHyqPazF-dEGU86dC8jztw2ElxqhuAJ86MMuf0JG2G5JZjK6-jOO-d_mxjDtk11sCL5_IZ5Xx5VINiJw4oPdGPrOuN3Q7k5VvRYDI75wiRhZuSNGhhyR_zbeSbL-avRmrCyQdqaeUrw1tNkXnVcY61ckBCvCeZJuQIRwT3BbQPUaQHtUAd3MyvMCLaXCIqc2JH6Np5ls"
+  description: "Our panel of distinguished adjudicators will evaluate entries based on structural density, algorithmic depth, and operational efficiency.",
+  figureImg: "https://lh3.googleusercontent.com/aida/AP1WRLuuwbmjrA6qXNi1-vSBXIxJ9LYBYT5PpH59ZmuqSfrBunbsH7LtaHyqPazF-dEGU86dC8jztw2ElxqhuAJ86MMuf0JG2G5JZjK6-jOO-d_mxjDtk11sCL5_IZ5Xx5VINiJw4oPdGPrOuN3Q7k5VvRYDI75wiRhZuSNGhhyR_zbeSbL-avRmrCyQdqaeUrw1tNkXnVcY61ckBCvCeZJuQIRwT3BbQPUaQHtUAd3MyvMCLaXCIqc2JH6Np5ls",
+  judges: [
+    {
+      id: "JUDGE-01",
+      name: "Dr. Vishal M. Lichade",
+      title: "Managing Director, Softsense Technoserve (STIPL)",
+      domain: "Cybersecurity, Operations Research & System Architecture",
+      qualifications: "Ph.D. (Operations Research) • M.Sc. (Statistics) • MCM",
+      summary: "Certified ISO 27001 & VAPT Auditor, G20 Civil 20 Delegate, and pioneer behind the nation's 1st Cyberange Lab. 28+ years of expertise in software development, data modeling, and academic authoring (Wiley Press).",
+      tags: ["ISO 27001 / VAPT Auditor", "G20 C20 Delegate", "Operations Research", "Wiley Author"],
+      icon: "shield"
+    },
+    {
+      id: "JUDGE-02",
+      name: "Prof. Pooja Walke",
+      title: "Assistant Professor, Dept. of Artificial Intelligence, SVPCET",
+      domain: "Natural Language Processing, AI & Distributed Systems",
+      qualifications: "Ph.D. (Pursuing - NLP) • M.Tech (Computer Tech) • B.E.",
+      summary: "AI educator and NLP researcher with 18.5+ years of experience across engineering academia and IT industry. Incharge of Innovation & Entrepreneurship Development Cell (IEDC) with 10+ publications in AI & Transformer models.",
+      tags: ["NLP & Transformers", "Intelligent Systems", "IEDC Incharge", "10+ Publications"],
+      icon: "psychology"
+    }
+  ]
 };
 
 export const scheduleData = {
